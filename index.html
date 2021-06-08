@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-06-08 mar 19:14 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital Forensics and Cybercrime</title>
+<meta name="author" content="Tancredi Covioli" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="css/dfc-notes.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Digital Forensics and Cybercrime</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org346b1cb">Cybercryme Landscape</a>
+<ul>
+<li><a href="#org9134819">Threat dimensions</a></li>
+<li><a href="#org2a83c3c">Gartner quadrant of threats</a></li>
+<li><a href="#org3c1bd6a">Internal threats</a></li>
+<li><a href="#org3eccc59">How to manage a cyber attack</a></li>
+<li><a href="#orgc918938">Financially oriented attacks</a></li>
+<li><a href="#org02802f8">Cybercrime</a>
+<ul>
+<li><a href="#org6e13d4c">Identity theft</a></li>
+<li><a href="#orgc96e42d">Selling kits</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org376ff4a">Abuses of cryptocurrency and forensics</a>
+<ul>
+<li><a href="#orgce0ce4d">Some informations</a>
+<ul>
+<li><a href="#org64e7781">Bitcoin wallet</a></li>
+<li><a href="#org1596ed3">Bitcoin address</a></li>
+<li><a href="#org13a9517">Bitcoin mining</a></li>
+<li><a href="#org4d9f99f">Forks</a></li>
+</ul>
+</li>
+<li><a href="#orgcbd25d8">Pseudo Anonimity</a>
+<ul>
+<li><a href="#org281405c">How to protect Pseudo Anonimity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf4796eb">Acquisition</a>
+<ul>
+<li><a href="#org35e2502">Acquisition in Italy</a></li>
+<li><a href="#orga8d5da7">Brittleness of digital evidence</a>
+<ul>
+<li><a href="#orgf917b2a">Hashes</a></li>
+</ul>
+</li>
+<li><a href="#org7290c1d">Typical hw/sw for acquisition</a></li>
+<li><a href="#orgb77ea3a">Bitstream images</a></li>
+<li><a href="#orgb865ec8">Acquisition procedure</a>
+<ul>
+<li><a href="#org863d1d1">The time problem</a></li>
+<li><a href="#orgb51347c">The size problem</a></li>
+<li><a href="#org65eaf17">The encryption problem</a></li>
+</ul>
+</li>
+<li><a href="#org6722d11">Forensics Duplicators</a></li>
+</ul>
+</li>
+<li><a href="#orgd6ca5da">Identification</a>
+<ul>
+<li><a href="#orgbc2316b">Setup</a>
+<ul>
+<li><a href="#org1ba3193">Why not windows</a></li>
+<li><a href="#org7274fae">Repeatibility</a>
+<ul>
+<li><a href="#org6456661">Law enforcement tools</a></li>
+</ul>
+</li>
+<li><a href="#orgde5f4e9">What analysis encompasses</a></li>
+</ul>
+</li>
+<li><a href="#org3267cec">Data Recovery</a>
+<ul>
+<li><a href="#org317e9c6">Disk Geometry</a></li>
+<li><a href="#orgbda8395">File system (method 1 to retrieve data)</a></li>
+<li><a href="#orge719c5e">Carving (method 2 to retrieve data)</a></li>
+<li><a href="#orgbc4075c">Free-as-in-beer software tools for data recovery</a></li>
+</ul>
+</li>
+<li><a href="#org5ee3246">Antiforensic Techniques</a>
+<ul>
+<li><a href="#org441de84">Timeline tampering</a></li>
+<li><a href="#orgc62eb46">Countering file recovery</a></li>
+<li><a href="#org45e9ab1">Fileless attacks</a></li>
+<li><a href="#org01cedd3">Filesystem insertion and subversion technologies</a></li>
+<li><a href="#org1b2d7ff">Log analisys and tampering</a></li>
+<li><a href="#org95b5a84">Patition table analisys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb272adc">SSD-forensics</a>
+<ul>
+<li><a href="#org60a73c4">FTL</a></li>
+<li><a href="#org0536b28">Tests</a>
+<ul>
+<li><a href="#org19499b7">Trimming</a></li>
+<li><a href="#orgf49d3b2">Garbage Collection</a></li>
+<li><a href="#org9f7ec98">Erasing patterns</a></li>
+<li><a href="#org895c5fe">Compression</a></li>
+<li><a href="#orgbf0f1ae">Wear Leveling</a></li>
+<li><a href="#org2d8a34d">Reults on file recoverability</a></li>
+</ul>
+</li>
+<li><a href="#org295295c">Conclusions</a></li>
+</ul>
+</li>
+<li><a href="#orgb4b405b">Evaluation and presentation</a>
+<ul>
+<li><a href="#orgcb1b9db">Evaluation phase</a>
+<ul>
+<li><a href="#org0827272">Analyzing the documents</a></li>
+</ul>
+</li>
+<li><a href="#org932b9e3">The relationship with lawyers, customers and prosecutor/police</a></li>
+<li><a href="#org7badc94">Typical errors found in reports and analyses and presentation errors</a>
+<ul>
+<li><a href="#org0776b68">What to look for</a></li>
+<li><a href="#org98b7f4a">What to do when your client is in the wrong</a></li>
+<li><a href="#org6f0adb5">Writing your report</a></li>
+<li><a href="#org9267bc8">Structure of a report</a></li>
+</ul>
+</li>
+<li><a href="#orga5bdb62">Testimony as a witness</a></li>
+<li><a href="#org9a2774f">Direct and cross examination</a></li>
+</ul>
+</li>
+<li><a href="#orgc6cb67a">Fraud analysis and detection (carminati, 16/04/21)</a>
+<ul>
+<li><a href="#org8d19e0f">Why people commit fraud</a></li>
+<li><a href="#org50532d1">Fraud categories</a></li>
+<li><a href="#org6ff8f58">Anti-fraud stategies</a>
+<ul>
+<li><a href="#org173a16d">Anti fraud mechanisms</a></li>
+<li><a href="#orgba1aa08">Fraud detection and Fraud prevention</a>
+<ul>
+<li><a href="#orga41d889">Example of fraud prevention: Strong customer authentication</a></li>
+</ul>
+</li>
+<li><a href="#orga25e4dc">Strategies for Fraud detection and prevention</a>
+<ul>
+<li><a href="#org8d3cefb">Expert-based approach</a>
+<ul>
+<li><a href="#org05b8668">Rule based engines</a></li>
+</ul>
+</li>
+<li><a href="#orge53ff86">Automated fraud detection system</a></li>
+<li><a href="#org106019f">Data driven fraud detection</a></li>
+</ul>
+</li>
+<li><a href="#org817598a">Fraud management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgc0c149e">Fraud Detection (carminati, 21/04/21)</a>
+<ul>
+<li><a href="#orga30598e">Frauds as a dynamic phenomenon</a></li>
+<li><a href="#orgf19c4cc">Techniques to detect a fraud automatically</a>
+<ul>
+<li><a href="#org2501005">Unsupervised learning analytics techniques</a>
+<ul>
+<li><a href="#org1aa66ed">Telecommunication example</a></li>
+<li><a href="#org5615966">Limitations</a></li>
+</ul>
+</li>
+<li><a href="#org52e9b4d">Supervised learning techniques</a>
+<ul>
+<li><a href="#org90ada0c">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgec3ca55">Developing a fraud detection system</a></li>
+<li><a href="#orge797682">Social Network Analysis</a></li>
+<li><a href="#org5199b4b">Fraud management cycle</a>
+<ul>
+<li><a href="#org37e4b8b">Regular update of the model</a>
+<ul>
+<li><a href="#orgd09a6c7">Reinforcement learning</a></li>
+</ul>
+</li>
+<li><a href="#org3b14dee">Example: Credit card fraud</a></li>
+</ul>
+</li>
+<li><a href="#orgf5df6b2">Fraud analytical process</a>
+<ul>
+<li><a href="#orgc568b98">Preprocessing</a></li>
+<li><a href="#org88146ef">Analytics</a>
+<ul>
+<li><a href="#org7bd4a05">Possible analysis outputs</a></li>
+</ul>
+</li>
+<li><a href="#orge15cfd0">Post processing phase</a></li>
+<li><a href="#org927b84b">Key characteristics of successful fraud analtics models</a></li>
+<li><a href="#org00e7401">Fraud management as risk management</a>
+<ul>
+<li><a href="#org043690c">Economical cost</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0495be1">Challenges of developing fraud-detection models</a></li>
+<li><a href="#orgf5bd18e">Red flags of frauds</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org346b1cb" class="outline-2">
+<h2 id="org346b1cb">Cybercryme Landscape</h2>
+<div class="outline-text-2" id="text-org346b1cb">
+<p>
+<b>Risks</b> are a statistical evaluation of the exposure to damage because of the presence of vulnerabilities and threats.<br />
+</p>
+</div>
+<div id="outline-container-org9134819" class="outline-3">
+<h3 id="org9134819">Threat dimensions</h3>
+<div class="outline-text-3" id="text-org9134819">
+<ul class="org-ul">
+<li>Generic threats: threats in which we incur for simply being connected to the internet.<br /></li>
+<li>Targeted: threats that exploit known informations about us.<br /></li>
+<li>Financial motivations: easy to understand.<br /></li>
+<li>Other motivations: difficult to understand and, being non financial, makes the attacker out of scale against our security system.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2a83c3c" class="outline-3">
+<h3 id="org2a83c3c">Gartner quadrant of threats</h3>
+<div class="outline-text-3" id="text-org2a83c3c">
+<p>
+A table showing some example of the threat categories listed above, with their relative possible financiary motivation level.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org3c1bd6a" class="outline-3">
+<h3 id="org3c1bd6a">Internal threats</h3>
+<div class="outline-text-3" id="text-org3c1bd6a">
+<p>
+Internal threats can be countered by contracts and <span class="underline">separation of duties</span>.<br />
+They can be of various kind:<br />
+</p>
+<ul class="org-ul">
+<li>Malicious insiders (personal gain)<br /></li>
+<li>Inside agents (other organizations)<br /></li>
+<li>Emotional employees (revenge)<br /></li>
+<li>Reckless employees (self conciousness)<br /></li>
+<li>Third party users (other organization&rsquo;s users)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3eccc59" class="outline-3">
+<h3 id="org3eccc59">How to manage a cyber attack</h3>
+<div class="outline-text-3" id="text-org3eccc59">
+<p>
+In cyberspace, private companies defend their own piece of infrastructure by themselves.<br />
+When we talk about public or semi-public agencies (see ENI, VODAFONE etc.), what should they do in case of a big scale cyber-attack? Is the jurisdiction of the attack on them or on the nation?<br />
+</p>
+
+<p>
+The NATO wrote an entire manual (the Tallin Manual) on the policy they think applies to confilcts in cyberspace.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc918938" class="outline-3">
+<h3 id="orgc918938">Financially oriented attacks</h3>
+<div class="outline-text-3" id="text-orgc918938">
+<p>
+The monetization of the attacks can be either direct or indirect.<br />
+</p>
+<ul class="org-ul">
+<li>Direct monetization: credit card / bank account fraud; ransomware; fake AVs.<br /></li>
+<li>Indirect monetization: information gathering; abuse computing resources for other attacks; rent or sell botnets.<br /></li>
+</ul>
+
+<p>
+The discriminant between the two is whether the money comes directly from the victim or from the use of their computer.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org02802f8" class="outline-3">
+<h3 id="org02802f8">Cybercrime</h3>
+<div class="outline-text-3" id="text-org02802f8">
+<p>
+Cybercrime has its own ecosystem, whit producers, enablers (that don&rsquo;t produce the exploits but keep them relevant) and clients<br />
+</p>
+</div>
+<div id="outline-container-org6e13d4c" class="outline-4">
+<h4 id="org6e13d4c">Identity theft</h4>
+<div class="outline-text-4" id="text-org6e13d4c">
+<p>
+Identities are stolen because they can be abused.<br />
+American SSN is sometimes abused for authentication purposes.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc96e42d" class="outline-4">
+<h4 id="orgc96e42d">Selling kits</h4>
+<div class="outline-text-4" id="text-orgc96e42d">
+<p>
+Various kinds of kits are sold in the cybercrime ecosystem:<br />
+Botnets, exploitation kits, viruses..<br />
+</p>
+
+<p>
+These are then used for other kinds of crimes.<br />
+</p>
+
+<p>
+Also, the selling of stolen VISA accounts is common for money laundering and scamming (e.g: the scam of buying plane tickets and sell them to poor people before the real owner of the card blocks the payment).<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org376ff4a" class="outline-2">
+<h2 id="org376ff4a">Abuses of cryptocurrency and forensics</h2>
+<div class="outline-text-2" id="text-org376ff4a">
+</div>
+<div id="outline-container-orgce0ce4d" class="outline-3">
+<h3 id="orgce0ce4d">Some informations</h3>
+<div class="outline-text-3" id="text-orgce0ce4d">
+</div>
+<div id="outline-container-org64e7781" class="outline-4">
+<h4 id="org64e7781">Bitcoin wallet</h4>
+<div class="outline-text-4" id="text-org64e7781">
+<ul class="org-ul">
+<li>Manage and store keys of you bitcoin addresses<br /></li>
+<li>Creates and signs transactions (receive/send BTC)<br /></li>
+<li>Track the balance<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1596ed3" class="outline-4">
+<h4 id="org1596ed3">Bitcoin address</h4>
+<div class="outline-text-4" id="text-org1596ed3">
+<p>
+String used to receive payments.<br />
+You usually want to use more addresses to not make people able to track your movements.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org13a9517" class="outline-4">
+<h4 id="org13a9517">Bitcoin mining</h4>
+<div class="outline-text-4" id="text-org13a9517">
+<p>
+Objective: compete to solve a complex problem by bruteforce: find the next block of transactions with as much leading zeroes as possible.<br />
+The one that resolves it first gets a reward (constantly decreasing).<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org4d9f99f" class="outline-4">
+<h4 id="org4d9f99f">Forks</h4>
+<div class="outline-text-4" id="text-org4d9f99f">
+<p>
+When two miners find the same solution at approximately the same time, each block becomes the new head of the blockchain for a network: the blockchain splits.<br />
+That&rsquo;s what is called a fork.<br />
+When other 6/7 blocks are found, we see which chain they continue and we consider that the &ldquo;real&rdquo; chain.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcbd25d8" class="outline-3">
+<h3 id="orgcbd25d8">Pseudo Anonimity</h3>
+<div class="outline-text-3" id="text-orgcbd25d8">
+<p>
+An identity can have an arbitrary number of addresses, which can be used to split a transaction into multiple ones and make the derivation of the real owner difficult.<br />
+</p>
+
+<p>
+But all the transaction data is available, so if you take enough care you can track the flow of a transaction and infer some things:<br />
+</p>
+<ul class="org-ul">
+<li>most of the times, all the inputs of a transaction are the same user.<br /></li>
+<li>New addresses are usually shadow addresses, made explicitly to cover the traces.<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org281405c" class="outline-4">
+<h4 id="org281405c">How to protect Pseudo Anonimity</h4>
+<div class="outline-text-4" id="text-org281405c">
+<p>
+The &ldquo;flow tracking&rdquo; described above is made difficult by malicious sites by mixing together multiple transactions from different clients. (See Silk Road, as an example).<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf4796eb" class="outline-2">
+<h2 id="orgf4796eb">Acquisition</h2>
+<div class="outline-text-2" id="text-orgf4796eb">
+</div>
+<div id="outline-container-org35e2502" class="outline-3">
+<h3 id="org35e2502">Acquisition in Italy</h3>
+<div class="outline-text-3" id="text-org35e2502">
+<p>
+In Italy, it is not requested to provide a report on how the acquisition was made, so the methods now presented will be overkill.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orga8d5da7" class="outline-3">
+<h3 id="orga8d5da7">Brittleness of digital evidence</h3>
+<div class="outline-text-3" id="text-orga8d5da7">
+<p>
+All digital evidence, if modified, is not <b>tamper evident</b>.<br />
+There are, though, some procedure to ensure that digital evidence becomes tamper evidence.<br />
+</p>
+</div>
+<div id="outline-container-orgf917b2a" class="outline-4">
+<h4 id="orgf917b2a">Hashes</h4>
+<div class="outline-text-4" id="text-orgf917b2a">
+<p>
+In court it is asked to prove that evidence has been modified.<br />
+</p>
+
+<p>
+Hashes allow you to validate that an evidence has not been modified.<br />
+Its absence does not mean that it has been modified.<br />
+</p>
+
+<p>
+Remember that we create the hash so that we can create a record of how the evidence looks. This means that it <b>must be preserved in another location than the evidence</b> to ensure it has not been tampered with.<br />
+</p>
+
+<p>
+They are not a dogma, and their absence won&rsquo;t be a huge obstacle for the &ldquo;jury&rdquo; to surpass.<br />
+But they are useful to debunk any accusation of counterfation.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org7290c1d" class="outline-3">
+<h3 id="org7290c1d">Typical hw/sw for acquisition</h3>
+<div class="outline-text-3" id="text-org7290c1d">
+<ul class="org-ul">
+<li>Hardware:<br />
+<ul class="org-ul">
+<li>Write blocker<br /></li>
+<li>external disks (simple copy through a live usb)<br /></li>
+<li>removable HD enclosures<br /></li>
+</ul></li>
+<li>Operating system:<br />
+<ul class="org-ul">
+<li>Live linux boot<br /></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb77ea3a" class="outline-3">
+<h3 id="orgb77ea3a">Bitstream images</h3>
+<div class="outline-text-3" id="text-orgb77ea3a">
+<p>
+Usually, by &ldquo;copying and pasting&rdquo; we lose some important informations.<br />
+</p>
+
+<p>
+We can, instead, make a &ldquo;bit by bit&rdquo; clone <span class="underline">of the original media</span>.<br />
+</p>
+
+<p>
+Of this image I want to make a hash, to ensure it&rsquo;s not tampered.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgb865ec8" class="outline-3">
+<h3 id="orgb865ec8">Acquisition procedure</h3>
+<div class="outline-text-3" id="text-orgb865ec8">
+<ul class="org-ul">
+<li>If possible, disconnect the media<br />
+<ul class="org-ul">
+<li>Connect it to an analysis station, with a <b>write blocker</b> possibly (not a necessity, you can just confugure correctly your software).<br /></li>
+<li>compute the hash of the source<br /></li>
+<li>make a clone of the source and check its hash<br /></li>
+</ul></li>
+<li>When media disconnection is not possible (soldered memory / raid devices / other constraints)<br />
+<ul class="org-ul">
+<li>live boot the system with a linux distribution (possibly one targeted to forensic analysis)<br />
+<ul class="org-ul">
+<li>only available if the target is off, though.<br />
+When turning off the target, <span class="underline">pull the plug</span>. Don&rsquo;t let it have a system shutdown.<br /></li>
+</ul></li>
+<li>if the target is powered on and cannot be turned off, make sure first to take all the data available in the system, and <b>work in volatility order</b>:<br />
+<ul class="org-ul">
+<li><b>disconnect the machine from the network</b>, if the network is not necessary.<br />
+Done to avoid additional modifications.<br /></li>
+<li>dump the memory (In linux, there are /dev/mem and /dev/kmem that you may use to acquire the memory of the machine while on).<br /></li>
+<li>save runtime informations (network, processes etc)<br /></li>
+<li>make the disk acquisition<br /></li>
+</ul></li>
+</ul></li>
+<li>When we want to make the analysis &ldquo;live&rdquo;<br />
+Likely, we caught the intruder.<br />
+<ul class="org-ul">
+<li>check the logs (only usable if they are on a different machine than the one attacked)<br /></li>
+<li>check the network traffic (now or never)<br /></li>
+</ul></li>
+</ul>
+
+<p>
+The noerror and sync options of dd are used to not make dd stop in case of errors in the hdd.<br />
+</p>
+
+<p>
+The recomputation of the hash of the source and the acquisition image is made to ensure they are the same and to ensure that the source has not been modified (by comparing it with the first hash made of the device).<br />
+</p>
+
+<p>
+We often use <b>multiple hashing algorithms</b> to compute the hash for the same image.<br />
+The reason is that someone else who has actually analized the drive might have used a different hashing algorithm (maybe a few years back).<br />
+</p>
+</div>
+
+<div id="outline-container-org863d1d1" class="outline-4">
+<h4 id="org863d1d1">The time problem</h4>
+<div class="outline-text-4" id="text-org863d1d1">
+<p>
+Computing the copy of a 1TB hdd/usb key might take some time depending on the interface used by the hdd itself or by the write blocker.<br />
+It might take several ours to compute an hash and make a copy of the source.<br />
+</p>
+
+<p>
+To avoid the time waste, some softwares may automate part of the procedure by computing the source hash while copyng.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb51347c" class="outline-4">
+<h4 id="orgb51347c">The size problem</h4>
+<div class="outline-text-4" id="text-orgb51347c">
+<p>
+In large scale investigations (or when multiple investigations are held in parallel), the sizes of the drives might make storing their clones and transfering them a real burden.<br />
+Using external media devices is a no-go, since it slows down operations by a lot if you don&rsquo;t use the correct interfaces (USB).<br />
+</p>
+
+<p>
+NASs and SANs are used all the times for this specific reason.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org65eaf17" class="outline-4">
+<h4 id="org65eaf17">The encryption problem</h4>
+<div class="outline-text-4" id="text-org65eaf17">
+<p>
+In Italy, it might not be required for the persecuted to provide the passcode to decrypt the evidence for the analysis, since it can be seen as <b>testifying against oneself</b>.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6722d11" class="outline-3">
+<h3 id="org6722d11">Forensics Duplicators</h3>
+<div class="outline-text-3" id="text-org6722d11">
+<p>
+These perform hashes and copy the hard drive into one of the others, printing a &ldquo;receipt&rdquo; with all the informations of the process.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd6ca5da" class="outline-2">
+<h2 id="orgd6ca5da">Identification</h2>
+<div class="outline-text-2" id="text-orgd6ca5da">
+</div>
+
+<div id="outline-container-orgbc2316b" class="outline-3">
+<h3 id="orgbc2316b">Setup</h3>
+<div class="outline-text-3" id="text-orgbc2316b">
+<p>
+The easyest operating system to work on when making forensic analisys is Linux, since it has/can:<br />
+</p>
+<ul class="org-ul">
+<li>extensive native file system support<br /></li>
+<li>native support for swapping drives<br /></li>
+<li>mounting of disk images as drives<br /></li>
+</ul>
+
+<p>
+On a linux guest we might keep some windows vms to use soe additional tools.<br />
+</p>
+</div>
+
+<div id="outline-container-org1ba3193" class="outline-4">
+<h4 id="org1ba3193">Why not windows</h4>
+<div class="outline-text-4" id="text-org1ba3193">
+<p>
+Windows tampers with drives and <b>modifies evidence</b>.<br />
+It doesn&rsquo;t support many file systems.<br />
+</p>
+
+<p>
+Remember: Some tools are windows only, and as such you cannot use linux for your entire job.<br />
+When using these tools inside a vm, be sure that the disk drive is not writable (this is a last resort, you should first try to work on a copy or on a write blocked drive).<br />
+</p>
+
+<p>
+Be wary of proprietary and non free software.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7274fae" class="outline-4">
+<h4 id="org7274fae">Repeatibility</h4>
+<div class="outline-text-4" id="text-org7274fae">
+<p>
+Since any other expert must be able to perform the same experiment, you should <b>avoid proprietary/paid forensic solutions</b>.<br />
+</p>
+
+<p>
+Moreover, if a machine is subject to a job without fully understanding (or having access to) how the job innerly works, you cannot say that its output represents truly repeatable evidence, since the expert should be (in theory) able to <b>perform the same analysis by hand</b>.<br />
+</p>
+</div>
+
+<div id="outline-container-org6456661" class="outline-5">
+<h5 id="org6456661">Law enforcement tools</h5>
+<div class="outline-text-5" id="text-org6456661">
+<p>
+Adversarial Investigation tools that <b>must be left hidden</b> to the public in order to avoid other people (e.g. criminals) finding ways to circumvent them.<br />
+</p>
+
+<p>
+They are <i>not really fit</i> for the job, since to make an analysis scientific the tool shall be used and undestood by other experts.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgde5f4e9" class="outline-4">
+<h4 id="orgde5f4e9">What analysis encompasses</h4>
+<div class="outline-text-4" id="text-orgde5f4e9">
+<p>
+We will focus on tasks that happens only in forensics, but be careful: forensic analysis encompasses everything you have studied.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3267cec" class="outline-3">
+<h3 id="org3267cec">Data Recovery</h3>
+<div class="outline-text-3" id="text-org3267cec">
+<p>
+One of the most typical tasks of computer forensics<br />
+</p>
+</div>
+
+<div id="outline-container-org317e9c6" class="outline-4">
+<h4 id="org317e9c6">Disk Geometry</h4>
+<div class="outline-text-4" id="text-org317e9c6">
+<p>
+The data is read from the tracks on the platters.<br />
+The minimum part of the track that can be read is a <b>Sector</b>.<br />
+The minimum block that can be allocated for a file is a <b>Cluster</b>.<br />
+A cilinder is the set of tracks that are on the same position (on different platters) on the drive.<br />
+</p>
+
+<p>
+When a file is not exactly a multiple of clusters, the operating systems allocates the clusters anyway.<br />
+</p>
+
+<p>
+The area that is left between the file end and the end of the last cluster is called &ldquo;slack space&rdquo;.<br />
+This chunk of data contains the <b>remains of previously deleted stuff</b>.<br />
+</p>
+
+<p>
+If this data is text or otherwise an easily recognizable file format, you can reconstruct (at least a minimal part of) a file.<br />
+Zip files, most of images and audio etc. are probably not reconstructable this way, since they rely on headers and other file sections.<br />
+</p>
+
+<p>
+But we could check if a file we are seeking for matches with the part in the slack space, to have a partial confirmation.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbda8395" class="outline-4">
+<h4 id="orgbda8395">File system (method 1 to retrieve data)</h4>
+<div class="outline-text-4" id="text-orgbda8395">
+<p>
+The file system is the equivalent of the index of a series of folders and files.<br />
+In each <b>inode</b> you have a table of (direct | indirect) pointers to data blocks in the hard drive.<br />
+</p>
+
+<p>
+On file deletion, the file system entry is marked as free.<br />
+After some time, the file system entry (not the data itself) is freed and, after some more time, the data block might be overwritten.<br />
+</p>
+
+<p>
+If we want to access the deleted files, we either:<br />
+</p>
+<ul class="org-ul">
+<li><b>if the file entry was not deleted</b>: un-mark the file entry in the inode for deletion<br /></li>
+<li><b>if the file entry deletion has already taken place</b>: ignore the inode and look for the block.<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge719c5e" class="outline-4">
+<h4 id="orge719c5e">Carving (method 2 to retrieve data)</h4>
+<div class="outline-text-4" id="text-orge719c5e">
+<ul class="org-ul">
+<li>Scan the drive as a single bit stream<br /></li>
+<li><b>locate MIME types</b> of interesting file types<br /></li>
+<li>anything in between is a candidate file.<br /></li>
+</ul>
+
+<p>
+The problem comes when encryption and/or compression are taken into consideration, where file types cannot be recognized anymore.<br />
+</p>
+
+<p>
+Fragmentation happens on only 2% of files, and is mostly a 2 part fragmentation.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc4075c" class="outline-4">
+<h4 id="orgbc4075c">Free-as-in-beer software tools for data recovery</h4>
+<div class="outline-text-4" id="text-orgbc4075c">
+<p>
+Sleuthkit is the core (with a cli), autopsy is the gui.<br />
+Autopsy will be used also in mobile forensics to inspect mobile phone images.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5ee3246" class="outline-3">
+<h3 id="org5ee3246">Antiforensic Techniques</h3>
+<div class="outline-text-3" id="text-org5ee3246">
+<p>
+Aimed at circumventing the forensic analyst.<br />
+They are called transient when they just deviate the analysis, definitive when they destroy/tamper the evidence.<br />
+</p>
+
+<p>
+The <b>most vunerable phases</b> are aquisition and identification.<br />
+</p>
+
+<p>
+<b>Transient antiforensics</b> interfere mostly with identification, but can be detected.<br />
+<b>Definitive antiforensics</b> interfere with identification, since .<br />
+</p>
+</div>
+<div id="outline-container-org441de84" class="outline-4">
+<h4 id="org441de84">Timeline tampering</h4>
+<div class="outline-text-4" id="text-org441de84">
+<p>
+A technique that consists in modifying the timestamp of files on the disk to make them appear not correlated one another.<br />
+It&rsquo;s a <b>definitive antiforensics</b> technique, since the old timestamp is not available anymore.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgc62eb46" class="outline-4">
+<h4 id="orgc62eb46">Countering file recovery</h4>
+<div class="outline-text-4" id="text-orgc62eb46">
+<p>
+File recovery uses data remnants on the disk, so:<br />
+</p>
+<ul class="org-ul">
+<li>secure deletion of files<br /></li>
+<li>encryption<br /></li>
+<li>virtual machines<br /></li>
+</ul>
+<p>
+Are all available methods to avoid data to be recovered.<br />
+It is a definitive antiforensics method since it destroys (or negates the creation of) the evidence.<br />
+</p>
+
+<p>
+The &ldquo;residual of magnetization&rdquo; is a file recovery method studied during the 90es.<br />
+A 0 written where there was a 0 has a magnetization level slightly different than a 0 written where there was written a 1.<br />
+This was never shown to be practical, but it was a reasonable assumption with the technology from the 90es; Nowadays (due to the high density of the bits) it is unusable.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org45e9ab1" class="outline-4">
+<h4 id="org45e9ab1">Fileless attacks</h4>
+<div class="outline-text-4" id="text-org45e9ab1">
+<p>
+No traces are left on the disk at all.<br />
+Metasploit has this feature: it injects in memory a DLL.<br />
+Thus all traces are lost after the machine is turned off (and turning off is one of the main steps to analyze data.)<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org01cedd3" class="outline-4">
+<h4 id="org01cedd3">Filesystem insertion and subversion technologies</h4>
+<div class="outline-text-4" id="text-org01cedd3">
+<p>
+We place the data where there&rsquo;s no reason to look for them (in the metadata section of the file system).<br />
+The partition table, for example, has 32KB assigned, but in effective use, usually, it has 1KB at most.<br />
+</p>
+
+<ul class="org-ul">
+<li>Inodes for bad blocks are created by the system to not use them.<br />
+If we manage to pass a good block as a bad one, we get some free real estate.<br /></li>
+<li>You can use directory inodes to, instead, point to data blocks<br /></li>
+<li>We can put data in metadata structures ignored by forensic tools (this method is weak to carving)<br /></li>
+</ul>
+
+<p>
+It is a transient antiforensic method, since the evidence is hidden and not destroyed.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org1b2d7ff" class="outline-4">
+<h4 id="org1b2d7ff">Log analisys and tampering</h4>
+<div class="outline-text-4" id="text-org1b2d7ff">
+<p>
+If an attacker has access to the log files, it can tamper them to insert fake log entries or malicious code (this last option is only useful if they are automatically analyzed).<br />
+</p>
+
+<p>
+It is a <b>transient antiforensics</b> technique.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org95b5a84" class="outline-4">
+<h4 id="org95b5a84">Patition table analisys</h4>
+<div class="outline-text-4" id="text-org95b5a84">
+<ul class="org-ul">
+<li>If a partition is not correctly aligned, the OS (Windows) might still use it, while forensic tools might miss them.<br /></li>
+<li>Normally, there is only one extendend partition per disk. Windows and Linux can manage multiple extended partitions, but forensic analysis tools might not support them.<br /></li>
+<li>A high number of logical partitions in an extended one might bring the tool to crash.<br />
+The case was with NCase, 15 years ago. It supported at most 26 partitions (one for each letter of the alphabet).<br /></li>
+</ul>
+
+<p>
+This too is a <b>transient antiforensics</b> technique, since the data that composes the evidence is not altered.<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb272adc" class="outline-2">
+<h2 id="orgb272adc">SSD-forensics</h2>
+<div class="outline-text-2" id="text-orgb272adc">
+<p>
+SSDs are based on NAND based flash memory, widely used in mobile devices.<br />
+</p>
+</div>
+<div id="outline-container-org60a73c4" class="outline-3">
+<h3 id="org60a73c4">FTL</h3>
+<div class="outline-text-3" id="text-org60a73c4">
+<p>
+In order to write on nand, you need to blank the block completely.<br />
+FTL (flash translation layer) chips are devices used to optimize the access to the SSD<br />
+Functionalities:<br />
+</p>
+<ul class="org-ul">
+<li>Caching<br />
+Avoid blanking a block with one single bit flipped<br /></li>
+<li>Trimming<br />
+When the drive is idle, start trimming (clearing) blocks. It depends on the operating system to tell which blocks to trim.<br /></li>
+<li>Garbage Collection<br />
+An advanced form of trimming not dependent on the OS<br /></li>
+<li>Data compression<br />
+Avoid writing multiple blocks when possible<br /></li>
+<li>Bad block handling<br />
+When a cell is about to fail, the ssd should stop using it<br /></li>
+<li>Wear leveling<br />
+When we have a cell that has been written many times, we try to move on it static data.<br /></li>
+</ul>
+
+<p>
+Since the FTL decides how to compress and obfuscate data and shuffles it (for wear leveling, even when the OS isn&rsquo;t running), it is the only one with the knowledge of the mapping between the logical structure of the data seen by the OS and the physical layout.<br />
+</p>
+
+<p>
+The FTL cannot be disabled via software. You can read the chips with external tools (extremely difficult), risking the destruction of the drive.<br />
+</p>
+
+<p>
+The FTL, moreover, is not standard: It is the main difference between different vendors (chips are usually the same) and, as such, they are intellectual property that they try to protect.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0536b28" class="outline-3">
+<h3 id="org0536b28">Tests</h3>
+<div class="outline-text-3" id="text-org0536b28">
+<p>
+A set of tests was developed to assess the impacts of FTL on the use of black-box tools.<br />
+</p>
+</div>
+<div id="outline-container-org19499b7" class="outline-4">
+<h4 id="org19499b7">Trimming</h4>
+<div class="outline-text-4" id="text-org19499b7">
+<p>
+Trim activates after a second of the drive being IDLE, and it is very aggressive.<br />
+After ten second from the erase of the drive, it will be completely empties (looking through the FTL).<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf49d3b2" class="outline-4">
+<h4 id="orgf49d3b2">Garbage Collection</h4>
+<div class="outline-text-4" id="text-orgf49d3b2">
+<p>
+We didn&rsquo;t find Garbage collection of the drives.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f7ec98" class="outline-4">
+<h4 id="org9f7ec98">Erasing patterns</h4>
+<div class="outline-text-4" id="text-org9f7ec98">
+<p>
+Certain SSD controllers exhibit unexpected trimming patterns.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org895c5fe" class="outline-4">
+<h4 id="org895c5fe">Compression</h4>
+<div class="outline-text-4" id="text-org895c5fe">
+<p>
+Files with High entropy (that cannot be compressed) will take more time to be written<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf0f1ae" class="outline-4">
+<h4 id="orgbf0f1ae">Wear Leveling</h4>
+<div class="outline-text-4" id="text-orgbf0f1ae">
+<p>
+We thought that wear leveling, since it would make shadow copies of the files, could help the forensic analysis. It does not.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d8a34d" class="outline-4">
+<h4 id="org2d8a34d">Reults on file recoverability</h4>
+<div class="outline-text-4" id="text-org2d8a34d">
+<p>
+Very detrimental. If TRIM is active, it&rsquo;s quite difficult to recover any file.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org295295c" class="outline-3">
+<h3 id="org295295c">Conclusions</h3>
+<div class="outline-text-3" id="text-org295295c">
+<p>
+For forensics analysts, SSD are a pain in the arse.<br />
+We can say that SSDs have an &ldquo;intrinsic&rdquo; secure deletion system.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb4b405b" class="outline-2">
+<h2 id="orgb4b405b">Evaluation and presentation</h2>
+<div class="outline-text-2" id="text-orgb4b405b">
+<p>
+These phases are tightly coupled with experience and are difficult to teach generally.<br />
+</p>
+</div>
+<div id="outline-container-orgcb1b9db" class="outline-3">
+<h3 id="orgcb1b9db">Evaluation phase</h3>
+<div class="outline-text-3" id="text-orgcb1b9db">
+<p>
+Consists in <b>matching the evidence elements with the required legal elements to support/negate a legal theory</b>.<br />
+</p>
+
+<p>
+The experts and the lawyer sit down and share their expertise, trying to match the requirements to negate or confirm an allegation.<br />
+</p>
+
+<p>
+The judge will analyze what can be said now, what cannot be said and what are the other possible experiments to find something new.<br />
+But sometimes, showing a feasible experiment to the jury can be detrimental to our own cause; There is a <b>risk</b> associated with each experiment we make.<br />
+</p>
+
+<p>
+Very often, expert witnesses work on the results of other experts (not on the evidence itself).<br />
+All experts must testify with objective facts (without interpretation or twisting) but they are not required to be completely non-sided to the matter (so they might want to avoid certain tests etc.)<br />
+But be wary, since omission of truth is persecutable in Italy <b>experts cannot</b>, when asked, <b>claim professional secrecy</b>.<br />
+</p>
+
+<p>
+After each analysis, the expert is asked a series of question called &ldquo;quesito peritale&rdquo;. One of the question is &ldquo;riferisca quant&rsquo;altro può essere utile ai fini di giustizia&rdquo;.<br />
+This implies that, should you find another crime evidence during your analysis, you are forced to say so.<br />
+</p>
+</div>
+
+<div id="outline-container-org0827272" class="outline-4">
+<h4 id="org0827272">Analyzing the documents</h4>
+<div class="outline-text-4" id="text-org0827272">
+<p>
+You always need to analyze what can be said and <i>what can not</i>, possibly specifying <b>what further experiments would be needed</b> to say more.<br />
+</p>
+
+<p>
+This last analysis must be perfomed to be prepared on what experiments the counterpart will perform and what will be the repercussions if out part asks to make such experiments.<br />
+</p>
+
+<p>
+It&rsquo;s also very important to <b>review previous dovuments and evidences</b>, to look for technical/factual errors, suggestive writing, opinions not distinct from facts.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org932b9e3" class="outline-3">
+<h3 id="org932b9e3">The relationship with lawyers, customers and prosecutor/police</h3>
+<div class="outline-text-3" id="text-org932b9e3">
+<p>
+The important thing to remember is that: &ldquo;unless you are a police officer, you are not a policeman&rdquo;. It&rsquo;s <b>not your duty to punish</b> someone.<br />
+Unless you are a lawyer, it&rsquo;s <b>not your duty to protect</b> people either (even though lawyers and customers pay your bills).<br />
+You may be asked by the lawyer to omit a finding though (as long as it&rsquo;s not the same as lying).<br />
+</p>
+
+<p>
+You should never compromise the trust of the customer in their lawyer.<br />
+</p>
+
+<p>
+The process truth is not the same as historical truth: The law may not support incriminating someone that may be guilty historically.<br />
+</p>
+
+<p>
+It is super important to stick to facts and science, we&rsquo;re <b>not fighting for justice</b>, and your thoughts must not be shaped by it.<br />
+</p>
+
+<p>
+In Italy, a super-partes kind of experts are available: the judge experts, requested by the judge to review the evidence.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-org7badc94" class="outline-3">
+<h3 id="org7badc94">Typical errors found in reports and analyses and presentation errors</h3>
+<div class="outline-text-3" id="text-org7badc94">
+<p>
+If the theory is that &ldquo;a supernatural/incredibly powerful being did something&rdquo; and that cannot be confuted, it is a &ldquo;trojan defense&rdquo;.<br />
+(You can never exclude a trojan virus that deletes itself put the files on my computer, but it is not <b>falsifiable</b> so not <b>scientific</b>)<br />
+We can provide additional explanations and alternative theories to these.<br />
+</p>
+
+<p>
+Many court cases drag over a long time, so having a good written report (presentation) can be lifesaving to gather back the informations.<br />
+The report you signed is the only thing you can bring with you in a court.<br />
+</p>
+</div>
+
+<div id="outline-container-org0776b68" class="outline-4">
+<h4 id="org0776b68">What to look for</h4>
+<div class="outline-text-4" id="text-org0776b68">
+<ul class="org-ul">
+<li><b>Acquisition errors</b><br />
+<ul class="org-ul">
+<li>missing links in the chain of custody<br /></li>
+<li>missing/mismatched serial numbers<br /></li>
+<li>errors during hashing/cloning procedures (missing write lockers)<br /></li>
+</ul></li>
+<li><b>Analysis errors</b><br />
+<ul class="org-ul">
+<li>steps where the hash is not verified<br /></li>
+<li>use of proprietary programs<br /></li>
+<li>technical mistakes.<br /></li>
+</ul></li>
+<li><b>Presentation errors</b><br />
+<ul class="org-ul">
+<li>the presentation is biased<br /></li>
+<li>counter examples for an assumption can be found<br /></li>
+<li>alternative theories not explored<br /></li>
+</ul></li>
+</ul>
+
+<p>
+In Italy it is <span class="underline">not enough to demonstrate that an analysis was not conducted in a correct way</span>, but if you can raise questions and <span class="underline">show that other results are feasible</span> with the same set of informations and another analysis method, you can bring the jury to your side.<br />
+That&rsquo;s why, during the presentation phase, you must be meticolous and list all possible counter examples.<br />
+</p>
+
+<p>
+On the other side, if you cannot dispute the facts that the opposition is saying about your client, you can dispute their presentation.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98b7f4a" class="outline-4">
+<h4 id="org98b7f4a">What to do when your client is in the wrong</h4>
+<div class="outline-text-4" id="text-org98b7f4a">
+<p>
+You can avoid to present the informations about your client that aren&rsquo;t on your favor.<br />
+But if the prosecutor asks, you must respond (unless you &ldquo;didn&rsquo;t touch&rdquo; the topic in your analysis)<br />
+&ldquo;It&rsquo;s the ill people that need doctors&rdquo;<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6f0adb5" class="outline-4">
+<h4 id="org6f0adb5">Writing your report</h4>
+<div class="outline-text-4" id="text-org6f0adb5">
+<p>
+You want to explain the situation in a simple way, but not a simplistic way.<br />
+The judge won&rsquo;t like to be treated like a child, but he will want to understand everything (so all the technical terminology will have to be explained).<br />
+You will also have to explain why certain things are relevant.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9267bc8" class="outline-4">
+<h4 id="org9267bc8">Structure of a report</h4>
+<div class="outline-text-4" id="text-org9267bc8">
+<p>
+Always explain the reasons behind an analysis and its results.<br />
+</p>
+
+<p>
+Try to write &ldquo;obstacles&rdquo; in the way to get your client sentenced:<br />
+</p>
+<ul class="org-ul">
+<li>&ldquo;the opposition did this&rdquo;<br /></li>
+<li>&ldquo;By doing this, they actually ruled out this&rdquo;<br /></li>
+<li>&ldquo;Even ignoring this, the evidence could be explained better with this&rdquo;<br /></li>
+</ul>
+
+<p>
+Always write in the introduction what is your very conclusion.<br />
+</p>
+
+<p>
+The conclusion is, most of the times, the only things the judge considers.<br />
+Give a fast write up of what was written in the report, then use a strong ending phrase.<br />
+<b>Stay factual</b>.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga5bdb62" class="outline-3">
+<h3 id="orga5bdb62">Testimony as a witness</h3>
+<div class="outline-text-3" id="text-orga5bdb62">
+<p>
+In many jurisdiction, the expert may be called as a witness or may only just have to submit a report.<br />
+In Italy, if you are working in a criminal procedure, you must be called as a witness.<br />
+</p>
+
+<p>
+In Italy, you are asked to know you duty as a witness: answer truthfully and not hide anything you know.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9a2774f" class="outline-3">
+<h3 id="org9a2774f">Direct and cross examination</h3>
+<div class="outline-text-3" id="text-org9a2774f">
+<ul class="org-ul">
+<li><b>Direct examination</b><br />
+you are <i>first</i> called by your side and proceed to a friendly direct examination.<br />
+In this examination you must:<br />
+<ul class="org-ul">
+<li>be as helpful as possible<br /></li>
+<li>be as clear as possible (make sure you explain everything to the judge)<br /></li>
+<li>check previous records of the jusdge to prepare for possible questions<br /></li>
+</ul></li>
+
+<li><b>Cross examination</b><br />
+you are called by the opposing side to testify. This is usually much more difficult than its direct counterpart.<br />
+In this examination you want to:<br />
+<ul class="org-ul">
+<li>be court if you can, and if you can not be very complex and difficult to understand (you can take you time talking by looking at your report)<br /></li>
+<li>If a question is positive for your side, be extremely clear and helpful<br /></li>
+<li>Don&rsquo;t get personal on the things they say and don&rsquo;t get angry<br /></li>
+</ul></li>
+</ul>
+
+<p>
+In civil court, witnesses are expected to provide answers to questions that were listed to the judge, in the form of &ldquo;is it true that..&rdquo;.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6cb67a" class="outline-2">
+<h2 id="orgc6cb67a">Fraud analysis and detection (carminati, 16/04/21)</h2>
+<div class="outline-text-2" id="text-orgc6cb67a">
+<p>
+What is a <b>fraud</b>? It&rsquo;s a wrongful or criminal deception intended for financial or personal gain.<br />
+In particular, it is:<br />
+</p>
+
+<ul class="org-ul">
+<li><b>uncommon</b><br />
+Only a minority of cases concerns fraud, which makes it difficult to detect frauds and to learn from historical cases (due to them being quite few).<br /></li>
+<li><b>well considered and imperceptibly concealed</b><br />
+Fraudsters remain unnoticed and covered by planning ahead their actions.<br /></li>
+<li><b>time evolving</b><br />
+fraud techniques evolve in time, ahead of fraud detection systems.<br /></li>
+<li><b>carefully organized</b><br />
+Fraudsters do not operate independently, they involve complex and organized structures.<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org8d19e0f" class="outline-3">
+<h3 id="org8d19e0f">Why people commit fraud</h3>
+<div class="outline-text-3" id="text-org8d19e0f">
+<p>
+The main reason is the <span class="underline">potential monetary gain</span>.<br />
+But we have an abstact model that tries to explain the drivers of a fraud, the <b>fraud triangle</b>, composed of:<br />
+</p>
+<ul class="org-ul">
+<li>motivation<br /></li>
+<li>opportunity<br /></li>
+<li>rationalization<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org50532d1" class="outline-3">
+<h3 id="org50532d1">Fraud categories</h3>
+<div class="outline-text-3" id="text-org50532d1">
+<ul class="org-ul">
+<li>Banking and credit card frauds<br />
+Has two subtypes:<br />
+<ul class="org-ul">
+<li>application fraud: obtain new credit cards from issuing companies by using false data and spend as much money as possible in a short time.<br /></li>
+<li>behvioral fraud: detail of legit cards are obtained fraudolently. Does not necessarily require stealing the physical card, but the credentials.<br /></li>
+</ul></li>
+<li>Insurance fraud<br />
+Can be either:<br />
+<ul class="org-ul">
+<li>from the side of the seller, if we<br />
+<ul class="org-ul">
+<li>sell policies for nonexistent companies<br /></li>
+<li>setting up multiple policies to create commissions<br /></li>
+</ul></li>
+<li>from the side of the buyer, if we<br />
+<ul class="org-ul">
+<li>exaggerate claims<br /></li>
+<li>falsify medical history<br /></li>
+<li>fake death/kidnapping etc<br /></li>
+<li>fake damage to our vehichle<br /></li>
+</ul></li>
+</ul></li>
+<li>Corruption<br />
+Misuse of entrusted power for personal gain.<br /></li>
+<li>Counterfition<br />
+A counterfeit is an imitation intended to be passes off fraudulently or deceptively.<br />
+It is usually done on valuable objects like money, credit cards, popular products etc.<br /></li>
+<li>Product warranty fraud<br />
+Fraudently claiming compensation or remuneration based on a product warranty.<br /></li>
+<li>Healthcare fraud<br />
+Filling dishonest healthcare claims to make profit.<br /></li>
+<li>Telecommunication fraud<br />
+Theft/use of communication services to commit other frauds.<br />
+<ul class="org-ul">
+<li>cloning fraud: clone a number and the related call credit.<br /></li>
+<li>superimposition fraud: fraudolent usage is added to the legit use of an account.<br /></li>
+</ul></li>
+<li>Money laundering<br />
+Transform illegal money into legit funds.<br /></li>
+<li>Click frauds<br />
+Illegal clicks on a website advertisement to increase the payable number of clicks to the advertiser.<br />
+Identity theft<br />
+Obtain the financial/personal informations of another person for the purpose of assuming that person&rsquo;s identity to make purchases.<br /></li>
+<li>Tax evasion<br />
+Illegal act or practice of not paying (or paying partially) taxes that are owed.<br /></li>
+<li>Plagiarism<br />
+Use another&rsquo;s production without crediting the source<br />
+It involves both stealing someone&rsquo;s work and lying about it afterwards.<br /></li>
+<li>Sim swap attacks<br />
+The attacker contacts your phone operator, asks for a new sim, get control of it, get access to your authentication method (if your phone is the secure point).<br />
+The second factor authentication based on the sim introduced by banks caused this kind of frauds.<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6ff8f58" class="outline-3">
+<h3 id="org6ff8f58">Anti-fraud stategies</h3>
+<div class="outline-text-3" id="text-org6ff8f58">
+</div>
+<div id="outline-container-org173a16d" class="outline-4">
+<h4 id="org173a16d">Anti fraud mechanisms</h4>
+<div class="outline-text-4" id="text-org173a16d">
+<p>
+Reduce losses due to frauds:<br />
+</p>
+<ul class="org-ul">
+<li>Prevents and detect part of the frauds.<br /></li>
+<li>hinder fraudsters who will look for other easier opportunities. (go on other organizations)<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgba1aa08" class="outline-4">
+<h4 id="orgba1aa08">Fraud detection and Fraud prevention</h4>
+<div class="outline-text-4" id="text-orgba1aa08">
+<p>
+<span class="underline">Fraud detection</span> mechanisms recognize fraudolent activities after they have happened (ex-post approach)<br />
+They usually provide the analyst with an index risk of fraud, depending on the past transaction (behavior) of the user<br />
+</p>
+
+<p>
+<span class="underline">Fraud prevention</span> mechanisms avoid or reduce the frauds that will happen (ex-ante approach)<br />
+</p>
+
+<p>
+They are <b>complementary</b> and <b>not independent</b>: if a fraud adapts to a detection mechanism, it will also impact prevention mechanisms and vice-versa.<br />
+</p>
+</div>
+
+<div id="outline-container-orga41d889" class="outline-5">
+<h5 id="orga41d889">Example of fraud prevention: Strong customer authentication</h5>
+<div class="outline-text-5" id="text-orga41d889">
+<p>
+New European requirement to make the payment. Two authentication methods are required to make a payment.<br />
+They are required to make online card payments in the European Economic Area.<br />
+</p>
+
+<p>
+Exemption: payments below 30 euros/low risk transaction (due to user friendliness)<br />
+</p>
+
+<p>
+Each single security measure impacts the cost and usability of a system.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga25e4dc" class="outline-4">
+<h4 id="orga25e4dc">Strategies for Fraud detection and prevention</h4>
+<div class="outline-text-4" id="text-orga25e4dc">
+</div>
+<div id="outline-container-org8d3cefb" class="outline-5">
+<h5 id="org8d3cefb">Expert-based approach</h5>
+<div class="outline-text-5" id="text-org8d3cefb">
+<p>
+This approach to fraud analysis is built on the domain knowledge of the fraud analyst.<br />
+It involves <b>manual investigation</b> of a suspicious case to understand the fraud mechanism.<br />
+</p>
+
+<p>
+It may find <b>new fraud mechanisms</b>.<br />
+</p>
+
+<p>
+They are usually implemented with if-then-else rules engine.<br />
+If the amount of claim is above the threshold, if there is a severe accident but no police/doctor report etc, then flag it as suspicious.<br />
+</p>
+</div>
+
+<div id="outline-container-org05b8668" class="outline-6">
+<h6 id="org05b8668">Rule based engines</h6>
+<div class="outline-text-6" id="text-org05b8668">
+<p>
+Rule-based engine are expensive to build and they <b>must be kept secret</b> from fraudsters, which can learn the rules and circumvent them.<br />
+Moreover, new <i>fraud patterns are not automatically signaled</i>: you must first make new rules for them.<br />
+</p>
+
+<p>
+There are some disadvantages though:<br />
+</p>
+<ul class="org-ul">
+<li>expensive to build: require manual input and they&rsquo;re difficult to mantain and manage<br /></li>
+<li>must be continuously monitored, improved and updated.<br /></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge53ff86" class="outline-5">
+<h5 id="orge53ff86">Automated fraud detection system</h5>
+<div class="outline-text-5" id="text-orge53ff86">
+<p>
+An automated system for detecting fraud requires less human involvement and could lead to a more efficient system, <b>based on data analysis</b>.<br />
+<span class="underline">Expert knowledge remains, in any case, crucial to build the system</span>.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org106019f" class="outline-5">
+<h5 id="org106019f">Data driven fraud detection</h5>
+<div class="outline-text-5" id="text-org106019f">
+<p>
+Based on machine learning.<br />
+It is <b>precise</b>, due to the increased detection power than classic approaches and the massive amount of informations available from previous frauds used to uncover frauds that are not apparent.<br />
+It is <b>efficient</b>, because it cost much less to automate the analysis than expert-based fraud detection systems.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org817598a" class="outline-4">
+<h4 id="org817598a">Fraud management</h4>
+<div class="outline-text-4" id="text-org817598a">
+<p>
+When a fraud is detected, it must be<br />
+</p>
+<ul class="org-ul">
+<li><b>corrected</b>, by providing a compensation for example. Note that you can be required to look at the past to be sure it didn&rsquo;t happen before.<br /></li>
+<li><b>prevented</b> from happening again.<br /></li>
+</ul>
+
+<p>
+A fraud becomes easier to detect the more time has passed, due to copycats using the same fraud over and over.<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc0c149e" class="outline-2">
+<h2 id="orgc0c149e">Fraud Detection (carminati, 21/04/21)</h2>
+<div class="outline-text-2" id="text-orgc0c149e">
+</div>
+<div id="outline-container-orga30598e" class="outline-3">
+<h3 id="orga30598e">Frauds as a dynamic phenomenon</h3>
+<div class="outline-text-3" id="text-orga30598e">
+<p>
+Frauds remain hard and complex to detect.<br />
+</p>
+
+<p>
+A fraudster may think about sending fraudolent transactions that may try to <b>shift the model of fraud detection systems</b> of an institution.<br />
+Unsupervised learning technique must be still monitored by experts.<br />
+</p>
+</div>
+</div>
+<div id="outline-container-orgf19c4cc" class="outline-3">
+<h3 id="orgf19c4cc">Techniques to detect a fraud automatically</h3>
+<div class="outline-text-3" id="text-orgf19c4cc">
+<p>
+New techniques able to <span class="underline">adapt to new frauds</span> are needed.<br />
+They can either be<br />
+</p>
+<ul class="org-ul">
+<li><b>Unsupervised learning</b> (or descriptive) analytics techniques<br /></li>
+<li><b>Supervised learning</b> (or predictive) analytics techniques<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org2501005" class="outline-4">
+<h4 id="org2501005">Unsupervised learning analytics techniques</h4>
+<div class="outline-text-4" id="text-org2501005">
+<p>
+They do not require labeled observations. They learn from past observations by <b>detecting anomalies</b>.<br />
+They can detect novel fraud patterns.<br />
+</p>
+</div>
+
+<div id="outline-container-org1aa66ed" class="outline-5">
+<h5 id="org1aa66ed">Telecommunication example</h5>
+<div class="outline-text-5" id="text-org1aa66ed">
+<p>
+I can see a fraud is in act if I see <i>multiple short calls</i>, <i>during night hours</i> and <i>with little time between one another</i>.<br />
+But note that there can be multiple false negatives.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5615966" class="outline-5">
+<h5 id="org5615966">Limitations</h5>
+<div class="outline-text-5" id="text-org5615966">
+<p>
+Unsupervised learning techniques are <b>prone to deception</b> by camouflage-like fraud strategies.<br />
+They need to be complemented by other tools.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org52e9b4d" class="outline-4">
+<h4 id="org52e9b4d">Supervised learning techniques</h4>
+<div class="outline-text-4" id="text-org52e9b4d">
+<p>
+learn from <b>labeled</b> historical observations, where the fraud was exposed.<br />
+They can find known alarms that fraudsters cannot hide.<br />
+</p>
+</div>
+
+<div id="outline-container-org90ada0c" class="outline-5">
+<h5 id="org90ada0c">Limitations</h5>
+<div class="outline-text-5" id="text-org90ada0c">
+<ul class="org-ul">
+<li>Low detection power against new fraud types<br /></li>
+<li>Need a labeled set to learn from<br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgec3ca55" class="outline-3">
+<h3 id="orgec3ca55">Developing a fraud detection system</h3>
+<div class="outline-text-3" id="text-orgec3ca55">
+<ol class="org-ol">
+<li>Start with an Expert-based rule engine<br /></li>
+<li>use a unsupervised learning system<br /></li>
+<li>use a supervised learning system once you have build your labeled history<br /></li>
+</ol>
+<p>
+The exact order of adoption depends from case to case.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge797682" class="outline-3">
+<h3 id="orge797682">Social Network Analysis</h3>
+<div class="outline-text-3" id="text-orge797682">
+<p>
+Extends the abilities of fraud detection systems by detecting <span class="underline">characteristics of frauds between linked entities</span>.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5199b4b" class="outline-3">
+<h3 id="org5199b4b">Fraud management cycle</h3>
+<div class="outline-text-3" id="text-org5199b4b">
+<p>
+you have to put together the following steps:<br />
+</p>
+<ol class="org-ol">
+<li>fraud <b>detection</b> : applying detection models on new observations<br /></li>
+<li>fraud <b>investigation</b> : human expert investigates on a flagged fraud<br /></li>
+<li>fraud <b>confirmation</b> : determining the kind (label) of fraud<br /></li>
+<li>fraud <b>prevention</b> : preventing frauds to be committed in the future by marking them as frauds faster and faster.<br /></li>
+<li>Finally, you need to put an <b>automated detection algorithm</b> to create and update the detection model with the confirmed frauds.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org37e4b8b" class="outline-4">
+<h4 id="org37e4b8b">Regular update of the model</h4>
+<div class="outline-text-4" id="text-org37e4b8b">
+<p>
+The <b>frequency</b> of update of your model depends on:<br />
+</p>
+<ul class="org-ul">
+<li>the <span class="underline">volatility</span> of the fraud behavior<br /></li>
+<li>the <span class="underline">detection power</span> of the model<br /></li>
+<li>amount of <span class="underline">similar confirmed case available</span><br /></li>
+<li>the <span class="underline">rate of new cases</span> being confirmed<br /></li>
+<li>the <span class="underline">required effort</span> to retain the model<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-orgd09a6c7" class="outline-5">
+<h5 id="orgd09a6c7">Reinforcement learning</h5>
+<div class="outline-text-5" id="text-orgd09a6c7">
+<p>
+Instead of waiting for a window to update the model, continuously update it as soon as new data is available.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b14dee" class="outline-4">
+<h4 id="org3b14dee">Example: Credit card fraud</h4>
+<div class="outline-text-4" id="text-org3b14dee">
+<p>
+<b>Outlier detection</b> is made by analyzing clusters of common transaction based on position and time.<br />
+If a transaction happens outside of a group (it&rsquo;s an outlier), they might be a fraud.<br />
+</p>
+
+<p>
+Users are analyzed in the same way at a system level, based on their age and income.<br />
+An outlier might be a fraudster or a victim.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5df6b2" class="outline-3">
+<h3 id="orgf5df6b2">Fraud analytical process</h3>
+<div class="outline-text-3" id="text-orgf5df6b2">
+<p>
+How to develop a <b>fraud analysis model</b>.<br />
+</p>
+
+<p>
+The process is split in three main parts:<br />
+</p>
+<ul class="org-ul">
+<li>preprocessing (the most important and time consuming)<br />
+The performance of your model will strictly depend on this step.<br /></li>
+<li>analytics<br /></li>
+<li>post processing<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-orgc568b98" class="outline-4">
+<h4 id="orgc568b98">Preprocessing</h4>
+<div class="outline-text-4" id="text-orgc568b98">
+<ul class="org-ul">
+<li>identify the business problem<br /></li>
+<li>identify the data sources<br /></li>
+<li>select the data<br /></li>
+<li>clean the data (gets rid of inconsistencies)<br /></li>
+<li>transform the data (extract additional informations from the data)<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org88146ef" class="outline-4">
+<h4 id="org88146ef">Analytics</h4>
+<div class="outline-text-4" id="text-org88146ef">
+<ul class="org-ul">
+<li>Analyze the data. Here the <b>model is built</b> based on the data preprocessed.<br /></li>
+</ul>
+</div>
+
+<div id="outline-container-org7bd4a05" class="outline-5">
+<h5 id="org7bd4a05">Possible analysis outputs</h5>
+<div class="outline-text-5" id="text-org7bd4a05">
+<ul class="org-ul">
+<li>Find known easy frauds, that ensure the system is working<br /></li>
+<li>Find unknown patterns, that provide added insight and detection power.<br /></li>
+</ul>
+
+<p>
+In any case, you&rsquo;re going to work on <b>clusters</b>, and will be trying to extract knowledge from them.<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge15cfd0" class="outline-4">
+<h4 id="orge15cfd0">Post processing phase</h4>
+<div class="outline-text-4" id="text-orge15cfd0">
+<p>
+Validate the model created with experts.<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org927b84b" class="outline-4">
+<h4 id="org927b84b">Key characteristics of successful fraud analtics models</h4>
+<div class="outline-text-4" id="text-org927b84b">
+<p>
+To understand if your system is working I must monitor:<br />
+</p>
+<ul class="org-ul">
+<li>statistical accuracy and significance<br />
+Your system must generalize well and <span class="underline">must not be overfitted to the historical data set</span>.<br /></li>
+<li>Interpretability<br />
+You can put in place the state of art deep learning approach, but if the result of the analysis cannot be interpreted because the model is too complex (it tells us that a particular case might be a fraud, but it won&rsquo;t say why) it is unuseful.<br />
+Such a non interpretable system is called <b>black-box</b>, while a system that can be interpreted is a <b>white-box</b> system.<br /></li>
+<li>Operational efficiency<br />
+The time and effort that is required to obtain a result and evaluate it is important, expecially on <i>real time system</i>.<br /></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org00e7401" class="outline-4">
+<h4 id="org00e7401">Fraud management as risk management</h4>
+<div class="outline-text-4" id="text-org00e7401">
+<p>
+Every time we have to deploy a fraud management system, we must consider<br />
+</p>
+<ul class="org-ul">
+<li>the value of the asset we want to protect<br /></li>
+<li>the vulnerabilities<br /></li>
+<li>the threats<br /></li>
+<li><p>
+the cost of the system (both direct and <span class="underline">indirect</span>)<br />
+Indirect costs are mainly<br />
+</p>
+<ul class="org-ul">
+<li>less usability for the user<br /></li>
+<li>slower performance<br /></li>
+<li>less privacy<br /></li>
+<li>reduced productivity (users are slower)<br /></li>
+</ul>
+<p>
+Direct costs are the equipment, its management and its operation.<br />
+</p></li>
+</ul>
+</div>
+
+<div id="outline-container-org043690c" class="outline-5">
+<h5 id="org043690c">Economical cost</h5>
+<div class="outline-text-5" id="text-org043690c">
+<p>
+Developing and implementing a fraud-detection model involves a significant cost to an organization.<br />
+</p>
+
+<p>
+A cost-benefit analysis to understand the returns on investment that you gain with a fraud detection system.<br />
+</p>
+
+<p>
+Moreover, now that the fraud-detection model should go under the <span class="underline">privacy regulations</span>, it&rsquo;s really difficult to put up a dataset big enough.<br />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0495be1" class="outline-3">
+<h3 id="org0495be1">Challenges of developing fraud-detection models</h3>
+<div class="outline-text-3" id="text-org0495be1">
+<ul class="org-ul">
+<li>Dynamic nature of frauds<br />
+As previously seen, fraudsters will keep on trying to beat detection and prevention systems by developing new strategies and methods.<br />
+We will need <span class="underline">adaptive</span> models for detection and prevention.<br /></li>
+<li><b>Accuracy</b><br />
+You don&rsquo;t want to miss on too many frauds, but you want to keep a low false alarm rate.<br />
+All in all, the cost of missing a fraudolent case will probably be higher than marking a legit one as fraudolent.<br /></li>
+<li><b>Skewness<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></b> of the data<br />
+The number of fraudolent cases is small w.r.t. the number of legit ones.<br />
+An analytical technique might have some difficulties in learning an accurate model.<br /></li>
+<li><b>Time efficiency</b><br />
+The model must be fast enough to reach a decision (fraudolent or not) in the time window before the next batch of transactions arrive.<br /></li>
+<li><b>Big data</b> management<br />
+The model must be able to deal with massive amounts of data.<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf5bd18e" class="outline-3">
+<h3 id="orgf5bd18e">Red flags of frauds</h3>
+<div class="outline-text-3" id="text-orgf5bd18e">
+<p>
+What we want to extract from an analysis are the &ldquo; <span class="underline">patterns</span> &rdquo; for frauds, to be used as the grounding truth for new fraud detection systems.<br />
+</p>
+
+<p>
+This means translating the typical anomalies (called &ldquo;red flags&rdquo; here) of each kind of fraud into expert rules (after being documented) for rule based engines.<br />
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Skewness, in this context, can be read as <b>asymmetry</b><br />
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Tancredi Covioli</p>
+<p class="date">Created: 2021-06-08 mar 19:14</p>
+</div>
+</body>
+</html>
