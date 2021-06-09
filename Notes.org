@@ -1,5 +1,5 @@
 #+TITLE: Digital Forensics and Cybercrime
-#+OPTIONS: toc:t todo:nil date:nil \n:t H:5 tasks:done html-style:nil num:nil
+#+OPTIONS: toc:t todo:nil date:nil \n:t H:5 tasks:done html-style:nil num:nil tags:not-in-toc
 #+EXPORT_FILE_NAME: index
 #+LATEX_HEADER: \usepackage[margin=0.9in]{geometry} \usepackage{parskip}
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/dfc-notes.css" />
