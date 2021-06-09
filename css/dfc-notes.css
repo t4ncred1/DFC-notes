@@ -12,15 +12,17 @@
   --font-primary: "Raleway", sans-serif;
   --font-headings: "Arial", serif;
 
-  --font-size-1: 2.188rem;
-  --font-size-2: 1.874rem;
-  --font-size-3: 1.428rem;
-  --font-size-4: 1.14rem;
-  --font-size-5: 0.94rem;
-  --font-size-6: 0.86rem;
+  --font-size-1: 1.988rem;
+  --font-size-2: 1.674rem;
+  --font-size-3: 1.228rem;
+  --font-size-4: 0.94rem;
+  --font-size-5: 0.74rem;
+  --font-size-6: 0.66rem;
 
-  --font-size-small: 0.75rem;
-  --font-size-normal: 0.9rem;
+  --font-size-small: 0.55rem;
+  --font-size-normal: 0.7rem;
+
+  --font-size-tags: 0.5rem;
 }
 
 /* Selection color */
@@ -240,14 +242,15 @@ blockquote {
   flex-wrap: wrap;
   gap: 1px;
   color: black;
-  font-size: 0.8rem;
-  font-family: var(--font-normal);
+  font-size: var(--font-size-tags);
+  font-family: var(--font-heading);
 }
 
 .tag > span {
   display: block;
   /* background-color: var(--color-secondary); */
   text-transform: uppercase;
+  font-weight: normal;
   border: 2px solid black;
   border-radius: 8px;
   width: fit-content;
@@ -259,9 +262,4 @@ blockquote {
 
 .underline {
   text-decoration: underline;
-}
-
-.math {
-  margin-top: 3px;
-  margin-bottom: 3px;
 }
