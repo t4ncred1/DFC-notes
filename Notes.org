@@ -1,5 +1,5 @@
 #+TITLE: Digital Forensics and Cybercrime
-#+OPTIONS: toc:t todo:nil date:nil \n:t H:5 tasks:done html-style:nil num:nil tags:not-in-toc
+#+OPTIONS: toc:t todo:nil date:nil \n:t H:5 tasks:done html-style:nil num:nil tags:t
 #+EXPORT_FILE_NAME: index
 #+LATEX_HEADER: \usepackage[margin=0.9in]{geometry} \usepackage{parskip}
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/dfc-notes.css" />
@@ -1148,7 +1148,7 @@ Sometimes, invalid values are not outliers though.
 
 For example: a customer with birth date 01/01/1980 and classified as a child is not an outlier (there might be many child customers and many customers born the same day), but it is clearly an invalid value.
 
-To remove such inconsistencies, set of checks is made to find wether your data is _coherent_ or not.
+To remove such inconsistencies, a set of checks is made to find wether your data is _coherent_ or not.
 
 To impose these checks you need the help of experts.
 
