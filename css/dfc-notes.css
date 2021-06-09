@@ -78,9 +78,15 @@ blockquote {
   padding: 1px calc(clamp(2rem, 5%, 3rem) - 1rem);
 }
 
-/* Table of contents */
+/* Table of contents and footnotes*/
 #footnotes, #table-of-contents {
   padding-left: 1%;
+}
+#table-of-contents {
+  padding-bottom: 1%;
+}
+.footpara {
+  display: inline;
 }
 /* Heading styles */
 h1,
@@ -144,6 +150,7 @@ h1 > .subtitle {
 #postamble {
   text-align: center;
   width: 100%;
+  padding-top: 0.5%
 }
 
 #postamble > p {
@@ -229,26 +236,32 @@ blockquote {
 
 .tag {
   margin-top: 10px;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   gap: 1px;
-  color: white;
+  color: black;
   font-size: 0.8rem;
   font-family: var(--font-normal);
 }
 
 .tag > span {
   display: block;
-  background-color: var(--color-secondary);
+  /* background-color: var(--color-secondary); */
   text-transform: uppercase;
-  border-radius: 2px;
+  border: 2px solid black;
+  border-radius: 8px;
   width: fit-content;
   padding: 4px 10px;
   margin: 0;
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.08),
-    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.08), */
+  /*   0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); */
 }
 
 .underline {
   text-decoration: underline;
+}
+
+.math {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
