@@ -170,6 +170,64 @@ But all the transaction data is available, so if you take enough care you can tr
 
 *** How to protect Pseudo Anonimity
 The "flow tracking" described above is made difficult by malicious sites by mixing together multiple transactions from different clients. (See Silk Road, as an example).
+* DONE Introduction to Digital Forensics
+:PROPERTIES:
+:NOTER_DOCUMENT: slides/05. Introduction to Digital Forensics.pdf
+:NOTER_PAGE: 8
+:END:
+Forensics: the application of scientific analysis methods to reconstruct evidence.
+
+Digital Forensics: the application of scientific analysis methods to computer systems/digital data/networks to reconstruct evidence.
+
+** Witnesses vs experts
+*Witnesses* testify about _what they personally know_. They cannot testify about something they heard from others.
+*Experts* can _testify with their scientifical analysis_ even if they where not present.
+
+Experts are witnesses with knowledge, skill, experience or education that can form an opinion.
+
+** Daubert Standard (How to be an Expert Witness)
+:PROPERTIES:
+:NOTER_PAGE: 3
+:END:
+An expert must:
+- have its specialized knowledge be helpful to the trier to understand the evidence
+- have his/her testimony rely on sufficient facts/data
+- have his/her testimony be *scientifically valid*:
+  + Must be the product of reliable principles and methods
+  + Such principles and methods must have been reliably applied
+
+*** Scientific Method
+:PROPERTIES:
+:NOTER_PAGE: 5
+:END:
+For a statement to be scientific, it must be:
+- Repeatable
+  If the experiment cannot be repeated (e.g: blood drop analysis) it must be detailed enough to be understood fully.
+- Falsifiable
+  If the experiment cannot be confuted, it is not scientific (e.g: statistics cannot be considered scientific)
+
+*** Scientific Test for Daubert
+:PROPERTIES:
+:NOTER_PAGE: 6
+:END:
+Factors to consider (not all of these must be simultaneously valid for the method to be considered scientific):
+- Wheter the theory or the technique is accepted in the scientific community.
+- Wheter it has been subjected to peer review.
+- Wheter it has been tested (or can be).
+- Wheter the rate of error is acceptable.
+- Wheter the research was independent of the litigation[fn:4].
+
+*** Four phases of investigation
+:PROPERTIES:
+:NOTER_PAGE: 8
+:END:
+
+The four phases of an investigation are:
+1. The *acquisition* of the sources
+2. The *identification* of the evidences
+3. The *evaluation* of the evidences
+4. The *presentation* of the evidences
+
 * DONE Acquisition
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/06. Acquisition.pdf
@@ -259,7 +317,7 @@ NASs and SANs are used all the times for this specific reason.
 *** The encryption problem
 In Italy, it might not be required for the persecuted to provide the passcode to decrypt the evidence for the analysis, since it can be seen as *testifying against oneself*.
 
-** DONE Forensics Duplicators
+** Forensics Duplicators
 :PROPERTIES:
 :NOTER_PAGE: 12
 :END:
@@ -321,7 +379,6 @@ We will focus on tasks that happens only in forensics, but be careful: forensic 
 :PROPERTIES:
 :NOTER_PAGE: 6
 :END:
-
 One of the most typical tasks of computer forensics
 
 *** Disk Geometry
@@ -374,8 +431,9 @@ Fragmentation happens on only 2% of files, and is mostly a 2 part fragmentation.
 :PROPERTIES:
 :NOTER_PAGE: 13
 :END:
-Sleuthkit is the core (with a cli), autopsy is the gui.
-Autopsy will be used also in mobile forensics to inspect mobile phone images.
+Sleuthkit is the core (with a cli), Autopsy is the gui.
+Autopsy will be used also in [[*Tool analysis: Autopsy][mobile forensics]] to inspect mobile phone images.
+
 ** Antiforensic Techniques
 :PROPERTIES:
 :NOTER_PAGE: 14
@@ -926,7 +984,7 @@ What we want to extract from an analysis are the " _patterns_ " for frauds, to b
 
 This means translating the typical anomalies (called "red flags" here) of each kind of fraud into expert rules (after being documented) for rule based engines.
 
-* TODO Machine Learning for Fraud Detection
+* DONE Machine Learning for Fraud Detection
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/04. Machine Learning for Fraud Detection.pdf
 :NOTER_PAGE: 137
@@ -1062,7 +1120,6 @@ When an observation with missing values is encountered you can:
 *** Outliers
 :PROPERTIES:
 :NOTER_PAGE: 26
-:ID:       0d3a323c-fb62-4a80-aa4b-b32d6900e591
 :END:
 Outliers are extreme values that are dissimilar to the rest of the population.
 Some of these values might be legitimate (or they might be the result of invalid observations).
@@ -1634,293 +1691,307 @@ To extract the rules to be fed to a rule based engine, we can use two techniques
 :END:
 Instead of directly using a Neural network, we can estimate a simpler model with a more interpretable method (like linear/logistic regression) and, then, use a neural network to predict the errors made by the model and adjust the parameters of the linear model.
 
-*** Support Vector Machine
+*** Support Vector Machines
 :PROPERTIES:
 :NOTER_PAGE: 202
 :END:
-Based on linear programming (define an objective function and put some constraints on it).
+Based on linear programming[fn:3] (define an objective function and put some constraints on it).
 It's a _classification method_, but it can also be applied as a regression method.
 
 **** Benefits
 :PROPERTIES:
 :NOTER_PAGE: 205
 :END:
-Easy to introduce business knowledge (simply add constraints).
-
+In linear programming, it's _easy to introduce business knowledge_ (simply add constraints).
 **** Problem
 :PROPERTIES:
 :NOTER_PAGE: 206
 :END:
-It can estimate multiple optimal decision boundaries for a linear separable case.
+1. It can estimate _multiple optimal decision boundaries_ for a linear separable case.
+   We can avoid this problem by selecting the boundary that is maximally distant from the two classes.
 
-We can avoid this problem by selecting the hyper plane that maximizes the distance between teh two classes.
+2. The system might be *non-separable* (we might not be able to find a linear boundary between two classes).
+   In this case, we can introduce a _misclassification error_, which allows for wrong classification labels to happen.
 
-**** Case of a non separable system
-:PROPERTIES:
-:NOTER_PAGE: 209
-:END:
-We have to keep in consideration the misclassification error.
-
-**** SVM is black box
+**** Rule extraction and Variable selection
 :PROPERTIES:
 :NOTER_PAGE: 215
 :END:
-Rule extraction is the same for the neural network approach.
+To extract variables and rules from SVMs, we can use the same approaches seen for Neural Networks:
+- for _variable selection_ , the [[*Variable selection in Neural Networks][backward variable selection]] procedure can be used to reduce the input variables.
+- for _rule extraction_ , the SVM can be interpreted as a neural network and the [[*Extracting rules from Neural Networks][same methods]] can be applied.
 
 *** Ensemble methods
 :PROPERTIES:
 :NOTER_PAGE: 219
 :END:
+Ensembe methods aim at estimating *multiple analytical models* instead of only one; The models created can then be used to cover different parts of the data input.
 
 **** Bagging
 :PROPERTIES:
 :NOTER_PAGE: 220
 :END:
-Create N samples of your dataset.
-Build a classifier for each of these samples.
-Classification is done by letting the classifiers "vote" on the label to give.
-Regression is done by averaging the outcome of the model.
+The Baggin method is an ensemble method. It consists of two steps:
+1. Take N samples from your dataset.
+2. Build a model (also called _classifier_ ) for each of these samples.
 
-***** Instability
-:PROPERTIES:
-:NOTER_PAGE: 221
-:END:
-
+A _classification_ model is then built by letting the classifiers "vote" on the label to give.
+A _regression_ model is built by averaging the outcome of the N models.
 
 **** Boosting
 :PROPERTIES:
 :NOTER_PAGE: 222
 :END:
-You still estimate multiple models, but we put weights on data samples.
-Depending on the performances obtained, we can give higher attention to difficult observations.
+The Boosting method is an ensemble method. It estimates multiple models using a _weighted data sample_.
 
-**** Random Forest
+The weights applied on the data change according to the classification errors made by the models, to allow difficult observations to get more attention.
+But this calls for a *drawback*: the models might become overfitted on the difficult observations.
+
+The final model used is a combination of all the individual models.
+
+**** Random Forest :missing_informations:
 :PROPERTIES:
 :NOTER_PAGE: 225
 :END:
-We create a "forest" of decision trees.
+We create a "forest" of decision trees, with random splitting decision variables for each tree.
 
-**** Evaluating ensemble methods
-:PROPERTIES:
-:NOTER_PAGE: 228
-:END:
+It's not clear how the final model is built from the set of decision trees.
 
 *** Evaluating a fraud detection model
 :PROPERTIES:
 :NOTER_PAGE: 230
 :END:
+Two key decisions determine the effectiveness of the predictive models shown above:
+- how to split the data set
+- how we choose our performance metrics.
 
 **** Splitting the data set
 :PROPERTIES:
 :NOTER_PAGE: 233
 :END:
-The training data set and the test dataset must be completely split.
-Sometimes, you may want to have the same percentage of fraudsters in all sets (stratified split-up)
+The training data set and the test dataset must be completely separated.
+The decision on how we split the set *depends on the size* of the dataset itself.
+
+When present, the validation sample (seen for [[*Stopping decision][decision trees]] and [[*How many hidden neurons?][neural networks]]) should be separated, too, but the requirement is less strict.
+
+Sometimes, having the _same percentage of fraudsters_ in each set can be useful; Such split-up is called a *stratified split-up*.
 
 ***** Small data sets
-:PROPERTIES:
-:NOTER_PAGE: 235
-:END:
+When the data set is not big enough, two methods can be adopted to make the split:
+- *Cross-validation*:
+  The data is split in K groups, then the model is trained on K-1 groups and tested on the remaining group.
+  The process is then repeated for every possible validation group, resulting in K _performance estimates_ (/aren't they also different models?/).
+- *Leave-one-out cross validation*:
+  Every observation is left out in turn and a model is made from the remaining ones.
+
+The selection of the model can then be performed in different ways:
+- randomly (common for leave-one-out cross validation, since every model changes by only an observation)
+- a final model on all observation is built (taking into consideration the performances coming out of the cross validation process)
+- an ensemble model is built with a voting procedure (similarly to what we have seen for [[*Bagging][bagging ensemble models]])
 
 **** Performance metrics
 :PROPERTIES:
 :NOTER_PAGE: 242
 :END:
+The main performance metrics used to evaluate our analytical model are:
+- *classification accuracy* : $\frac{\text{true positive } + \text{ true negative}}{\text{true positive }+\text{ false positive }+\text{ false negative }+\text{ true negative}}$, or the percentage of correctly classified observations.
+- *classification error* : $\frac{\text{false positive } + \text{ false negative}}{\text{true positive }+\text{ false positive }+\text{ false negative }+\text{ true negative}}$, or the percentage of wrongly classified observations.
+- *sensitivity* (also called recall or hit rate) : $\frac{\text{true positive}}{\text{true positive }+\text{ false negative}}$, or the percentage of fraudsters correctly labeled.
+- *specificity* : $\frac{\text{true negative}}{\text{false positive }+\text{ true negative}}$, or the percentage of non-fraudsters correctly labeled.
+- *precision* : $\frac{\text{true positive}}{\text{false positive }+\text{ true positive}}$, or the percentage of labeled fraudsters that are actually fraudsters.
 
-**** Oversampling and undersampling
+
+**** Managing skewed datasets
 :PROPERTIES:
 :NOTER_PAGE: 251
 :END:
+With a skewed[fn:1] dataset it might become difficult to make a valid model due to the missing observations labeled as frauds.
+Two transformations can be made to the dataset to make it less skewed:
+- *Oversampling* : replicate frauds to make the distribution less skewed.
+- *Undersampling* : remove some observations that aren't frauds.
 
-**** Cost-sensitive Learning
-:PROPERTIES:
-:NOTER_PAGE: 258
-:END:
-Misclassifications are treated differently depending on which of false (negatives/positives) is more important
-* TODO 12/05 - Lesson with Epifani on Mobile Forensics
-A forensic expert must understand his role in the court. Every kind of case is different also from teh legal perspective.
+The two can also be combined, but usually undersampling yelds better results (since we don't put in the set forged observations).
 
-Mobile devices use has increased between people and, in turn, in investigation.
+In general, it's suggested to *stay as close as possible to the original distribution* to avoid unnecessary bias.
 
-** What is mobile forensics
-A branch of digital forensics, related to the recovery of digital evidence from a mobile device under *forensically sound conditions*.
+* DONE Mobile Forensics :guest_lecture:
+Mobile devices use has increased between people and, in turn, mobile forensics investigation has gained importance.
 
-Forensically sound is a term to justify the use of particular forensic technology or methodology.
-For example, in computer forensics we use various ways to avoid altering the data on the system.
+Mobile forensics is a branch of digital forensics, related to the recovery of digital evidence from a mobile device under *forensically sound conditions*.
 
-*** Forensical soundness
+** Forensical soundness
+Forensically sound is a term used to justify the use of particular forensic technology or methodology.
 
-On computers, you are typically able to remove the hard drive, and if this option is not available you usually have a way to boot a live distribution to mount the hard drive on a read-only way (from a phisical perspective, we are able to have a 100% forensically sound approach).
+It doesn't have a specific definition ("/it depends/"), but we can say that a method is forensically sound when it _doesn't alter or destroy the evidence_ and has been shown to be _consistently reliable_.
 
-On mobile devices, this is extremely difficult to do, mostly because we are _limited_ in the use of our phone (unless we are root, which is usually not the case) and because most elements (like memory) is soldered.
+For example, in computer forensics we use various ways to avoid altering the data on the system:
+On computers you are typically able to remove the hard drive, and if this option is not available you usually have a way to boot a live distribution to mount the hard drive on a read-only way (from a phisical perspective, we are able to have a 100% forensically sound approach).
+
+On mobile devices, this is extremely difficult to do, mostly because we are _limited in the use of our phone_ (unless we are root, which is usually not the case) and because most elements (like memory) is soldered.
 Moreover, the memory in the phone is most of the time encrypted on some key stored on the motherboard or another chipset (see iOS devices and their enclave).
 
-When the acquisition of data is not possible without changing the configuration of the device (even booting the phone changes some things), the procedure must be documented and the changes must be tested beforehand.
+When the acquisition of data is not possible without changing the configuration of the device (even booting the phone might change some things), the _procedure must be documented_ and the _changes must be tested beforehand_.
 
-**** Example
+*** Example :noexport:unuseful:
 We have to find interaction between two people that has happened on an instant messaging application.
 We can extract those data without having impact on *that* data (but having an impact in other parts of the OS).
 
 If we, instead, have to check what has happened to the phone in the last X days, we have to be really careful to ensure the data is not altered in any way (or as little as possible).
 
-**** Low Level Exploits
-In some phones, it's possible to obtain the best acquisition (full, unaltered) with low level exploits, which allow us to obtain root privileges before the phone boots.
+*** Low Level Exploits
+In some phones, it's possible to obtain the best acquisition (full, unaltered) with *low level exploits*, which allow us to _obtain root privileges before the phone boots_; Such acquisitions are the nearest to forensically sound in mobile forensics.
 It's more common on Android devices.
 
-**** Documentation
-The key to forensic soundness is documentation. The acquisition process should change the original evidence as little as possible and any changes should be documnented and assessed.
+*** Documentation is key
+The key to forensic soundness is *documentation*. The acquisition process should change the original evidence as little as possible and any changes should be documented and assessed.
 
 ** Challenges of mobile forensics
+In the mobile world we have a *big market fragmentation*, with new devices added daily.
 
-In the mobile world we have a big market fragmentation, with new devices added daily.
+Each and every device uses some kind of chipset (qualcomm, exynos, kirin etc.), and most exploits are available at the chipset level (sometimes also on software level, but rarely), which means we have to *undestand exactly the carachteristics of the device* in front of us.
 
-Each and every device uses some kind of chipset (qualcomm, exynos, kirin etc.), and most exploits are available at the chipset level (sometimes also on software level, but rarely), which means we have to undestand exactly the carachteristics of the device in front of us.
+Digital forensic analysts must also *overcome difficult security measures* (e.g: limited tries pin codes) brought up by the phone manufacturers, sometimes without the help of the incrimined person (s/he might be dead or unwilling to help).
 
-Digital forensic analysts must also overcome difficult security measure brought up by the phone manufacturers, sometimes without the help of the incrimined person (s/he might be dead or unwilling to help).
+Moreover, the *data of interest* for forensic analysts has *expanded to multiple applications* (where previously it was mostly sms and, sometimes, images).
+The *amount of memory* to analyze in a smartphone has increased a lot (up to 500 gigs as of now) which implies the need for new analysis methodologies (e.g: AI recognition).
 
-Moreover, the data of interest for forensic analysts has expanded to multiple applications (where previously it was mostly sms and, sometimes, images).
-
-The amount of memory to analyze in a smartphone has increased a lot, up to 500 gigs, which implies the need for new analysis methodologies (AI recognition, for example).
-
-Finally, for some apps the data is stored not only on the phone but on the cloud, too, and to analyze those data you need access to the cloud account of the person, which is:
-1) difficult to do
+Finally, for some apps the data is stored not only on the phone but on the *cloud*, too, and to analyze those data you need access to the cloud account of the person, which:
+1) is difficult to do
 2) you must first get permission to do it
 
 ** Operating system diversity
-
-In mobile, the most used OSes nowadays are Android and iOS, with the only additional (still being developed) OS being KaiOS.
-
-In Italy we use mostly android, while in America iOS is dominant.
-
+In mobile, the most used OSes nowadays are _Android_ and _iOS_, with the only additional (still being developed) OS being _KaiOS_.
+In Italy we use mostly Android, while in America iOS is dominant.
 As you can understand, most of the commercial companies are US based.
 
-*** Android versions market share
+*** Android versions diversity
+Android has multiple versions still being used by a wide audience, with the security patches providing an additional layer of diversification.
 
-When it comes to software level exploits, having knowledge of the version and which security patch is applied is the key point to choose your extraction methodology
+When it comes to software level exploits, having knowledge of the version and which security patch is applied on the phone is the key point to choose your extraction methodology.
 
-*** iOS versions market share
-Since iOS forces the updates of the phones, there's not the same diversity that you can find in the android market share
+*** iOS versions diversity
+Since iOS forces the updates on the phones, there's not the same diversity that you can find in the android market share.
 
 ** Guidelines to follow
-There are various guidelines used online to follow.
-The one we will analyze is the one from SWGDE.
+There are various guidelines documented online to follow.
+The one we will analyze is [[https://drive.google.com/file/d/1sVko_Uo7o6iootWwn9IoLJ3mrMVXqTDg/view][one from SWGDE]].
 
-*** Best practices for mobile device eveidence and collection preservation and acquisition (SWGDE)
-Organized in section:
-- evidence collection and preservation: tipically done by law enforcement
--
+It's organized in sections:
 
-**** Evidence collection and preservation
+*** Evidence collection and preservation
 Tipically done by law enforcement.
 
-***** Preparation
+**** Preparation
 You need to have the proper tools to do and document the steps you will take, and you need to have proper legal authority to collect the evidence
 
-***** Documentation
+**** Documentation
 Take notes of the collection location and the device state and characteristics at the time of collection.
 You have different things to identify and take as evidence, such as cables, phone boxes etc.
 
-***** What to do first
-Based on the state of the phone and its type, you have two options for the *preservation process* (what to do to preserve the integrity of the evidence, to work in a _forensically sound_ way):
-- iOS device:
-  + If on:
-    - Keep it on. Making it turn off will almost certainly encrypt the phone
-    - If the phone is on and the passcode was not inserted since boot, the phone won't have unencrypted its data and won't have used its ram.
-    - If we can access the settings, engage airplane mode, disable wifi, disable bluetooth and extend the display auto-lock.
-- Android devices:
-  + If off:
-    - Don't turn it on
+**** What to do first
+Based on the state of the phone and its type, you have two options for the *preservation process* (what to do to preserve the integrity of the evidence and to work in a _forensically sound_ way):
+- If on:
+  + Keep it on. Making it turn off will almost certainly encrypt the phone
+  + If the phone is on and the passcode was not inserted since boot, the phone won't have unencrypted its data and won't have used its ram (true mostly for iOS).
+  + If we can access the settings, engage airplane mode, disable wifi, disable bluetooth and extend the display auto-lock.
+  + If the system cannot be accessed, put it in a faraday bag to _avoid outside connections_ from happening.
+- If off:
+  + Don't turn it on
+  + Remove the battery if possible
+- In both cases, collect the device identifiers.
 
-***** Check periferals
+**** Check periferals
 Check for any paired or linked devices, which might lead to backups or additional informations.
 
-**** Evidence Handling
+*** Evidence Handling
 The steps to extract the data from your device without loss of digital or physical data (e.g: fingerprints).
 
-***** Access devices
+**** Access devices
 Frequently, phones can be unlocked if you have access to a safe place of the owner or another smart tool (a smartwatch) or the body of the person itself.
-Be careful: don't try to guess the password, which might call procedures of the phone to provide additional security measures.
+Be careful: don't try to guess the password, which might call procedures of the phone to provide additional security measures (like formatting the data partition of the phone).
 
-***** Devices powered on and unlocked
+**** Devices powered on and unlocked
 Document as much as possible the content of the phone (also by taking pictures) without locking it accidentally.
 
-If the phone is an organization device, and MDM (mobile device management) system might be in place, which would require to seek help from the system administrator of the organization to extract data.
+If the phone is an organization's device, an MDM (mobile device management) system might be in place which would require to seek help from the system administrator of the organization to extract data.
 
-***** Encryption
+**** Encryption
 Most of the devices nowadays use some form of encryption.
-iOS devices (mostly, but not only) have backup passwords. There are ways to bypass and reset these kind of passwords but this modifies the content of the phone, and as such must be documented and extensively tested.
+iOS devices (mostly, but not only) have backup passwords.
+There are ways to bypass and reset these kind of passwords but this modifies the content of the phone, and as such must be documented and extensively tested.
 
-***** Network Isolation
+**** Network Isolation
 Any kind of connection can be dangerous for the phone.
 
-**** Evidence acquisition
+*** Evidence acquisition
 
-***** Preparation
+**** Preparation
 Prepare all the software applications, cables etc. to perform the acquisition.
 
-There are various tools, and there is a website to test and review various type of forensics tools ([[https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt/cftt-technical/mobile][link]])
-The number of vendors available is limited nowadays, and there's no single tool perfect for all scopes: we have to use different tools for different devices, and sometimes manual investigation is mandatory.
+There are various tools (and there is a [[https://www.nist.gov/itl/ssd/software-quality-group/computer-forensics-tool-testing-program-cftt/cftt-technical/mobile][website]]) to test and review various type of forensics tools.
+The number of tool vendors available is limited nowadays, and there's no single tool perfect for all scopes: we have to _use different tools for different devices_, and sometimes manual investigation is mandatory.
 
-Sometimes, exploit are not available at the time of the analysis, but they might become available later on (for example, Epifani told us about a time when the exploit was made available during a trial and they were able to analyze the phone at that point)
+Sometimes, exploit are not available at the time of the analysis, but they might become available later on (for example, Epifani told us about a time when the exploit was made available during a trial and they were able to analyze the phone at that point).
 
-****** Tools for law enforcement
-Some of these tools are only for law enforcement: some unlocking and decryption mechanisms are provided as a service, where you send the phone to a lab and they unlock it through zero-days exploit that are not yet available to the public (and not yet tested).
-This methods must be carefully reviewed by a court of law.
+***** Tools for law enforcement and acquisition services
+Some of these tools are only *meant for law enforcement*.
+Most of the times though, police analysts use unlocking and decryption mechanisms *provided as a service*, where you send the phone to a lab and they unlock it through zero-days exploit that are not yet available to the public (and not yet tested).
 
-***** Device identification
-To identify a device, you can use its IMEI, a number to univocally identify it worldwide; the model number; or the serial number.
-Sometimes, the IMEI is written on the back of the phone, sometimes it is written in the simcard tray, sometimes on the packaging box of the phone, but it should always be accessible (on an unlocked device) by dialing =*#06#=.
+This methods must be carefully reviewed by a court of law, since the methods used are not reliable.
 
-Once the IMEI is identified, you need to search and understand what characteristics the phone has based on it. You can use [[https://imei.info][imei.info]] to find informations about it.
+**** Device identification
+To identify a device, you can use:
+- its *IMEI*, a number to univocally identify it worldwide
+- the model number
+- the serial number
+
+Sometimes, the IMEI is written on the back of the phone, sometimes it is written in the simcard tray, sometimes on the packaging box of the phone, but it should always be accessible (on an unlocked and functioning device) by dialing =*#06#=.
+
+Once the IMEI is identified, you need to search and understand what characteristics the phone has based on it. You can use [[https://imei.info][this website]] to find informations about it.
 Most importantly, the chipset must be known to understand which tool/technique to use to extract data from the phone.
 
-Another option is to check the coverage of the warranty of the phone (mainly for apple devices) through the serial number. This way you can undestrand wether the phone was recently purchased and, based on the informations acquired, you can ask apple (as a public prosecutor) to provide you informations about that phone.
+Another option is to _check the coverage of the warranty_ of the phone (mainly for apple devices) through the serial number. This way you can undestrand wether the phone was recently purchased and, based on the informations acquired, you can ask apple (as a public prosecutor) to provide you informations about that phone.
 
-***** Extraction methods
+**** Extraction methods
 As a general rule, you can obtain different level of extraction based on the kind of devices and the patches applied.
 
-****** Physical acquisition
+***** Physical acquisition
 Our goal is generally to obtain a physical, non invasive acquisition, which means we would use an exploit to obtain an image of the entire phone without phisically handling the phone (except for the insertion of a cable).
 
 On most Samsung, encryption is done using full disk encryption (and not file based encryption). In this cases, we can change the boot loader (the part of the OS responsible of starting the OS) to and "engineering bootloader" to be able to access the trusted zone of the phone and obtain the encryption keys.
 
 These engeneering bootloader must be signed by Samsung and be valid for the phone.
 
-****** Logical acquisition
+***** Logical acquisition
 
 When a physical acquisition is not possible we rely on smaller acquisitions or, sometimes, simple logical acquisitions (which means that we only take what is available to us as non-root users).
 
 Whit a logical aquisition we can tipically obtain native applications data but not third parti applications data (whatsapp, facebook etc.)
 
-****** Partial filesystem aquisition
-Since we are mostly interested on third party applications, sometimes we might try some (software) invasive method to get those data, for example we might try to downgrade the application to have a viable exploit to make.
-Take note that this method is invasive, since you are changing the state of the phone to do it.
+***** Partial filesystem aquisition
+Since we are mostly interested on third party applications, sometimes we might try some (software) invasive method to get those data, for example to downgrade the application to have a viable exploit to make.
+Take note that *this method is invasive*, since you are changing the state of the phone to do it.
 
-****** Invasive acquisition
+***** Invasive acquisition
 You can remove the chip from the device and try to analyze it, but most of the times nowadays you will get encrypted data.
-This is still a great option for IoT devices.
+This is still a _great option for IoT devices_.
 
-On some android devices you can also simply remove external memories (sd cards and sim cards).
-Sim cards don't contain much infos except for carrier informations.
+On some android devices you can also simply remove external memories (sd cards and sim cards), even though sim cards don't contain much infos except for carrier informations.
 
-***** Data extraction
+**** Data extraction :noexport:unuseful:
 You must try to have as little impact as possible during your data extraction.
 
-* TODO 14/05 - Lesson with Epifani on Mobile Forensics
-
-** Autopsy
-a tool to analyze mahcines (calls itself the "premium forensic platform").
+** Tool analysis: Autopsy
+Autopsy is an open source tool to analyze machines (calls itself the "premium forensic platform").
 For mobile forensics, it will need an image to analyze.
-It is centralized, so the users can share interesting content.
+It is centralized (in the organization, not globally), so its users users can share content.
 
-
-
-** Android analysis on Autopsy (Open source tool)
-Once you unzip the andoid file, you get two files:
-- a 30gb file containing the dump of the rom memory of the file. That's a full _filesystem_ image, with the partitioning schema.
+*** Android analysis on Autopsy
+Once you unzip the android file, you get two files:
+- a 30gb file containing the dump of the rom memory of the file. That's a full _filesystem_ image, with the partitioning schema included.
 - another 4mb file
 
-Let's analyze the image by, first, creating a case and adding our image to it. The type of source should be DiskImage (not LogicalFiles, since we have available a filesystem with partitions).
+Let's analyze the image by, first, creating a /case/ and adding our image to it. The type of source should be DiskImage (not LogicalFiles, since we have available a filesystem with partitions).
 
 Then you select the timezone (UTC, we guess) and the tools to run on the image.
 The tools we are going to use are:
@@ -1928,11 +1999,11 @@ The tools we are going to use are:
 - Extension mismatch detector
 - Embedded files extractor (allows to check if there is a file containing other files, like zip files, documents with images etc.)
 - Picture analyzer (checks internal metadata for pictures)
-- Android analyzer (both of them, one is with eLEAPP)
+- Android analyzer
 
 The tool will start adding the data source to your case.
 
-*** Image extraction
+**** Image extraction
 
 The extraction of the image must usually be done with commercial tools, like UFED for PC (from Cellebrite).
 The same company makes a commercial analyzer (like autopsy, but a bit more advanced).
@@ -1940,11 +2011,11 @@ The same company makes a commercial analyzer (like autopsy, but a bit more advan
 Image extraction on a locked phone is based on an exploit, and as usual this is risky.
 That's why you should know what are the risks of each image extraction method (there are multiple, that can extract different kinds of informations)
 
-*** Image Analysis
-After having loaded the image, you can look at the interface of autopsy.
+**** Image Analysis
+After having loaded the image, you can look at its contents through Autopsy.
 You can see, by looking at the data sources, the huge number of partitions in an android device.
 The most important ones are:
-- The system partition, where the stock OS resides.
+- The *system partition*, where the stock OS resides.
   + The app folder in the system partition contains pre-installed apps, in particular the apk files to run them.
   + This partition should not contain user data (unless the phone is rooted)
   + The =build.prop= file in the root of the file system contains the the properties of this build of android (like versions).
@@ -1953,19 +2024,16 @@ The most important ones are:
   + You have an app folder here too, containing the apk files of the  applications installed by the user.
   + Under the data folder, we have a folder for each package (com.whatsapp, for example) and this folder is the only one to which the application can write data to.
     The data organization in this folder is highly dependant on the application.
-- The misc folder
+- The misc folder.
   + Contains mainly network configurations, which can tell us more on the locations the target visited.
 
 The results of the analysis are in the "Extracted Content" submenu.
 We can see:
-- Call logs
-  + These are organized as databases, whit cellular calls, facebook calls etc etc.
-  + To extract the content we need to understand how data is organized.
-- Messages
-  + again, organized in databases, with SMS, whatsapp messages etc.
-  + These might not be all the messages saved on the phone! These are just the ones the tool was able to extract.
-- Pictures
-  + Note: can also be cached pictures.
+- Call logs, organized as databases, with cellular calls, facebook calls etc.
+  To extract its contents we need to understand how its data is organized.
+- Messages, organized in databases too, with SMS, whatsapp messages etc.
+  These might not be all the messages saved on the phone! These are just the ones the tool was able to extract.
+- Pictures, which can also be cached pictures.
 - The list of installed applications
 
 ** Android analysis with Physical analyzer (commercial tool)
@@ -1975,17 +2043,17 @@ The unpacking of the image is done through layers: you start with the filesystem
 
 The difference with Autopsy is the number of applications data layouts recognized.
 For example, if we go to look at the call logs, they are many more than the ones we found in Autopsy, because it was able to fetch calls from more applications.
-You can also see the file where the information was extracted from, and the specific point.
+You can also see the file where the information was extracted from, and the specific point of extraction.
 
-When you see a red number next to an entry, it means that that number of items where deleted by the user and recovered by the tool.
+When you see a red number next to an entry you know that number of items where deleted by the user and recovered by the tool.
 
 Through the timeline, you can see every item with the timestamp of the last access/creation, with a graph showing the usage of the phone based on them.
 
 Moreover, you can also see the account tokens used in the phone (potentially having access to the account).
 
-** How to have a forensically resiliant phone
-Limit people on their use.
-Set restrictions on doing things with the phone.
+*** How to have a forensically resiliant phone :in_class_question:
+To have a forensically resiliant phone, the producer must limit the costumers on their use and set restrictions on the things they can do with the phone.
+
 * NO Guest_lecture_glorioso :noexport:
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/Guest_lecture_glorioso.pdf
@@ -2055,116 +2123,66 @@ A workshop was organized with technical experts to define what is not defined ye
 Huge execise on Nato cyber defence.
 ** The problem now
 We don't have a state practice. But in case of an attack we will probably use article 5 to promote a kinetic answer.
-* TODO Malware Analysis (Armando Bellante, 07/04/21)
-We will reverse engineer a malware *in Windows*. (In the beginning, a brief introduction on general computing, like CS/ACT)
-There are 2 kinds of analysis (we will use both in the demo):
+* DONE Malware Analysis :missing_informations:guest_lecture:
+There are two kinds of analysis (we will use both in the demo):
 - static:
-  avoids malicious behavior, might be slow.
+  The code is not executed; Avoids malicious behaviors, but might be slow.
 - dynamic:
-  usually made through a debugger.
-  you run the program and check its runtime behavior.
-  _Can_ be much faster than static analysis (the malware can recognize dynamic analysis, or be dormiant)
+  Usually made through a debugger: You run the program and check its runtime behavior.
+  _Can_ be much faster than static analysis (but the malware might recognize it's being dynamically analyzed, or be dormiant)
 
-The best strategy is doing both.
+The *best strategy is doing both*.
 
-CFG -> control flow graph: the diagram of the execution of your program.
-
-Window registers are used by malwares to get persistency and stay hidden.
-* TODO Introduction to Digital Forensics
-:PROPERTIES:
-:NOTER_DOCUMENT: slides/05. Introduction to Digital Forensics.pdf
-:NOTER_PAGE: 8
-:END:
-Forensics: the application of scientific analysis methods to reconstruct evidence.
-
-Digital Forensics: the application of scientific analysis methods to computer systems/digital data/networks to reconstruct evidence.
-
-** Witnesses vs experts
-Witnesses testify about what they personally know. They cannot testify about something they heard from others.
-
-Experts CAN testify with their scientifical analysis even if they where not present.
-
-Experts are witnesses with knowledge, skill, experience or education that can form an opinion.
-
-** Daubert Standard (How to be an Expert Witness)
-:PROPERTIES:
-:NOTER_PAGE: 3
-:END:
-To be an expert, one must:
-- have its specialized knowledge be helpful to the trier to understand the evidence
-- The testimony must rely on sufficient facts/data
-- The testimony must be *scientifically valid*:
-  + Must be the product of reliable principles and methods
-  + Such principles anf methods must have been reliably applied
-
-*** Scientific Method
-:PROPERTIES:
-:NOTER_PAGE: 5
-:END:
-For a statement to be scientific, it must be:
-- Repeatable
-  If the experiment cannot be repeated (e.g: blood drop analysis) it must be detailed enough to be understood fully.
-- Falsifiable
-  If the experiment cannot be confuted, it is not scientific (statistics cannot be considered scientific)
-
-*** Scientific Test for Daubert
-:PROPERTIES:
-:NOTER_PAGE: 6
-:END:
-Factors to consider (not all of these must be simultaneously valid for the method to be considered scientific):
-- Wheter the theory or the technique is accepted in the scientific community
-- Wheter it has been subjected to peer review
-- Wheter it has been tested (or can be)
-- Wheter the rate of error is acceptable
-- Wheter the research was independent of the litigation (se la ricerca è stata fatta indipendentemente dal fatto in esame)
-
-*** 4 phases of investigation
-:PROPERTIES:
-:NOTER_PAGE: 8
-:END:
+On windows, register entries are used by malwares to get persistency and stay hidden.
 
 * TODO Cloud forensics
-We will focus mainly on public clouds, since they are the ones affected by these problems.
+Digital forensics meets a plethora of problems when confronted with cloud infrastructures.
+In the following, the focus will mainly be on public clouds, since they are the ones affected by these problems.
 
 ** Acquisition issues
 In general, no control is given to the user on hw and storage space.
-Investigators cannot really access the metal, they can have dumps of the vm hosting the client's storage.
+Investigators cannot really access the metal[fn:5], at most they can have dumps of the vm hosting the client's storage.
 
-All our concepts about data remnants disappear in this context, since the stuff you deallocate is lost on a virtual drive.
+All our concepts about [[*Data Recovery][data remnants recovery]] are unuseful in this context, since the stuff you deallocate is lost on a virtual drive.
+
 Depending on the service, we have different levels of access:
-- SaaS: cloud service provider has logs for application and network. This data can only be seized with a plenaria from the judge, but it may not be available (maybe the provider doesn't keep them)
+- SaaS:
+  The cloud service provider has logs for application and network. This data can only be seized with a plenaria[fn:6] from the judge, but it may not be available (maybe the provider doesn't keep them).
 - PaaS
 - IaaS
 
 *** Data existence
+In the cloud world, it is _not always true that data exists_.
+Most data exists only in the scope of a transaction; For example, the comments to a deleted video on youtube might be unfeasible to check.
+This is a very difficult concept to explain to a court.
 
-In the cloud world, it is not always true that data exists. Most data exists only in the scope of a transaction; For example, the comments to a deleted video on youtube might be unfeasible to check.
-This is a very difficult concept to drive home to a court.
-
+**** Experience
 The court once asked an internet giant to retrieve the contents of a deleted page.
-The giant responded that it was "too costly", and it was in fact true.
+The giant responded that it was "too costly", and it was in fact true, but the answer was rejected.
 It's difficult for non technical people to understand the complexity of a system that allows billions of people to see the same thing simultaneously.
 
-Another example of lack of data is when we try to get the number of people that interacted with a page/an element. This can be really difficult.
+Another example of lack of data is when we try to get the number of people that interacted with a page/an element.
 
 *** Acquisition problems
 How do you acquire a web page?
+
 Problems:
-- Dynamic contents (how can you be sure that is what the victim was seeing?). Everything the user see might be based on something he has done.
+- Dynamic contents
+  How can you be sure that is what the victim was seeing? Everything the user see might be based on something he has done.
 - Due to encryption, we cannot use the old method of using a packet sniffer to capture the data.
-- Visualization is different from data (What is the status of things that are imported from the outside?).
+- Visualization is different from data. What is the status of things that are imported from the outside?
 - Who is the couprit of an offensive advertisement?
-  + not(?) the website hoster, since they incorporate ads providers
-  + ads providers just create ads based on machine learning maybe
-- Attribution problem: the structure of the internet changes daily, and you want to retrieve the data at the time of the victim's visit. This data consists in:
+- The attribution problem
+  The structure of the internet changes daily, and you want to retrieve the data at the time of the victim's visit. This data consists in:
   + Whois data
   + DNS resolution
   + Connectivity and provider identification
   + geolocation of hoster (in particular, this is the most uncertain since is given by the provider).
 
 ** Analysis issues
-The retrieval of deleted data (what is mostly expected by forensics) is basically impossible on cloud environments.
-If you are trying to investigate any compromise that extends to the hypervisor, it will be almost impossible to investigate. It's going to be impossible, unless the cloud provider wants to demonstrate such compromise with you (quite unusual, since then they'll have to admit the security breach).
+The _retrieval of deleted data_ (the most expected work by forensics experts) is basically *impossible on cloud environments*.
+
+If you are trying to investigate any compromise that extends to the hypervisor, it will be almost impossible to investigate, unless the cloud provider wants to demonstrate such compromise with you (quite unusual, since then they'll have to admit the security breach).
 
 ** Attrubution issue
 In cyberspace, attribution is diffcult: IPs can be taken, but linking them to a real person is the real deal.
@@ -2175,13 +2193,13 @@ In cloud forensics, the problem is even worse: Anyone can pay with someone else'
 The geographic location of the IP address changes drastically the law system aroud the case.
 
 The location of data in cloud services may be difficult to prove or the data might be on multiple locations altogether.
-What happens if the data centers storing each part of the data are on different jurisdiction with different laws? That's a difficult problem.
+What happens if the data centers storing each part of the data are on different jurisdiction with different laws?
 
 *** Clouds of clouds of clouds
 Some cloud systems use other cloud providers to store their data.
 This add other layers of indirection that would complicate even more the matter.
 
-** Forensically enabled clouds
+** Forensically enabled clouds :noexport:missing_informations:
 Some clouds supports investigation (are used by investigators):
 - Data location (to allow companies to have their data stay in a certain location, other than the reasons seen above)
 - Proof of past data possession
@@ -2233,6 +2251,15 @@ The time for the exam will be aroud 1 and a half hour (depending on the number o
 All the other lectures aren't going to be on exam (but, if cited, they will be accepted).
 
 * Footnotes
+
+[fn:6] a plenaria is the definitive approvation of an action.
+
+[fn:5] "metal" in this context means the effective machine on which the cloud instance is running.
+
+[fn:4] litigation can be translated in italian with "fatto in esame".
+
+[fn:3] If you have followed the course "Foundations of Operation Research", you are already familiar with this concept.
+
 [fn:2] Basket market can be translated with "vendita al dettaglio" in Italian.
 
 [fn:1] Skewness, in this context, can be read as *asymmetry*
