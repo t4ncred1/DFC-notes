@@ -388,7 +388,7 @@ They are /not really fit/ for the job, since to make an analysis scientific the 
 :PROPERTIES:
 :NOTER_PAGE: 5
 :END:
-We will focus on tasks that happens only in forensics, but be careful: forensic analysis encompasses everything you have studied.
+We will focus on tasks that only happen in forensics, but be careful: forensic analysis encompasses everything you have studied.
 
 ** Data Recovery
 :PROPERTIES:
@@ -459,8 +459,8 @@ They are called transient when they just deviate the analysis, definitive when t
 
 The *most vunerable phases* are aquisition and identification.
 
-*Transient antiforensics* interfere mostly with identification, but can be detected.
-*Definitive antiforensics* interfere with identification, since .
+*Transient antiforensics* techniques interfere mostly with identification, but can be detected and reverted/stopped from happening (most of the times).
+*Definitive antiforensics* techniques can sometimes be detected, too, but cannot be reverted.
 *** Timeline tampering
 :PROPERTIES:
 :NOTER_PAGE: 17
