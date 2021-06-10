@@ -415,13 +415,13 @@ Zip files, most of images and audio etc. are probably not reconstructable this w
 
 But we could check if a file we are seeking for matches with the part in the slack space, to have a partial confirmation.
 
-*** File system
+*** Retrieve data from the File System
 :PROPERTIES:
 :NOTER_PAGE: 8
 :END:
 
 The file system is the equivalent of the index of a series of folders and files.
-In each *inode* you have a table of (direct | indirect) pointers to data blocks in the hard drive.
+In each *inode* you have a table of (direct | indirect) pointers to the data blocks that compose the file.
 
 On file deletion, the file system entry is marked as free.
 After some time, the file system entry (not the data itself) is freed and, after some more time, the data block might be overwritten.
@@ -524,7 +524,7 @@ It is a *transient antiforensics* technique, since the real evidence has not bee
 
 This, too, is a *transient antiforensics* technique, since the data that composes the evidence is not altered.
 
-* DONE SSD-forensics
+* DONE SSD forensics
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/08. SSD-forensics.pdf
 :NOTER_PAGE: 46
@@ -645,7 +645,7 @@ You always need to analyze what can be said and /what can not/, possibly specify
 
 This last analysis must be perfomed to be prepared on what experiments the counterpart will perform and what will be the repercussions if out part asks to make such experiments.
 
-It's also very important to *review previous dovuments and evidences*, to look for technical/factual errors, suggestive writing and opinions treated as facts.
+It's also very important to *review previous documents and evidences*, to look for technical/factual errors, suggestive writing and opinions treated as facts.
 
 ** Presentation phase
 During the presentatiion phase, all experts must testify with objective facts (without interpretation or twisting) but they are not required to be completely non-sided to the matter (so they might want to avoid certain tests etc.)
@@ -796,7 +796,7 @@ But we have an abstact model that tries to explain the drivers of a fraud, the *
   Transform illegal money into legit funds.
 - Click frauds
   Illegal clicks on a website advertisement to increase the payable number of clicks to the advertiser.
-  Identity theft
+- Identity theft
   Obtain the financial/personal informations of another person for the purpose of assuming that person's identity to make purchases.
 - Tax evasion
   Illegal act or practice of not paying (or paying partially) taxes that are owed.
@@ -833,7 +833,7 @@ It involves *manual investigation* of a suspicious case to understand the fraud 
 It may find *new fraud mechanisms*.
 
 They are usually implemented with if-then-else rules engine.
-If the amount of claim is above the threshold, if there is a severe accident but no police/doctor report etc, then flag it as suspicious.
+For example: If the amount of claim is above the threshold or if there is a severe accident but no police report etc, then flag it as suspicious.
 
 ***** Rule based engines
 Rudimental (but quite functional) fraud detection systems, but expensive to build.
@@ -841,7 +841,7 @@ Rudimental (but quite functional) fraud detection systems, but expensive to buil
 They *must be kept secret* from fraudsters, which can learn the rules and circumvent them.
 Moreover, new /fraud patterns are not automatically signaled/: you must first make new rules for them.
 
-**** Automated fraud detection system
+**** Automated fraud detection systems
 An automated system for detecting fraud requires less human involvement and could lead to a more efficient system, *based on data analysis*.
 _Expert knowledge remains, in any case, crucial to build the system_.
 
@@ -869,7 +869,7 @@ They can either be
 - *Supervised learning* (or predictive) analytics techniques
 
 *** Unsupervised learning analytics techniques
-They do not require labeled observations. They learn from past observations by *detecting anomalies*.
+They do *not require labeled observations*. They learn from past observations by *detecting anomalies*.
 They can detect novel fraud patterns.
 
 **** Telecommunication example
@@ -881,7 +881,7 @@ Unsupervised learning techniques are *prone to deception* by camouflage-like fra
 They need to be complemented by other tools.
 
 *** Supervised learning techniques
-learn from *labeled* historical observations, where the fraud was exposed.
+Learn from *labeled* historical observations, where the fraud was exposed.
 They can find known alarms that fraudsters cannot hide.
 
 **** Limitations
