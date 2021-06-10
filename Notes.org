@@ -71,10 +71,17 @@ Riguardo i requisiti tecnici il garante ha detto: va specificato i moduli del si
 :PROPERTIES:
 :NOTER_PAGE: 3
 :END:
-- Generic threats: threats in which we incur for simply being connected to the internet.
-- Targeted: threats that exploit known informations about us.
-- Financial motivations: easy to understand.
-- Other motivations: difficult to understand and, being non financial, makes the attacker out of scale against our security system.
+Threats can be
+- *Generic* or *Targeted*:
+  + Generic threats are threats in which we incur for simply being connected to the internet.
+  + Targeted threats are threats that exploit known informations about us.
+- Financially or non *financially motivated*:
+  + Financially motivated threats are easy to understand.
+  + Non financially motivated threats can be difficult to understand
+- *Internal* or *External*:
+  + Internal threats are put up by some internal figure of the organization itself.
+  + External threats are put up by external figures (like criminals and other organizations).
+
 ** Gartner quadrant of threats
 :PROPERTIES:
 :NOTER_PAGE: 4
@@ -131,6 +138,7 @@ Also, the selling of stolen VISA accounts is common for money laundering and sca
 :NOTER_DOCUMENT: slides/02. Abuses of cryptocurrency and forensics.pdf
 :NOTER_PAGE: 39
 :END:
+
 ** Some informations
 :PROPERTIES:
 :NOTER_PAGE: 4
@@ -139,18 +147,21 @@ Also, the selling of stolen VISA accounts is common for money laundering and sca
 - Manage and store keys of you bitcoin addresses
 - Creates and signs transactions (receive/send BTC)
 - Track the balance
+
 *** Bitcoin address
 :PROPERTIES:
 :NOTER_PAGE: 5
 :END:
 String used to receive payments.
-You usually want to use more addresses to not make people able to track your movements.
+You usually want to use more addresses to make people unable to track your movements.
+
 *** Bitcoin mining
 :PROPERTIES:
 :NOTER_PAGE: 9
 :END:
-Objective: compete to solve a complex problem by bruteforce: find the next block of transactions with as much leading zeroes as possible.
+"Miners" compete to solve a complex problem by bruteforce: find the next block of transactions with as much leading zeroes as possible.
 The one that resolves it first gets a reward (constantly decreasing).
+
 *** Forks
 :PROPERTIES:
 :NOTER_PAGE: 12
@@ -158,6 +169,7 @@ The one that resolves it first gets a reward (constantly decreasing).
 When two miners find the same solution at approximately the same time, each block becomes the new head of the blockchain for a network: the blockchain splits.
 That's what is called a fork.
 When other 6/7 blocks are found, we see which chain they continue and we consider that the "real" chain.
+
 ** Pseudo Anonimity
 :PROPERTIES:
 :NOTER_PAGE: 19
@@ -189,7 +201,9 @@ Experts are witnesses with knowledge, skill, experience or education that can fo
 :PROPERTIES:
 :NOTER_PAGE: 3
 :END:
-An expert must:
+The *Daubert Standard* is a _rule of evidence_ regarding the _admissibility of expert witness_ testimonies in the U.S.
+
+In the states where the standard is applied, an expert must:
 - have its specialized knowledge be helpful to the trier to understand the evidence
 - have his/her testimony rely on sufficient facts/data
 - have his/her testimony be *scientifically valid*:
@@ -200,10 +214,10 @@ An expert must:
 :PROPERTIES:
 :NOTER_PAGE: 5
 :END:
-For a statement to be scientific, it must be:
-- Repeatable
+For a method to be scientific, it must be:
+- *Repeatable*
   If the experiment cannot be repeated (e.g: blood drop analysis) it must be detailed enough to be understood fully.
-- Falsifiable
+- *Falsifiable*
   If the experiment cannot be confuted, it is not scientific (e.g: statistics cannot be considered scientific)
 
 *** Scientific Test for Daubert
@@ -238,29 +252,29 @@ The four phases of an investigation are:
 :NOTER_PAGE: 2
 :END:
 In Italy, it is not requested to provide a report on how the acquisition was made, so the methods now presented will be overkill.
+
 ** Brittleness of digital evidence
-All digital evidence, if modified, is not *tamper evident*.
-There are, though, some procedure to ensure that digital evidence becomes tamper evidence.
+All digital evidence, if modified, is not *tamper evident*, which means it can be modified without the modification being noticeable afterwards.
+There are, though, some procedure to ensure that digital evidence becomes tamper evident.
 *** Hashes
 :PROPERTIES:
 :NOTER_PAGE: 4
 :END:
-In court it is asked to prove that evidence has been modified.
+In court it is asked to prove that evidence hasn't been modified, and hashes allow you to validate that.
+Its *absence does not mean that the has been modified*.
 
-Hashes allow you to validate that an evidence has not been modified.
-Its absence does not mean that it has been modified.
-
-Remember that we create the hash so that we can create a record of how the evidence looks. This means that it *must be preserved in another location than the evidence* to ensure it has not been tampered with.
+Remember that we create the hash so that we can create a record of how the evidence looks to be used later. This means that it *must be preserved in another location than the evidence* to ensure it has not been tampered with.
 
 They are not a dogma, and their absence won't be a huge obstacle for the "jury" to surpass.
 But they are useful to debunk any accusation of counterfation.
+
 ** Typical hw/sw for acquisition
 - Hardware:
   + Write blocker
   + external disks (simple copy through a live usb)
   + removable HD enclosures
 - Operating system:
-  + Live linux boot
+  + Live linux distribution image
 
 ** Bitstream images
 :PROPERTIES:
@@ -271,36 +285,36 @@ Usually, by "copying and pasting" we lose some important informations.
 We can, instead, make a "bit by bit" clone _of the original media_.
 
 Of this image I want to make a hash, to ensure it's not tampered.
+
 ** Acquisition procedure
 :PROPERTIES:
 :NOTER_PAGE: 7
 :END:
 
-- If possible, disconnect the media
+- If possible, *disconnect the media*
   + Connect it to an analysis station, with a *write blocker* possibly (not a necessity, you can just confugure correctly your software).
   + compute the hash of the source
   + make a clone of the source and check its hash
-- When media disconnection is not possible (soldered memory / raid devices / other constraints)
-  + live boot the system with a linux distribution (possibly one targeted to forensic analysis)
+- When media _disconnection is not possible_ (soldered memory / raid devices / other constraints)
+  + *live boot the system* with a linux distribution (possibly one targeted to forensic analysis)
     - only available if the target is off, though.
       When turning off the target, _pull the plug_. Don't let it have a system shutdown.
-  + if the target is powered on and cannot be turned off, make sure first to take all the data available in the system, and *work in volatility order*:
+  + if the _target is powered on and cannot be turned off_, make sure first to take all the data available in the system, and *work in volatility order*:
     - *disconnect the machine from the network*, if the network is not necessary.
       Done to avoid additional modifications.
     - dump the memory (In linux, there are /dev/mem and /dev/kmem that you may use to acquire the memory of the machine while on).
     - save runtime informations (network, processes etc)
     - make the disk acquisition
-- When we want to make the analysis "live"
-  Likely, we caught the intruder.
+- When we think we caught the intruder, we might want to make the analysis "live":
   + check the logs (only usable if they are on a different machine than the one attacked)
   + check the network traffic (now or never)
 
-The noerror and sync options of dd are used to not make dd stop in case of errors in the hdd.
+The noerror and sync options of dd are used to not make dd stop in case of errors in the device.
 
-The recomputation of the hash of the source and the acquisition image is made to ensure they are the same and to ensure that the source has not been modified (by comparing it with the first hash made of the device).
+The recomputation of the hash of the source and the acquisition image is made to ensure they are the same and that the source has not been modified (by comparing it with the first hash made of the device).
 
 We often use *multiple hashing algorithms* to compute the hash for the same image.
-The reason is that someone else who has actually analized the drive might have used a different hashing algorithm (maybe a few years back).
+The reason is that someone else who has analized before (or will analyze) the drive might have used a different hashing algorithm.
 
 *** The time problem
 Computing the copy of a 1TB hdd/usb key might take some time depending on the interface used by the hdd itself or by the write blocker.
@@ -321,7 +335,8 @@ In Italy, it might not be required for the persecuted to provide the passcode to
 :PROPERTIES:
 :NOTER_PAGE: 12
 :END:
-These perform hashes and copy the hard drive into one of the others, printing a "receipt" with all the informations of the process.
+These perform the hashes and copy the hard drive into one of the others, printing a receipt with all the informations of the process.
+
 * DONE Identification
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/07. Identification.pdf
@@ -400,7 +415,7 @@ Zip files, most of images and audio etc. are probably not reconstructable this w
 
 But we could check if a file we are seeking for matches with the part in the slack space, to have a partial confirmation.
 
-*** File system (method 1 to retrieve data)
+*** File system
 :PROPERTIES:
 :NOTER_PAGE: 8
 :END:
@@ -415,19 +430,20 @@ If we want to access the deleted files, we either:
 - *if the file entry was not deleted*: un-mark the file entry in the inode for deletion
 - *if the file entry deletion has already taken place*: ignore the inode and look for the block.
 
-*** Carving (method 2 to retrieve data)
+*** Carving
 :PROPERTIES:
 :NOTER_PAGE: 12
 :END:
-- Scan the drive as a single bit stream
-- *locate MIME types* of interesting file types
-- anything in between is a candidate file.
+Another method to retrieve data is the carving method, which consists in:
+1. Scan the drive as a single bit stream
+2. *locate MIME types* of interesting file types
+3. consider anything in between as a candidate file.
+
+As the steps above show, carving *doesn't use informations from the file system*.
 
 The problem comes when encryption and/or compression are taken into consideration, where file types cannot be recognized anymore.
 
-Fragmentation happens on only 2% of files, and is mostly a 2 part fragmentation.
-
-*** Free-as-in-beer software tools for data recovery
+*** Free-as-in-beer software tools for data recovery :noexport:
 :PROPERTIES:
 :NOTER_PAGE: 13
 :END:
