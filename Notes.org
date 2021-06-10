@@ -2067,8 +2067,8 @@ Through the timeline, you can see every item with the timestamp of the last acce
 
 Moreover, you can also see the account tokens used in the phone (potentially having access to the account).
 
-*** How to have a forensically resiliant phone :in_class_question:
-To have a forensically resiliant phone, the producer must limit the costumers on their use and set restrictions on the things they can do with the phone.
+*** How to have a forensically resilient phone :in_class_question:
+To have a forensically resilient phone, the producer must limit the costumers on their use and set restrictions on the things they can do with the phone.
 
 * NO Guest_lecture_glorioso :noexport:
 :PROPERTIES:
