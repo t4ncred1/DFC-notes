@@ -679,7 +679,7 @@ The report you signed is the only thing you can bring with you in a court.
   + counter examples for an assumption can be found
   + alternative theories not explored
 
-In Italy it is _not enough to demonstrate that an analysis was not conducted in a correct way_, but if you can raise questions and _show that other results are feasible_ with the same set of informations and another analysis method, you can bring the jury to your side.
+In Italy it is _not enough to demonstrate that an analysis was not conducted under complete observance of the chain of custody_, but if you can raise questions and _show that other results are feasible_ with the same set of informations and another analysis method, you can bring the jury to your side.
 That's why, during the presentation phase, you must be meticolous and list all possible counter examples.
 
 On the other side, if you cannot dispute the facts that the opposition is saying about your client, you can dispute their presentation.
@@ -742,7 +742,7 @@ In Italy, you are asked to know you duty as a witness: answer truthfully and not
 
 In civil court, witnesses are expected to provide answers to questions that were listed to the judge, in the form of "is it true that..".
 
-* DONE Fraud analysis and detection (carminati, 16/04/21)
+* DONE Fraud analysis and detection :Carminati:
 
 What is a *fraud*? It's a wrongful or criminal deception intended for financial or personal gain.
 In particular, it is:
@@ -822,7 +822,7 @@ _Fraud prevention_ mechanisms avoid or reduce the frauds that will happen (ex-an
 They are *complementary* and *not independent*: if a fraud adapts to a detection mechanism, it will also impact prevention mechanisms and vice-versa.
 
 **** Example of fraud prevention: Strong customer authentication
-New European requirement to make the payment. Two authentication methods are required to make a payment.
+New European requirement to make payments. Two authentication methods are required to make a payment.
 They are required to make online card payments in the European Economic Area.
 
 Exemption: payments below 30 euros/low risk transaction (due to user friendliness)
@@ -861,8 +861,6 @@ When a fraud is detected, it must be
  - *prevented* from happening again.
 
  A fraud becomes easier to detect the more time has passed, due to copycats using the same fraud over and over.
-
-* DONE Fraud Detection (carminati, 21/04/21)
 
 ** Frauds as a dynamic phenomenon
 Frauds remain hard and complex to detect.
@@ -1006,7 +1004,7 @@ What we want to extract from an analysis are the " _patterns_ " for frauds, to b
 
 This means translating the typical anomalies (called "red flags" here) of each kind of fraud into expert rules (after being documented) for rule based engines.
 
-* DONE Machine Learning for Fraud Detection
+* DONE Machine Learning for Fraud Detection :Carminati:
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/04. Machine Learning for Fraud Detection.pdf
 :NOTER_PAGE: 137
