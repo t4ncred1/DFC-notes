@@ -847,8 +847,8 @@ _Expert knowledge remains, in any case, crucial to build the system_.
 
 ***** Data driven fraud detection
 Based on machine learning.
-It is *precise*, due to the increased detection power than classic approaches and the massive amount of informations available from previous frauds used to uncover frauds that are not apparent.
-It is *efficient*, because it cost much less to automate the analysis than expert-based fraud detection systems.
+It is *precise*, due to the increased detection power w.r.t. classic approaches and the massive amount of informations available from previous frauds.
+It is *efficient*, because it costs much less to automate the analysis than expert-based fraud detection systems.
 
 *** Fraud management
 When a fraud is detected, it must be
