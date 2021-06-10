@@ -467,6 +467,7 @@ The *most vunerable phases* are aquisition and identification.
 :END:
 A technique that consists in modifying the timestamp of files on the disk to make them appear not correlated one another.
 It's a *definitive antiforensics* technique, since the old timestamp is not available anymore.
+
 *** Countering file recovery
 :PROPERTIES:
 :NOTER_PAGE: 18
@@ -476,11 +477,12 @@ File recovery uses data remnants on the disk, so:
 - encryption
 - virtual machines
 Are all available methods to avoid data to be recovered.
-It is a definitive antiforensics method since it destroys (or negates the creation of) the evidence.
+It is a *definitive antiforensics* technique since it destroys (or negates the creation of) the evidence.
 
 The "residual of magnetization" is a file recovery method studied during the 90es.
 A 0 written where there was a 0 has a magnetization level slightly different than a 0 written where there was written a 1.
 This was never shown to be practical, but it was a reasonable assumption with the technology from the 90es; Nowadays (due to the high density of the bits) it is unusable.
+
 *** Fileless attacks
 :PROPERTIES:
 :NOTER_PAGE: 19
@@ -488,28 +490,30 @@ This was never shown to be practical, but it was a reasonable assumption with th
 No traces are left on the disk at all.
 Metasploit has this feature: it injects in memory a DLL.
 Thus all traces are lost after the machine is turned off (and turning off is one of the main steps to analyze data.)
+
 *** Filesystem insertion and subversion technologies
 :PROPERTIES:
 :NOTER_PAGE: 20
 :END:
-We place the data where there's no reason to look for them (in the metadata section of the file system).
-The partition table, for example, has 32KB assigned, but in effective use, usually, it has 1KB at most.
+We place the data _where there's no reason to look for it_.
+The partition table, for example, has 32KB assigned but, in real use, it occupies 1KB at most.
 
 - Inodes for bad blocks are created by the system to not use them.
   If we manage to pass a good block as a bad one, we get some free real estate.
 - You can use directory inodes to, instead, point to data blocks
 - We can put data in metadata structures ignored by forensic tools (this method is weak to carving)
 
-It is a transient antiforensic method, since the evidence is hidden and not destroyed.
-*** Log analisys and tampering
+It is a *transient antiforensic* technique, since the evidence is hidden and not destroyed.
+
+*** Log tampering
 :PROPERTIES:
 :NOTER_PAGE: 21
 :END:
 If an attacker has access to the log files, it can tamper them to insert fake log entries or malicious code (this last option is only useful if they are automatically analyzed).
 
-It is a *transient antiforensics* technique.
+It is a *transient antiforensics* technique, since the real evidence has not been modified.
 
-*** Patition table analisys
+*** Patition table tampering
 :PROPERTIES:
 :NOTER_PAGE: 22
 :END:
@@ -518,7 +522,7 @@ It is a *transient antiforensics* technique.
 - A high number of logical partitions in an extended one might bring the tool to crash.
   The case was with NCase, 15 years ago. It supported at most 26 partitions (one for each letter of the alphabet).
 
-This too is a *transient antiforensics* technique, since the data that composes the evidence is not altered.
+This, too, is a *transient antiforensics* technique, since the data that composes the evidence is not altered.
 
 * DONE SSD-forensics
 :PROPERTIES:
