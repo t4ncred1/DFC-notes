@@ -748,7 +748,7 @@ What is a *fraud*? It's a wrongful or criminal deception intended for financial 
 In particular, it is:
 
 - *uncommon*
-  Only a minority of cases concerns fraud, which makes it difficult to detect frauds and to learn from historical cases (due to them being quite few).
+  Only a minority of cases concerns fraud, which makes it difficult to detect them and to learn from historical cases.
 - *well considered and imperceptibly concealed*
   Fraudsters remain unnoticed and covered by planning ahead their actions.
 - *time evolving*
@@ -822,12 +822,9 @@ _Fraud prevention_ mechanisms avoid or reduce the frauds that will happen (ex-an
 They are *complementary* and *not independent*: if a fraud adapts to a detection mechanism, it will also impact prevention mechanisms and vice-versa.
 
 **** Example of fraud prevention: Strong customer authentication
-New European requirement to make payments. Two authentication methods are required to make a payment.
-They are required to make online card payments in the European Economic Area.
+Two authentication methods are required to make a payment in the European Economic Area.
 
-Exemption: payments below 30 euros/low risk transaction (due to user friendliness)
-
-Each single security measure impacts the cost and usability of a system.
+But each security measure impacts the cost and usability of a system and, for this reason, in this case payments below 30 euros or low risk transactions in general are exempted.
 *** Strategies for Fraud detection and prevention
 **** Expert-based approach
 This approach to fraud analysis is built on the domain knowledge of the fraud analyst.
@@ -839,18 +836,16 @@ They are usually implemented with if-then-else rules engine.
 If the amount of claim is above the threshold, if there is a severe accident but no police/doctor report etc, then flag it as suspicious.
 
 ***** Rule based engines
-Rule-based engine are expensive to build and they *must be kept secret* from fraudsters, which can learn the rules and circumvent them.
-Moreover, new /fraud patterns are not automatically signaled/: you must first make new rules for them.
+Rudimental (but quite functional) fraud detection systems, but expensive to build.
 
-There are some disadvantages though:
-- expensive to build: require manual input and they're difficult to mantain and manage
-- must be continuously monitored, improved and updated.
+They *must be kept secret* from fraudsters, which can learn the rules and circumvent them.
+Moreover, new /fraud patterns are not automatically signaled/: you must first make new rules for them.
 
 **** Automated fraud detection system
 An automated system for detecting fraud requires less human involvement and could lead to a more efficient system, *based on data analysis*.
 _Expert knowledge remains, in any case, crucial to build the system_.
 
-**** Data driven fraud detection
+***** Data driven fraud detection
 Based on machine learning.
 It is *precise*, due to the increased detection power than classic approaches and the massive amount of informations available from previous frauds used to uncover frauds that are not apparent.
 It is *efficient*, because it cost much less to automate the analysis than expert-based fraud detection systems.
