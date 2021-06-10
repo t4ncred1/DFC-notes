@@ -607,11 +607,11 @@ We can say that SSDs have an "intrinsic" secure deletion system.
 :NOTER_PAGE: 18
 :END:
 These phases are tightly coupled with experience and are difficult to teach generally.
+
 ** Evaluation phase
 :PROPERTIES:
 :NOTER_PAGE: 2
 :END:
-
 Consists in *matching the evidence elements with the required legal elements to support/negate a legal theory*.
 
 The experts and the lawyer sit down and share their expertise, trying to match the requirements to negate or confirm an allegation.
@@ -620,27 +620,11 @@ The judge will analyze what can be said now, what cannot be said and what are th
 But sometimes, showing a feasible experiment to the jury can be detrimental to our own cause; There is a *risk* associated with each experiment we make.
 
 Very often, expert witnesses work on the results of other experts (not on the evidence itself).
-All experts must testify with objective facts (without interpretation or twisting) but they are not required to be completely non-sided to the matter (so they might want to avoid certain tests etc.)
-But be wary, since omission of truth is persecutable in Italy *experts cannot*, when asked, *claim professional secrecy*.
 
-After each analysis, the expert is asked a series of question called "quesito peritale". One of the question is "riferisca quant'altro può essere utile ai fini di giustizia".
-This implies that, should you find another crime evidence during your analysis, you are forced to say so.
-
-*** Analyzing the documents
-:PROPERTIES:
-:NOTER_PAGE: 7
-:END:
-You always need to analyze what can be said and /what can not/, possibly specifying *what further experiments would be needed* to say more.
-
-This last analysis must be perfomed to be prepared on what experiments the counterpart will perform and what will be the repercussions if out part asks to make such experiments.
-
-It's also very important to *review previous dovuments and evidences*, to look for technical/factual errors, suggestive writing, opinions not distinct from facts.
-
-** The relationship with lawyers, customers and prosecutor/police
+*** The relationship with lawyers, customers and prosecutor/police
 :PROPERTIES:
 :NOTER_PAGE: 4
 :END:
-
 The important thing to remember is that: "unless you are a police officer, you are not a policeman". It's *not your duty to punish* someone.
 Unless you are a lawyer, it's *not your duty to protect* people either (even though lawyers and customers pay your bills).
 You may be asked by the lawyer to omit a finding though (as long as it's not the same as lying).
@@ -652,7 +636,25 @@ The process truth is not the same as historical truth: The law may not support i
 It is super important to stick to facts and science, we're *not fighting for justice*, and your thoughts must not be shaped by it.
 
 In Italy, a super-partes kind of experts are available: the judge experts, requested by the judge to review the evidence.
-** Typical errors found in reports and analyses and presentation errors
+
+*** Analyzing the documents
+:PROPERTIES:
+:NOTER_PAGE: 7
+:END:
+You always need to analyze what can be said and /what can not/, possibly specifying *what further experiments would be needed* to say more.
+
+This last analysis must be perfomed to be prepared on what experiments the counterpart will perform and what will be the repercussions if out part asks to make such experiments.
+
+It's also very important to *review previous dovuments and evidences*, to look for technical/factual errors, suggestive writing and opinions treated as facts.
+
+** Presentation phase
+During the presentatiion phase, all experts must testify with objective facts (without interpretation or twisting) but they are not required to be completely non-sided to the matter (so they might want to avoid certain tests etc.)
+But be wary, since omission of truth is persecutable in Italy *experts cannot*, when asked, *claim professional secrecy*.
+
+After each analysis, the expert is asked a series of question called "quesito peritale". One of the question is "riferisca quant'altro può essere utile ai fini di giustizia".
+This implies that, should you find another crime evidence during your analysis, you are forced to say so.
+
+*** Typical errors found in reports and analyses and presentation errors
 :PROPERTIES:
 :NOTER_PAGE: 8
 :END:
@@ -663,7 +665,7 @@ We can provide additional explanations and alternative theories to these.
 Many court cases drag over a long time, so having a good written report (presentation) can be lifesaving to gather back the informations.
 The report you signed is the only thing you can bring with you in a court.
 
-*** What to look for
+**** What to look for
 - *Acquisition errors*
   + missing links in the chain of custody
   + missing/mismatched serial numbers
@@ -685,7 +687,6 @@ On the other side, if you cannot dispute the facts that the opposition is saying
 *** What to do when your client is in the wrong
 You can avoid to present the informations about your client that aren't on your favor.
 But if the prosecutor asks, you must respond (unless you "didn't touch" the topic in your analysis)
-"It's the ill people that need doctors"
 
 *** Writing your report
 :PROPERTIES:
@@ -711,6 +712,7 @@ Always write in the introduction what is your very conclusion.
 The conclusion is, most of the times, the only things the judge considers.
 Give a fast write up of what was written in the report, then use a strong ending phrase.
 *Stay factual*.
+
 ** Testimony as a witness
 :PROPERTIES:
 :NOTER_PAGE: 16
