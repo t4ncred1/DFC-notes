@@ -749,6 +749,86 @@ In Italy, you are asked to know you duty as a witness: answer truthfully and not
 
 In civil court, witnesses are expected to provide answers to questions that were listed to the judge, in the form of "is it true that..".
 
+* DONE Cloud forensics
+Digital forensics meets a plethora of problems when confronted with cloud infrastructures.
+In the following, the focus will mainly be on public clouds, since they are the ones affected by these problems.
+
+** Acquisition issues
+In general, no control is given to the user on hw and storage space.
+Investigators cannot really access the metal[fn:5], at most they can have dumps of the vm hosting the client's storage.
+
+All our concepts about [[*Data Recovery][data remnants recovery]] are unuseful in this context, since the stuff you deallocate is lost on a virtual drive.
+
+Depending on the service, we have different levels of access:
+- SaaS:
+  The cloud service provider has logs for application and network. This data can only be seized with a plenaria[fn:6] from the judge, but it may not be available (maybe the provider doesn't keep them).
+- PaaS
+- IaaS:
+  The only service on which logs of the system can be retrieved, since the user has full access to the virtual machine.
+
+*** Data existence
+In the cloud world, it is _not always true that data exists_.
+Most data exists only in the scope of a transaction; For example, the comments to a deleted video on youtube might be unfeasible to check.
+This is a very difficult concept to explain to a court.
+
+**** Experience
+The court once asked an internet giant to retrieve the contents of a deleted page.
+The giant responded that it was "too costly", and it was in fact true, but the answer was rejected.
+It's difficult for non technical people to understand the complexity of a system that allows billions of people to see the same thing simultaneously.
+
+Another example of lack of data is when we try to get the number of people that interacted with a page/an element.
+
+*** Acquisition problems
+How do you acquire a web page?
+
+Problems:
+- Dynamic contents
+  How can you be sure that is what the victim was seeing? Everything the user see might be based on something he has done.
+- Due to encryption, we cannot use the old method of using a packet sniffer to capture the data.
+- Visualization is different from data. What is the status of things that are imported from the outside?
+- Who is the couprit of an offensive advertisement?
+- The attribution problem
+  The structure of the internet changes daily, and you want to retrieve the data at the time of the victim's visit. This data consists in:
+  + Whois data
+  + DNS resolution
+  + Connectivity and provider identification
+  + geolocation of hoster (in particular, this is the most uncertain since is given by the provider).
+
+** Identification issues
+The _retrieval of deleted data_ (the most expected work by forensics experts) is basically *impossible on cloud environments*, since all the data is save on the virtual hard drive of the virtual machine hosting the server, and all the block on the disk are deleted as soon as the file is removed from the filesystem.
+
+If you are trying to investigate any compromise that extends to the hypervisor, it will be almost impossible to investigate, unless the cloud provider wants to demonstrate such compromise with you (quite unusual, since then they'll have to admit the security breach).
+
+** Attrubution issue
+In cyberspace, attribution is diffcult: IPs can be taken, but linking them to a real person is the real deal.
+
+In cloud forensics, the problem is even worse: Anyone can pay with someone else's payment card the cloud instance fee.
+
+** Legal issues
+The geographic location of the IP address changes drastically the law system aroud the case.
+
+The location of data in cloud services may be difficult to prove or the data might be on multiple locations altogether.
+What happens if the data centers storing each part of the data are on different jurisdiction with different laws?
+
+*** Clouds of clouds of clouds
+Some cloud systems use other cloud providers to store their data.
+This adds more and more layers of indirection that complicate the matter.
+
+** Forensically enabled clouds
+All these issues gave incentive to Cloud Providers to put forensic-friendly feature in their services, such as:
+- Real data location
+- Proof of past data possession
+- Storage of vm snapshots
+- Identity management
+
+*** Dual considerations
+- Pros
+  + data storage size is constantly increasing
+  + analysis of large amounts of data might be unfeasible on local hardware
+- Cons
+  + Repeatability of the act is limited
+  + loss of control on evidence
+  + chain of custody must be preserved
 * DONE Fraud analysis and detection :Carminati:
 
 What is a *fraud*? It's a wrongful or criminal deception intended for financial or personal gain.
@@ -1990,7 +2070,7 @@ These engeneering bootloader must be signed by Samsung and be valid for the phon
 
 When a physical acquisition is not possible we rely on smaller acquisitions or, sometimes, simple logical acquisitions (which means that we only take what is available to us as non-root users).
 
-Whit a logical aquisition we can tipically obtain native applications data but not third parti applications data (whatsapp, facebook etc.)
+Whit a logical aquisition we can tipically obtain native applications data but not third party applications data (whatsapp, facebook etc.)
 
 ***** Partial filesystem aquisition
 Since we are mostly interested on third party applications, sometimes we might try some (software) invasive method to get those data, for example to downgrade the application to have a viable exploit to make.
@@ -2158,85 +2238,6 @@ There are two kinds of analysis (we will use both in the demo):
 The *best strategy is doing both*.
 
 On windows, register entries are used by malwares to get persistency and stay hidden.
-
-* TODO Cloud forensics
-Digital forensics meets a plethora of problems when confronted with cloud infrastructures.
-In the following, the focus will mainly be on public clouds, since they are the ones affected by these problems.
-
-** Acquisition issues
-In general, no control is given to the user on hw and storage space.
-Investigators cannot really access the metal[fn:5], at most they can have dumps of the vm hosting the client's storage.
-
-All our concepts about [[*Data Recovery][data remnants recovery]] are unuseful in this context, since the stuff you deallocate is lost on a virtual drive.
-
-Depending on the service, we have different levels of access:
-- SaaS:
-  The cloud service provider has logs for application and network. This data can only be seized with a plenaria[fn:6] from the judge, but it may not be available (maybe the provider doesn't keep them).
-- PaaS
-- IaaS
-
-*** Data existence
-In the cloud world, it is _not always true that data exists_.
-Most data exists only in the scope of a transaction; For example, the comments to a deleted video on youtube might be unfeasible to check.
-This is a very difficult concept to explain to a court.
-
-**** Experience
-The court once asked an internet giant to retrieve the contents of a deleted page.
-The giant responded that it was "too costly", and it was in fact true, but the answer was rejected.
-It's difficult for non technical people to understand the complexity of a system that allows billions of people to see the same thing simultaneously.
-
-Another example of lack of data is when we try to get the number of people that interacted with a page/an element.
-
-*** Acquisition problems
-How do you acquire a web page?
-
-Problems:
-- Dynamic contents
-  How can you be sure that is what the victim was seeing? Everything the user see might be based on something he has done.
-- Due to encryption, we cannot use the old method of using a packet sniffer to capture the data.
-- Visualization is different from data. What is the status of things that are imported from the outside?
-- Who is the couprit of an offensive advertisement?
-- The attribution problem
-  The structure of the internet changes daily, and you want to retrieve the data at the time of the victim's visit. This data consists in:
-  + Whois data
-  + DNS resolution
-  + Connectivity and provider identification
-  + geolocation of hoster (in particular, this is the most uncertain since is given by the provider).
-
-** Analysis issues
-The _retrieval of deleted data_ (the most expected work by forensics experts) is basically *impossible on cloud environments*.
-
-If you are trying to investigate any compromise that extends to the hypervisor, it will be almost impossible to investigate, unless the cloud provider wants to demonstrate such compromise with you (quite unusual, since then they'll have to admit the security breach).
-
-** Attrubution issue
-In cyberspace, attribution is diffcult: IPs can be taken, but linking them to a real person is the real deal.
-
-In cloud forensics, the problem is even worse: Anyone can pay with someone else's payment card the cloud instance fee.
-
-** Legal issues
-The geographic location of the IP address changes drastically the law system aroud the case.
-
-The location of data in cloud services may be difficult to prove or the data might be on multiple locations altogether.
-What happens if the data centers storing each part of the data are on different jurisdiction with different laws?
-
-*** Clouds of clouds of clouds
-Some cloud systems use other cloud providers to store their data.
-This add other layers of indirection that would complicate even more the matter.
-
-** Forensically enabled clouds :noexport:missing_informations:
-Some clouds supports investigation (are used by investigators):
-- Data location (to allow companies to have their data stay in a certain location, other than the reasons seen above)
-- Proof of past data possession
-[...]
-
-*** Dual considerations
-- Pros
-  + data storage size is constantly increasing
-  + analysis of large amounts of data might be unfeasible on local hardware
-- Cons
-  + Repeatability of the act is limited
-  + loss of control on evidence
-  + chain of custody must be preserved
 
 * Should companies be more helpful to companies to support justice :noexport:
 
