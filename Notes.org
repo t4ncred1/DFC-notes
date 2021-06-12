@@ -1530,7 +1530,7 @@ These can be put at different levels:
 :PROPERTIES:
 :NOTER_PAGE: 132
 :END:
-Try to maximize the distance between norm and anomalies: try to separate theme with a linear hyperplane (the anomalies are then the ones near the origin of your graph).
+Try to maximize the distance between norm and anomalies: try to separate them with a linear hyperplane (the anomalies are then the ones near the origin of your graph).
 
 **** Evaluation of clustering solutions
 :PROPERTIES:
@@ -1561,7 +1561,7 @@ One of the many kinds of regression.
 
 The target variable is seen as a combination of *explanatory variables*, with a certain weigth $\beta_{i}$ assigned to each of them that measures the impact of the explanatory variable on the target variable.
 
-These parameters $\beta_{i}$ must be estimated through the _minimization of squared error function_, a function that gives you an indication of how wrong your prediction was w.r.t. the actual value of the target variable.
+The weights $\beta_{i}$ must be estimated through the _minimization of squared error function_, a function that gives you an indication of how wrong your prediction was w.r.t. the actual value of the target variable.
 
 It has some limitation though:
 - The target variable is considered to be a continuous variable normally distributed, but it might not be (for example, it might be a boolean variable with a bernoully distribution)
@@ -1575,7 +1575,7 @@ Another kind of regression.
 
 A *logistic regression* is just the _combination of a linear regression and a bounding function_ (a function that limits the prediction values to a smaller interval).
 
-The parameters of a logistic regression model are estimated using a maximum likelihood optimization.
+The parameters of a logistic regression model are estimated using a *maximum likelihood* optimization.
 
 With a logistic regression model we are able to predict boolean variables, such as a variable that represents the question "/is this observation fraudolent?/".
 
@@ -1747,7 +1747,7 @@ In linear programming, it's _easy to introduce business knowledge_ (simply add c
 :NOTER_PAGE: 215
 :END:
 To extract variables and rules from SVMs, we can use the same approaches seen for Neural Networks:
-- for _variable selection_ , the [[*Variable selection in Neural Networks][backward variable selection]] procedure can be used to reduce the input variables.
+- To _reduce the variables to work on_ , the [[*Variable selection in Neural Networks][backward variable selection]] procedure can be used.
 - for _rule extraction_ , the SVM can be interpreted as a neural network and the [[*Extracting rules from Neural Networks][same methods]] can be applied.
 
 *** Ensemble methods
@@ -1932,16 +1932,11 @@ Based on the state of the phone and its type, you have two options for the *pres
 **** Check periferals
 Check for any paired or linked devices, which might lead to backups or additional informations.
 
-*** Evidence Handling
-The steps to extract the data from your device without loss of digital or physical data (e.g: fingerprints).
-
-**** Access devices
+**** Check access devices
 Frequently, phones can be unlocked if you have access to a safe place of the owner or another smart tool (a smartwatch) or the body of the person itself.
 Be careful: don't try to guess the password, which might call procedures of the phone to provide additional security measures (like formatting the data partition of the phone).
 
-**** Devices powered on and unlocked
-Document as much as possible the content of the phone (also by taking pictures) without locking it accidentally.
-
+**** Organization phones
 If the phone is an organization's device, an MDM (mobile device management) system might be in place which would require to seek help from the system administrator of the organization to extract data.
 
 **** Encryption
@@ -1964,7 +1959,7 @@ Sometimes, exploit are not available at the time of the analysis, but they might
 
 ***** Tools for law enforcement and acquisition services
 Some of these tools are only *meant for law enforcement*.
-Most of the times though, police analysts use unlocking and decryption mechanisms *provided as a service*, where you send the phone to a lab and they unlock it through zero-days exploit that are not yet available to the public (and not yet tested).
+Most of the times though, police analysts use unlocking and decryption mechanisms *provided as a service*, where you send the phone to a lab and they unlock it through zero-days exploits that are not yet available to the public (and not yet tested).
 
 This methods must be carefully reviewed by a court of law, since the methods used are not reliable.
 
