@@ -64,7 +64,7 @@ Riguardo i requisiti tecnici il garante ha detto: va specificato i moduli del si
 * DONE Cybercryme Landscape
 :PROPERTIES:
 :NOTER_DOCUMENT: slides/01.pdf
-:NOTER_PAGE: 31
+:NOTER_PAGE: 4
 :END:
 *Risks* are a statistical evaluation of the exposure to damage because of the presence of vulnerabilities and threats.
 ** Threat dimensions
@@ -87,6 +87,13 @@ Threats can be
 :NOTER_PAGE: 4
 :END:
 A table showing some example of the threat categories listed above, with their relative possible financiary motivation level.
+
+|            | generic                      | targeted                   |
+|------------+------------------------------+----------------------------|
+| /          | <                            | >                          |
+| *internal* | disgruntled employees (no $) | dishonest employee ($$$)   |
+| *external* | criminals ($$$)              | a variety of attackers ($) |
+
 ** Internal threats
 :PROPERTIES:
 :NOTER_PAGE: 5
@@ -762,6 +769,7 @@ But we have an abstact model that tries to explain the drivers of a fraud, the *
 - motivation
 - opportunity
 - rationalization
+For example a frauster in a *difficult financial situation* (_motivation_), with the *opportunity* to commit a fraud, might start to *rationalize the crime* as necessary and overall OK.
 
 ** Fraud categories
 
@@ -811,8 +819,9 @@ But we have an abstact model that tries to explain the drivers of a fraud, the *
 
 *** Anti fraud mechanisms
 Reduce losses due to frauds:
-- Prevents and detect part of the frauds.
-- hinder fraudsters who will look for other easier opportunities. (go on other organizations)
+- Prevent and detect part of the frauds.
+- Hinder fraudsters who will look for other easier opportunities (go on other organizations, for example).
+
 *** Fraud detection and Fraud prevention
 _Fraud detection_ mechanisms recognize fraudolent activities after they have happened (ex-post approach)
 They usually provide the analyst with an index risk of fraud, depending on the past transaction (behavior) of the user
@@ -825,6 +834,7 @@ They are *complementary* and *not independent*: if a fraud adapts to a detection
 Two authentication methods are required to make a payment in the European Economic Area.
 
 But each security measure impacts the cost and usability of a system and, for this reason, in this case payments below 30 euros or low risk transactions in general are exempted.
+
 *** Strategies for Fraud detection and prevention
 **** Expert-based approach
 This approach to fraud analysis is built on the domain knowledge of the fraud analyst.
@@ -842,7 +852,7 @@ They *must be kept secret* from fraudsters, which can learn the rules and circum
 Moreover, new /fraud patterns are not automatically signaled/: you must first make new rules for them.
 
 **** Automated fraud detection systems
-An automated system for detecting fraud requires less human involvement and could lead to a more efficient system, *based on data analysis*.
+An automated system consists in a software implementing a mathematical model to recognize frauds. This approach requires less human involvement and could lead to a more efficient system.
 _Expert knowledge remains, in any case, crucial to build the system_.
 
 ***** Data driven fraud detection
@@ -857,14 +867,15 @@ When a fraud is detected, it must be
 
  A fraud becomes easier to detect the more time has passed, due to copycats using the same fraud over and over.
 
-** Frauds as a dynamic phenomenon
+** Frauds as a dynamic phenomenon :noexport:
 Frauds remain hard and complex to detect.
 
 A fraudster may think about sending fraudolent transactions that may try to *shift the model of fraud detection systems* of an institution.
 Unsupervised learning technique must be still monitored by experts.
+
 ** Techniques to detect a fraud automatically
 New techniques able to _adapt to new frauds_ are needed.
-They can either be
+They can either be:
 - *Unsupervised learning* (or descriptive) analytics techniques
 - *Supervised learning* (or predictive) analytics techniques
 
@@ -915,6 +926,7 @@ The *frequency* of update of your model depends on:
 
 **** Reinforcement learning
 Instead of waiting for a window to update the model, continuously update it as soon as new data is available.
+
 *** Example: Credit card fraud
 *Outlier detection* is made by analyzing clusters of common transaction based on position and time.
 If a transaction happens outside of a group (it's an outlier), they might be a fraud.
@@ -959,6 +971,7 @@ To understand if your system is working I must monitor:
   Such a non interpretable system is called *black-box*, while a system that can be interpreted is a *white-box* system.
 - Operational efficiency
   The time and effort that is required to obtain a result and evaluate it is important, expecially on /real time system/.
+
 *** Fraud management as risk management
   Every time we have to deploy a fraud management system, we must consider
   - the value of the asset we want to protect
@@ -1013,6 +1026,7 @@ Let's now focus on how we can apply machine learning techniques in automatic fra
 :END:
 During the years, many techniques have been developed for fraud detection with ML from different disciplines.
 The main focus won't be on the technicalities of these techniques but on the fraud detection perspective.
+
 ** Data preprocessing
 :PROPERTIES:
 :NOTER_PAGE: 3
@@ -1045,7 +1059,7 @@ The main objective is to *find correlations between data sources*.
 :PROPERTIES:
 :NOTER_PAGE: 8
 :END:
-One kind of data source.
+The most common kind of data source.
 It's composed of structured informations capturing the characteristics of a transaction from a customer.
 
 This kind of data is usually summarized to extract the *RFM value* (recency, frequency and monetary factors):
@@ -1061,10 +1075,10 @@ These features can be used individually or jointly, and their interaction can be
 :END:
 You can either have continuous data or categorical data:
 - *Continuous* data
-  data elements are defined on an _interval_ (limited or unlimited) (the amount of a transaction or its timestamp is an example)
+  Data elements are defined on an _interval_ (limited or unlimited) (the amount of a transaction or its timestamp is an example)
 - *Categorical* data
-  + _Nominal_: data elements that are _limited on a set of values_ without ordering (iban; IP; motivation; region)
-  + _Ordinal_: data elements _limited on a set_ _with an ordering_
+  + _Nominal_: data elements that are _discrete on a set of values_ without ordering (Ibans; IP; Motivation; Region)
+  + _Ordinal_: data elements _discrete on a set_ _with an ordering_
   + _Binary_: data elements that _can only take two values_.
 
 *** Sampling
@@ -1242,7 +1256,7 @@ The transaction and fraud distributions (next page) can highlight that the secon
 
 The transaction amount distribution between fraudolent and legit transactions is different, too.
 
-** Descriptive analytics for fraud detection
+** Descriptive analytics for fraud detection (Unsupervised learining techniques)
 :PROPERTIES:
 :NOTER_PAGE: 58
 :END:
@@ -1529,7 +1543,7 @@ Another one is to analyze them graphically and confront them.
 Finally, another one is to train a supervised learning method on the basis of the results of the unsupervised learning one.
 The unsupervised one will tell you the clustering, the supervised might lead you to the reasons behind those clusters.
 
-** Predictive analytics for fraud detection
+** Predictive analytics for fraud detection (Supervised learining techniques)
 :PROPERTIES:
 :NOTER_PAGE: 137
 :END:

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-06-11 ven 01:25 -->
+<!-- 2021-06-12 sab 17:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Digital Forensics and Cybercrime</title>
@@ -62,446 +62,445 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3560bed">Cybercryme Landscape</a>
+<li><a href="#orgb18d6eb">Cybercryme Landscape</a>
 <ul>
-<li><a href="#orge901844">Threat dimensions</a></li>
-<li><a href="#org7b14d6c">Gartner quadrant of threats</a></li>
-<li><a href="#org992aff2">Internal threats</a></li>
-<li><a href="#org5cf3d50">How to manage a cyber attack</a></li>
-<li><a href="#org7947106">Financially oriented attacks</a></li>
-<li><a href="#org33edbea">Cybercrime</a>
+<li><a href="#orgc8f73f6">Threat dimensions</a></li>
+<li><a href="#org09e0c0c">Gartner quadrant of threats</a></li>
+<li><a href="#orgf1d11fb">Internal threats</a></li>
+<li><a href="#orge7d91ae">How to manage a cyber attack</a></li>
+<li><a href="#orgf122f19">Financially oriented attacks</a></li>
+<li><a href="#org4bb8f02">Cybercrime</a>
 <ul>
-<li><a href="#orgfd52c85">Identity theft</a></li>
-<li><a href="#orgaebfb4a">Selling kits</a></li>
+<li><a href="#orgb3b3020">Identity theft</a></li>
+<li><a href="#org10bd28e">Selling kits</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orga8eac54">Abuses of cryptocurrency and forensics</a>
+<li><a href="#org69d2874">Abuses of cryptocurrency and forensics</a>
 <ul>
-<li><a href="#orgb7459e0">Some informations</a>
+<li><a href="#org126cd78">Some informations</a>
 <ul>
-<li><a href="#org61c46d4">Bitcoin wallet</a></li>
-<li><a href="#org500284f">Bitcoin address</a></li>
-<li><a href="#org37c2190">Bitcoin mining</a></li>
-<li><a href="#orgf75d455">Forks</a></li>
+<li><a href="#orgb5a94d9">Bitcoin wallet</a></li>
+<li><a href="#orgb1de6c2">Bitcoin address</a></li>
+<li><a href="#org9556f95">Bitcoin mining</a></li>
+<li><a href="#orgf8fa3e8">Forks</a></li>
 </ul>
 </li>
-<li><a href="#org36e018b">Pseudo Anonimity</a>
+<li><a href="#org7f7df4c">Pseudo Anonimity</a>
 <ul>
-<li><a href="#org8e4990d">How to protect Pseudo Anonimity</a></li>
+<li><a href="#org3266573">How to protect Pseudo Anonimity</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge2553d1">Introduction to Digital Forensics</a>
+<li><a href="#orga34f81d">Introduction to Digital Forensics</a>
 <ul>
-<li><a href="#orga53a36e">Witnesses vs experts</a></li>
-<li><a href="#org86bbccd">Daubert Standard (How to be an Expert Witness)</a>
+<li><a href="#org41c3693">Witnesses vs experts</a></li>
+<li><a href="#org36bc728">Daubert Standard (How to be an Expert Witness)</a>
 <ul>
-<li><a href="#org348beaa">Scientific Method</a></li>
-<li><a href="#orgfbf8f0d">Scientific Test for Daubert</a></li>
-<li><a href="#orgea7badf">Four phases of investigation</a></li>
+<li><a href="#org76ea1d1">Scientific Method</a></li>
+<li><a href="#org9f802fe">Scientific Test for Daubert</a></li>
+<li><a href="#org4710526">Four phases of investigation</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge4c8db2">Acquisition</a>
+<li><a href="#org78ea495">Acquisition</a>
 <ul>
-<li><a href="#org2edafdf">Acquisition in Italy</a></li>
-<li><a href="#org882bd4b">Brittleness of digital evidence</a>
+<li><a href="#org12accf6">Acquisition in Italy</a></li>
+<li><a href="#org814d78e">Brittleness of digital evidence</a>
 <ul>
-<li><a href="#org6408f9c">Hashes</a></li>
+<li><a href="#org772308c">Hashes</a></li>
 </ul>
 </li>
-<li><a href="#org6c7babd">Typical hw/sw for acquisition</a></li>
-<li><a href="#orgf9d26bf">Bitstream images</a></li>
-<li><a href="#org7ce51bf">Acquisition procedure</a>
+<li><a href="#org4f8be4f">Typical hw/sw for acquisition</a></li>
+<li><a href="#org487a132">Bitstream images</a></li>
+<li><a href="#orgd96fbc3">Acquisition procedure</a>
 <ul>
-<li><a href="#orgc8c31b5">The time problem</a></li>
-<li><a href="#org1cdb098">The size problem</a></li>
-<li><a href="#orgd8ac81c">The encryption problem</a></li>
+<li><a href="#org95095ec">The time problem</a></li>
+<li><a href="#org08fe87d">The size problem</a></li>
+<li><a href="#orgce73895">The encryption problem</a></li>
 </ul>
 </li>
-<li><a href="#orga54e42d">Forensics Duplicators</a></li>
+<li><a href="#org10b60ca">Forensics Duplicators</a></li>
 </ul>
 </li>
-<li><a href="#org125bb67">Identification</a>
+<li><a href="#org4b2c9be">Identification</a>
 <ul>
-<li><a href="#org31b8303">Setup</a>
+<li><a href="#org623bf29">Setup</a>
 <ul>
-<li><a href="#org6bb9399">Why not windows</a></li>
-<li><a href="#org8802a54">Repeatibility</a>
+<li><a href="#org9473c00">Why not windows</a></li>
+<li><a href="#orga840512">Repeatibility</a>
 <ul>
-<li><a href="#org42284f5">Law enforcement tools</a></li>
+<li><a href="#orgfcfe0ad">Law enforcement tools</a></li>
 </ul>
 </li>
-<li><a href="#orgb179dcd">What analysis encompasses</a></li>
+<li><a href="#org036456c">What analysis encompasses</a></li>
 </ul>
 </li>
-<li><a href="#orgbe2dc87">Data Recovery</a>
+<li><a href="#org0e66459">Data Recovery</a>
 <ul>
-<li><a href="#org1dceb4c">Disk Geometry</a></li>
-<li><a href="#org60b9d90">Retrieve data from the File System</a></li>
-<li><a href="#orga26ad96">Carving</a></li>
+<li><a href="#orgaaf1ce1">Disk Geometry</a></li>
+<li><a href="#org6e0d863">Retrieve data from the File System</a></li>
+<li><a href="#org74de383">Carving</a></li>
 </ul>
 </li>
-<li><a href="#orgf2f67b2">Antiforensic Techniques</a>
+<li><a href="#orge17b357">Antiforensic Techniques</a>
 <ul>
-<li><a href="#org67cbf30">Timeline tampering</a></li>
-<li><a href="#orga0c03cb">Countering file recovery</a></li>
-<li><a href="#org5fb52a3">Fileless attacks</a></li>
-<li><a href="#orgb715c91">Filesystem insertion and subversion technologies</a></li>
-<li><a href="#orgd193fc6">Log tampering</a></li>
-<li><a href="#org916a5c8">Patition table tampering</a></li>
+<li><a href="#orgd2c24f7">Timeline tampering</a></li>
+<li><a href="#orgd57cb4e">Countering file recovery</a></li>
+<li><a href="#org6966da0">Fileless attacks</a></li>
+<li><a href="#org6190c66">Filesystem insertion and subversion technologies</a></li>
+<li><a href="#org8f74af9">Log tampering</a></li>
+<li><a href="#org7eb581b">Patition table tampering</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgbc3d440">SSD forensics</a>
+<li><a href="#org64bcdbf">SSD forensics</a>
 <ul>
-<li><a href="#orgc52867e">FTL</a></li>
-<li><a href="#orgfd8c893">Tests</a>
+<li><a href="#orga382e5b">FTL</a></li>
+<li><a href="#org3943f51">Tests</a>
 <ul>
-<li><a href="#org1b90d79">Trimming</a></li>
-<li><a href="#org7356f63">Garbage Collection</a></li>
-<li><a href="#org0304443">Erasing patterns</a></li>
-<li><a href="#org69438b5">Compression</a></li>
-<li><a href="#orgabaec4f">Wear Leveling</a></li>
-<li><a href="#org3d03d45">Reults on file recoverability</a></li>
+<li><a href="#org64d3944">Trimming</a></li>
+<li><a href="#org8bcb7f7">Garbage Collection</a></li>
+<li><a href="#orgedd5202">Erasing patterns</a></li>
+<li><a href="#org728a162">Compression</a></li>
+<li><a href="#orgfa6cb33">Wear Leveling</a></li>
+<li><a href="#org51c00d2">Reults on file recoverability</a></li>
 </ul>
 </li>
-<li><a href="#orgb174027">Conclusions</a></li>
+<li><a href="#org83129a6">Conclusions</a></li>
 </ul>
 </li>
-<li><a href="#org0f14a9e">Evaluation and presentation</a>
+<li><a href="#org7d4609f">Evaluation and presentation</a>
 <ul>
-<li><a href="#org2e3710d">Evaluation phase</a>
+<li><a href="#org4d390a0">Evaluation phase</a>
 <ul>
-<li><a href="#orgcb39460">The relationship with lawyers, customers and prosecutor/police</a></li>
-<li><a href="#org40908c7">Analyzing the documents</a></li>
+<li><a href="#orgea1ff62">The relationship with lawyers, customers and prosecutor/police</a></li>
+<li><a href="#org3eddb15">Analyzing the documents</a></li>
 </ul>
 </li>
-<li><a href="#org3fcfccb">Presentation phase</a>
+<li><a href="#org753518a">Presentation phase</a>
 <ul>
-<li><a href="#org9d41664">Typical errors found in reports and analyses and presentation errors</a>
+<li><a href="#org978d5b8">Typical errors found in reports and analyses and presentation errors</a>
 <ul>
-<li><a href="#orgdbae664">What to look for</a></li>
+<li><a href="#org07cab48">What to look for</a></li>
 </ul>
 </li>
-<li><a href="#orgaa07b0d">What to do when your client is in the wrong</a></li>
-<li><a href="#org553e572">Writing your report</a></li>
-<li><a href="#org64cedff">Structure of a report</a></li>
+<li><a href="#org3c74fd1">What to do when your client is in the wrong</a></li>
+<li><a href="#org2d379cc">Writing your report</a></li>
+<li><a href="#orgd16104b">Structure of a report</a></li>
 </ul>
 </li>
-<li><a href="#org534c61f">Testimony as a witness</a></li>
-<li><a href="#orgfd9c420">Direct and cross examination</a></li>
+<li><a href="#org5eb7100">Testimony as a witness</a></li>
+<li><a href="#orga5122c5">Direct and cross examination</a></li>
 </ul>
 </li>
-<li><a href="#org82e3bdb">Fraud analysis and detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></a>
+<li><a href="#orgc2c6ce2">Fraud analysis and detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></a>
 <ul>
-<li><a href="#org2d21d1b">Why people commit fraud</a></li>
-<li><a href="#org57b4809">Fraud categories</a></li>
-<li><a href="#orga26bfde">Anti-fraud stategies</a>
+<li><a href="#orgcf0ff4b">Why people commit fraud</a></li>
+<li><a href="#org2ed0066">Fraud categories</a></li>
+<li><a href="#org48ee6ab">Anti-fraud stategies</a>
 <ul>
-<li><a href="#org8ee015f">Anti fraud mechanisms</a></li>
-<li><a href="#org6a18f7e">Fraud detection and Fraud prevention</a>
+<li><a href="#org148032e">Anti fraud mechanisms</a></li>
+<li><a href="#orgb0969ee">Fraud detection and Fraud prevention</a>
 <ul>
-<li><a href="#orga8c1fdd">Example of fraud prevention: Strong customer authentication</a></li>
+<li><a href="#org6583409">Example of fraud prevention: Strong customer authentication</a></li>
 </ul>
 </li>
-<li><a href="#org7927932">Strategies for Fraud detection and prevention</a>
+<li><a href="#orgd6899b2">Strategies for Fraud detection and prevention</a>
 <ul>
-<li><a href="#org2b3abd5">Expert-based approach</a>
+<li><a href="#orgfa274f0">Expert-based approach</a>
 <ul>
-<li><a href="#orgfd8b926">Rule based engines</a></li>
+<li><a href="#org551e036">Rule based engines</a></li>
 </ul>
 </li>
-<li><a href="#org694479a">Automated fraud detection systems</a>
+<li><a href="#org66a4259">Automated fraud detection systems</a>
 <ul>
-<li><a href="#org96a8501">Data driven fraud detection</a></li>
+<li><a href="#org5cf4a5b">Data driven fraud detection</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgd634163">Fraud management</a></li>
+<li><a href="#org50d026b">Fraud management</a></li>
 </ul>
 </li>
-<li><a href="#org52196bf">Frauds as a dynamic phenomenon</a></li>
-<li><a href="#orgf6e5338">Techniques to detect a fraud automatically</a>
+<li><a href="#orgbe109dd">Techniques to detect a fraud automatically</a>
 <ul>
-<li><a href="#org25b16e6">Unsupervised learning analytics techniques</a>
+<li><a href="#org35e70ad">Unsupervised learning analytics techniques</a>
 <ul>
-<li><a href="#org03e7f0c">Telecommunication example</a></li>
-<li><a href="#orgb22d938">Limitations</a></li>
+<li><a href="#org8c4a847">Telecommunication example</a></li>
+<li><a href="#org3ad8455">Limitations</a></li>
 </ul>
 </li>
-<li><a href="#org180ccf1">Supervised learning techniques</a>
+<li><a href="#orgc9999bb">Supervised learning techniques</a>
 <ul>
-<li><a href="#org92df08d">Limitations</a></li>
+<li><a href="#org8727df0">Limitations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org4051794">Developing a fraud detection system</a></li>
-<li><a href="#org8d3d6a5">Social Network Analysis</a></li>
-<li><a href="#org04c0366">Fraud management cycle</a>
+<li><a href="#orgd0b3d39">Developing a fraud detection system</a></li>
+<li><a href="#org99be74c">Social Network Analysis</a></li>
+<li><a href="#org0bc544a">Fraud management cycle</a>
 <ul>
-<li><a href="#org50b41c9">Regular update of the model</a>
+<li><a href="#org97f76e8">Regular update of the model</a>
 <ul>
-<li><a href="#org31e728b">Reinforcement learning</a></li>
+<li><a href="#orga3c822a">Reinforcement learning</a></li>
 </ul>
 </li>
-<li><a href="#org143a165">Example: Credit card fraud</a></li>
+<li><a href="#org25a400b">Example: Credit card fraud</a></li>
 </ul>
 </li>
-<li><a href="#orgd2ad05a">Fraud analytical process</a>
+<li><a href="#org429f85e">Fraud analytical process</a>
 <ul>
-<li><a href="#orgfa08019">Preprocessing</a></li>
-<li><a href="#orgfc2c85d">Analytics</a>
+<li><a href="#org2c677ef">Preprocessing</a></li>
+<li><a href="#orga586d38">Analytics</a>
 <ul>
-<li><a href="#org497d982">Possible analysis outputs</a></li>
+<li><a href="#org77c7453">Possible analysis outputs</a></li>
 </ul>
 </li>
-<li><a href="#orga38eb36">Post processing phase</a></li>
-<li><a href="#org61b35f7">Key characteristics of successful fraud analtics models</a></li>
-<li><a href="#org29ac0cd">Fraud management as risk management</a>
+<li><a href="#org9941e37">Post processing phase</a></li>
+<li><a href="#org7dfa52c">Key characteristics of successful fraud analtics models</a></li>
+<li><a href="#org2edf0c8">Fraud management as risk management</a>
 <ul>
-<li><a href="#orgfc171fe">Economical cost</a></li>
+<li><a href="#orgb2f3373">Economical cost</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org8b7e0d2">Challenges of developing fraud-detection models</a></li>
-<li><a href="#org0495d1a">Red flags of frauds</a></li>
+<li><a href="#org268ed38">Challenges of developing fraud-detection models</a></li>
+<li><a href="#org9aaadd3">Red flags of frauds</a></li>
 </ul>
 </li>
-<li><a href="#org20944b2">Machine Learning for Fraud Detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></a>
+<li><a href="#orgc002e79">Machine Learning for Fraud Detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></a>
 <ul>
-<li><a href="#orge266e29">Notice</a></li>
-<li><a href="#orgb81233b">Data preprocessing</a>
+<li><a href="#orge2b3d3f">Notice</a></li>
+<li><a href="#org17a0649">Data preprocessing</a>
 <ul>
-<li><a href="#orgf2c85ea">Real data problems</a></li>
-<li><a href="#org54768bf">Types of sources</a>
+<li><a href="#org018fd28">Real data problems</a></li>
+<li><a href="#orgdb94584">Types of sources</a>
 <ul>
-<li><a href="#org557ab1e">Transactional Data</a></li>
+<li><a href="#orgec051c3">Transactional Data</a></li>
 </ul>
 </li>
-<li><a href="#orgab61d81">Types of data elements</a></li>
-<li><a href="#org92767e9">Sampling</a>
+<li><a href="#org9349c79">Types of data elements</a></li>
+<li><a href="#org18f171d">Sampling</a>
 <ul>
-<li><a href="#org9f611c2">Bias example</a></li>
-<li><a href="#orga4264f3">Stratified sampling</a></li>
+<li><a href="#org1c7abaf">Bias example</a></li>
+<li><a href="#org8cb2e95">Stratified sampling</a></li>
 </ul>
 </li>
-<li><a href="#org0f4c385">Visual data exploration</a></li>
-<li><a href="#orgebcba12">Exploratory statistical Analysis</a></li>
-<li><a href="#orgd5749a6">Dealing with missing values</a></li>
-<li><a href="#org013a823">Outliers</a>
+<li><a href="#orga94e50b">Visual data exploration</a></li>
+<li><a href="#orgfa32485">Exploratory statistical Analysis</a></li>
+<li><a href="#org0e46026">Dealing with missing values</a></li>
+<li><a href="#org48da439">Outliers</a>
 <ul>
-<li><a href="#org81b0243">Outlier treatment</a></li>
+<li><a href="#org07e336d">Outlier treatment</a></li>
 </ul>
 </li>
-<li><a href="#org4a8ed1f">When invalid data is not outlying</a></li>
-<li><a href="#orgc1b1cbe">Conclusion on outliers and invalid values</a></li>
-<li><a href="#orgf76055e">Standardization</a></li>
-<li><a href="#org089b15c">Categorization</a></li>
-<li><a href="#org1b1b311">Variable Selection</a>
+<li><a href="#org02ff1f3">When invalid data is not outlying</a></li>
+<li><a href="#org42afd67">Conclusion on outliers and invalid values</a></li>
+<li><a href="#org7992f1a">Standardization</a></li>
+<li><a href="#org81b67bb">Categorization</a></li>
+<li><a href="#org793368c">Variable Selection</a>
 <ul>
-<li><a href="#org7b20683">Filters</a></li>
-<li><a href="#orgecb4f79">Wrapper</a></li>
-<li><a href="#org7b41a45">Principal Components Analysis</a></li>
+<li><a href="#org4e01fd4">Filters</a></li>
+<li><a href="#orge4f30bb">Wrapper</a></li>
+<li><a href="#org742620a">Principal Components Analysis</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org20993db">Descriptive analytics for fraud detection</a>
+<li><a href="#orgf87e498">Descriptive analytics for fraud detection (Unsupervised learining techniques)</a>
 <ul>
-<li><a href="#org2da8885">Relevant environments for Unsupervised learning</a></li>
-<li><a href="#orgc08d7b4">Defining the norm</a></li>
-<li><a href="#org4698b44">Graphical outliers detection</a></li>
-<li><a href="#org03ad482">Statistical outliers detection</a>
+<li><a href="#orgb4c31d9">Relevant environments for Unsupervised learning</a></li>
+<li><a href="#org106400d">Defining the norm</a></li>
+<li><a href="#orge9c36ce">Graphical outliers detection</a></li>
+<li><a href="#org7c3dee6">Statistical outliers detection</a>
 <ul>
-<li><a href="#org4d28dac">Break point analysis</a></li>
-<li><a href="#org7537e52">Peer Group analysis</a>
+<li><a href="#org719ebf7">Break point analysis</a></li>
+<li><a href="#orgea63de1">Peer Group analysis</a>
 <ul>
-<li><a href="#org8208b1c">Identifying, sizing and comparing a peer group</a></li>
+<li><a href="#orgf731e04">Identifying, sizing and comparing a peer group</a></li>
 </ul>
 </li>
-<li><a href="#org7bb1819">Break point analysis vs peer group analysis</a></li>
-<li><a href="#org525044c">Association rule analysis</a>
+<li><a href="#orgc3405fc">Break point analysis vs peer group analysis</a></li>
+<li><a href="#org07b66fd">Association rule analysis</a>
 <ul>
-<li><a href="#org89f6019">Support</a></li>
-<li><a href="#orgca1bf8f">Confidence</a></li>
+<li><a href="#org8586e28">Support</a></li>
+<li><a href="#orgc231f01">Confidence</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgf1c52d5">Clustering</a>
+<li><a href="#org2e58f2d">Clustering</a>
 <ul>
-<li><a href="#org493a6fa">Kinds of clusters</a></li>
-<li><a href="#orgd90673b">Measure the similarity of elements</a></li>
-<li><a href="#org54579dd">Hierarchical clustering</a>
+<li><a href="#org20ef71b">Kinds of clusters</a></li>
+<li><a href="#org62820c1">Measure the similarity of elements</a></li>
+<li><a href="#orge208887">Hierarchical clustering</a>
 <ul>
-<li><a href="#org8ed53e8">Distance between clusters</a></li>
-<li><a href="#org7ba37b0">Select the number of clusters</a></li>
-<li><a href="#org1b9c9af">Advantages and disadvantages</a></li>
+<li><a href="#org2d729ea">Distance between clusters</a></li>
+<li><a href="#org9a281e6">Select the number of clusters</a></li>
+<li><a href="#org691d7a9">Advantages and disadvantages</a></li>
 </ul>
 </li>
-<li><a href="#orgbe5d42d">Nonhierarchical clustering</a>
+<li><a href="#org5262152">Nonhierarchical clustering</a>
 <ul>
-<li><a href="#org271c5a2">k-means</a></li>
-<li><a href="#org5453b6f">Self organizing maps</a></li>
+<li><a href="#orga39a30a">k-means</a></li>
+<li><a href="#org4eb1f8f">Self organizing maps</a></li>
 </ul>
 </li>
-<li><a href="#org71fe762">Semi-Supervised clustering</a></li>
-<li><a href="#org3a93e80">One-class SVM</a></li>
-<li><a href="#org2fab6f6">Evaluation of clustering solutions</a></li>
+<li><a href="#orgb339a7a">Semi-Supervised clustering</a></li>
+<li><a href="#orgb4d08e4">One-class SVM</a></li>
+<li><a href="#org135aba1">Evaluation of clustering solutions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org078c77e">Predictive analytics for fraud detection</a>
+<li><a href="#org913d098">Predictive analytics for fraud detection (Supervised learining techniques)</a>
 <ul>
-<li><a href="#orgf13284b">Linear regression</a></li>
-<li><a href="#orgec7c766">Logistic regression</a></li>
-<li><a href="#orga088d35">Decision trees</a>
+<li><a href="#org081cdbd">Linear regression</a></li>
+<li><a href="#org86607a4">Logistic regression</a></li>
+<li><a href="#org060190e">Decision trees</a>
 <ul>
-<li><a href="#org6a88659">Splitting decision</a></li>
-<li><a href="#orga13f9dd">Stopping decision</a></li>
-<li><a href="#orgfc7f2e1">Advantages</a></li>
-<li><a href="#orge29667e">Disadvantages</a></li>
+<li><a href="#org02b6fb0">Splitting decision</a></li>
+<li><a href="#org603a93d">Stopping decision</a></li>
+<li><a href="#org2f39996">Advantages</a></li>
+<li><a href="#orgda5f90b">Disadvantages</a></li>
 </ul>
 </li>
-<li><a href="#org8916498">Regression trees</a></li>
-<li><a href="#org3b11b35">Neural Networks</a>
+<li><a href="#org651a6c8">Regression trees</a></li>
+<li><a href="#orgcbd46c7">Neural Networks</a>
 <ul>
-<li><a href="#org1054b61">Layers</a></li>
-<li><a href="#org3be1acb">Weigth learning</a></li>
-<li><a href="#org6828ee1">How many hidden neurons?</a></li>
-<li><a href="#org3bb6760">The overfitting problem</a></li>
-<li><a href="#orgdc19dbc">Neural Networks lack interpretability</a>
+<li><a href="#org6852605">Layers</a></li>
+<li><a href="#org32b81cd">Weigth learning</a></li>
+<li><a href="#org75ce992">How many hidden neurons?</a></li>
+<li><a href="#orgf640b79">The overfitting problem</a></li>
+<li><a href="#orgf1db11b">Neural Networks lack interpretability</a>
 <ul>
-<li><a href="#orgaf5f7b6">Variable selection in Neural Networks</a></li>
-<li><a href="#org42fa30c">Extracting rules from Neural Networks</a></li>
+<li><a href="#org1e15a9e">Variable selection in Neural Networks</a></li>
+<li><a href="#org475bec7">Extracting rules from Neural Networks</a></li>
 </ul>
 </li>
-<li><a href="#org191a289">Two stage model setup</a></li>
+<li><a href="#org11e3be7">Two stage model setup</a></li>
 </ul>
 </li>
-<li><a href="#org3d61b78">Support Vector Machines</a>
+<li><a href="#org60e6d75">Support Vector Machines</a>
 <ul>
-<li><a href="#org2737d12">Benefits</a></li>
-<li><a href="#orgaf68f78">Problem</a></li>
-<li><a href="#org14c1496">Rule extraction and Variable selection</a></li>
+<li><a href="#org304807d">Benefits</a></li>
+<li><a href="#org9f6b99b">Problem</a></li>
+<li><a href="#org4349abd">Rule extraction and Variable selection</a></li>
 </ul>
 </li>
-<li><a href="#org22cb295">Ensemble methods</a>
+<li><a href="#org2d35996">Ensemble methods</a>
 <ul>
-<li><a href="#orgd2a0e9e">Bagging</a></li>
-<li><a href="#orgca481e7">Boosting</a></li>
-<li><a href="#orgfe5c2d5">Random Forest&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span></span></a></li>
+<li><a href="#org5117bbd">Bagging</a></li>
+<li><a href="#org342ff03">Boosting</a></li>
+<li><a href="#org30ae45c">Random Forest&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span></span></a></li>
 </ul>
 </li>
-<li><a href="#org749decd">Evaluating a fraud detection model</a>
+<li><a href="#org4d0c176">Evaluating a fraud detection model</a>
 <ul>
-<li><a href="#orgaa74d0b">Splitting the data set</a>
+<li><a href="#org1f574b0">Splitting the data set</a>
 <ul>
-<li><a href="#orgc04baac">Small data sets</a></li>
+<li><a href="#org43eaab8">Small data sets</a></li>
 </ul>
 </li>
-<li><a href="#org1e27c13">Performance metrics</a></li>
-<li><a href="#orgf270494">Managing skewed datasets</a></li>
+<li><a href="#org41f8e15">Performance metrics</a></li>
+<li><a href="#orge52df60">Managing skewed datasets</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgca897aa">Mobile Forensics&#xa0;&#xa0;&#xa0;<span class="tag"><span class="guest_lecture">guest_lecture</span></span></a>
+<li><a href="#org9175844">Mobile Forensics&#xa0;&#xa0;&#xa0;<span class="tag"><span class="guest_lecture">guest_lecture</span></span></a>
 <ul>
-<li><a href="#orgbb59694">Forensical soundness</a>
+<li><a href="#orgcb7c7eb">Forensical soundness</a>
 <ul>
-<li><a href="#orgcb114d6">Low Level Exploits</a></li>
-<li><a href="#org3c5fff4">Documentation is key</a></li>
+<li><a href="#org93205c0">Low Level Exploits</a></li>
+<li><a href="#org7f3c198">Documentation is key</a></li>
 </ul>
 </li>
-<li><a href="#org9ee0a8d">Challenges of mobile forensics</a></li>
-<li><a href="#orgbfe9d2f">Operating system diversity</a>
+<li><a href="#org9f6c211">Challenges of mobile forensics</a></li>
+<li><a href="#org15a9daa">Operating system diversity</a>
 <ul>
-<li><a href="#org9f49b23">Android versions diversity</a></li>
-<li><a href="#orgd5331df">iOS versions diversity</a></li>
+<li><a href="#org4f9be78">Android versions diversity</a></li>
+<li><a href="#org613665d">iOS versions diversity</a></li>
 </ul>
 </li>
-<li><a href="#org1336c9e">Guidelines to follow</a>
+<li><a href="#org3c1c2aa">Guidelines to follow</a>
 <ul>
-<li><a href="#org3cf9d0e">Evidence collection and preservation</a>
+<li><a href="#orge947e2f">Evidence collection and preservation</a>
 <ul>
-<li><a href="#orgd19baa2">Preparation</a></li>
-<li><a href="#org516e7fc">Documentation</a></li>
-<li><a href="#orga46afca">What to do first</a></li>
-<li><a href="#org8870114">Check periferals</a></li>
+<li><a href="#org278a239">Preparation</a></li>
+<li><a href="#org6ab391b">Documentation</a></li>
+<li><a href="#org56f08ed">What to do first</a></li>
+<li><a href="#org0150630">Check periferals</a></li>
 </ul>
 </li>
-<li><a href="#org3d8ff90">Evidence Handling</a>
+<li><a href="#orgaf3dd22">Evidence Handling</a>
 <ul>
-<li><a href="#org31a4336">Access devices</a></li>
-<li><a href="#orgaea9b29">Devices powered on and unlocked</a></li>
-<li><a href="#orgb897e3a">Encryption</a></li>
-<li><a href="#org01fed5b">Network Isolation</a></li>
+<li><a href="#org7514ef8">Access devices</a></li>
+<li><a href="#orgba5063e">Devices powered on and unlocked</a></li>
+<li><a href="#orgcdef5c4">Encryption</a></li>
+<li><a href="#orgc582b51">Network Isolation</a></li>
 </ul>
 </li>
-<li><a href="#org2af344d">Evidence acquisition</a>
+<li><a href="#orgac17d91">Evidence acquisition</a>
 <ul>
-<li><a href="#org43253a3">Preparation</a>
+<li><a href="#org6078568">Preparation</a>
 <ul>
-<li><a href="#org123ce9a">Tools for law enforcement and acquisition services</a></li>
+<li><a href="#orgecfe7f8">Tools for law enforcement and acquisition services</a></li>
 </ul>
 </li>
-<li><a href="#org0355f9d">Device identification</a></li>
-<li><a href="#orgf0eb212">Extraction methods</a>
+<li><a href="#org1415888">Device identification</a></li>
+<li><a href="#orga019efd">Extraction methods</a>
 <ul>
-<li><a href="#org86059ed">Physical acquisition</a></li>
-<li><a href="#orgde37e03">Logical acquisition</a></li>
-<li><a href="#org373f672">Partial filesystem aquisition</a></li>
-<li><a href="#org21bb23c">Invasive acquisition</a></li>
+<li><a href="#orgd62eaac">Physical acquisition</a></li>
+<li><a href="#orge255651">Logical acquisition</a></li>
+<li><a href="#org99dcaa5">Partial filesystem aquisition</a></li>
+<li><a href="#orgdca8577">Invasive acquisition</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org31ece8e">Tool analysis: Autopsy</a>
+<li><a href="#org1e12b2b">Tool analysis: Autopsy</a>
 <ul>
-<li><a href="#orge071beb">Android analysis on Autopsy</a>
+<li><a href="#org7230eee">Android analysis on Autopsy</a>
 <ul>
-<li><a href="#orgc76efda">Image extraction</a></li>
-<li><a href="#orgc0e7809">Image Analysis</a></li>
+<li><a href="#org3b6af70">Image extraction</a></li>
+<li><a href="#org457a5f7">Image Analysis</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org2c503f1">Android analysis with Physical analyzer (commercial tool)</a>
+<li><a href="#org83744ff">Android analysis with Physical analyzer (commercial tool)</a>
 <ul>
-<li><a href="#org56fc868">How to have a forensically resilient phone&#xa0;&#xa0;&#xa0;<span class="tag"><span class="in_class_question">in_class_question</span></span></a></li>
+<li><a href="#org8faa80d">How to have a forensically resilient phone&#xa0;&#xa0;&#xa0;<span class="tag"><span class="in_class_question">in_class_question</span></span></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgc767b61">Malware Analysis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span>&#xa0;<span class="guest_lecture">guest_lecture</span></span></a></li>
+<li><a href="#org01e5b9a">Malware Analysis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span>&#xa0;<span class="guest_lecture">guest_lecture</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3560bed" class="outline-2">
-<h2 id="org3560bed">Cybercryme Landscape</h2>
-<div class="outline-text-2" id="text-org3560bed">
+<div id="outline-container-orgb18d6eb" class="outline-2">
+<h2 id="orgb18d6eb">Cybercryme Landscape</h2>
+<div class="outline-text-2" id="text-orgb18d6eb">
 <p>
 <b>Risks</b> are a statistical evaluation of the exposure to damage because of the presence of vulnerabilities and threats.<br />
 </p>
 </div>
-<div id="outline-container-orge901844" class="outline-3">
-<h3 id="orge901844">Threat dimensions</h3>
-<div class="outline-text-3" id="text-orge901844">
+<div id="outline-container-orgc8f73f6" class="outline-3">
+<h3 id="orgc8f73f6">Threat dimensions</h3>
+<div class="outline-text-3" id="text-orgc8f73f6">
 <p>
 Threats can be<br />
 </p>
@@ -525,17 +524,52 @@ Threats can be<br />
 </div>
 </div>
 
-<div id="outline-container-org7b14d6c" class="outline-3">
-<h3 id="org7b14d6c">Gartner quadrant of threats</h3>
-<div class="outline-text-3" id="text-org7b14d6c">
+<div id="outline-container-org09e0c0c" class="outline-3">
+<h3 id="org09e0c0c">Gartner quadrant of threats</h3>
+<div class="outline-text-3" id="text-org09e0c0c">
 <p>
 A table showing some example of the threat categories listed above, with their relative possible financiary motivation level.<br />
 </p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left">generic</th>
+<th scope="col" class="org-left">targeted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><b>internal</b></td>
+<td class="org-left">disgruntled employees (no $)</td>
+<td class="org-left">dishonest employee ($$$)</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>external</b></td>
+<td class="org-left">criminals ($$$)</td>
+<td class="org-left">a variety of attackers ($)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div id="outline-container-org992aff2" class="outline-3">
-<h3 id="org992aff2">Internal threats</h3>
-<div class="outline-text-3" id="text-org992aff2">
+
+<div id="outline-container-orgf1d11fb" class="outline-3">
+<h3 id="orgf1d11fb">Internal threats</h3>
+<div class="outline-text-3" id="text-orgf1d11fb">
 <p>
 Internal threats can be countered by contracts and <span class="underline">separation of duties</span>.<br />
 They can be of various kind:<br />
@@ -549,9 +583,9 @@ They can be of various kind:<br />
 </ul>
 </div>
 </div>
-<div id="outline-container-org5cf3d50" class="outline-3">
-<h3 id="org5cf3d50">How to manage a cyber attack</h3>
-<div class="outline-text-3" id="text-org5cf3d50">
+<div id="outline-container-orge7d91ae" class="outline-3">
+<h3 id="orge7d91ae">How to manage a cyber attack</h3>
+<div class="outline-text-3" id="text-orge7d91ae">
 <p>
 In cyberspace, private companies defend their own piece of infrastructure by themselves.<br />
 When we talk about public or semi-public agencies (see ENI, VODAFONE etc.), what should they do in case of a big scale cyber-attack? Is the jurisdiction of the attack on them or on the nation?<br />
@@ -562,9 +596,9 @@ The NATO wrote an entire manual (the Tallin Manual) on the policy they think app
 </p>
 </div>
 </div>
-<div id="outline-container-org7947106" class="outline-3">
-<h3 id="org7947106">Financially oriented attacks</h3>
-<div class="outline-text-3" id="text-org7947106">
+<div id="outline-container-orgf122f19" class="outline-3">
+<h3 id="orgf122f19">Financially oriented attacks</h3>
+<div class="outline-text-3" id="text-orgf122f19">
 <p>
 The monetization of the attacks can be either direct or indirect.<br />
 </p>
@@ -578,25 +612,25 @@ The discriminant between the two is whether the money comes directly from the vi
 </p>
 </div>
 </div>
-<div id="outline-container-org33edbea" class="outline-3">
-<h3 id="org33edbea">Cybercrime</h3>
-<div class="outline-text-3" id="text-org33edbea">
+<div id="outline-container-org4bb8f02" class="outline-3">
+<h3 id="org4bb8f02">Cybercrime</h3>
+<div class="outline-text-3" id="text-org4bb8f02">
 <p>
 Cybercrime has its own ecosystem, whit producers, enablers (that don&rsquo;t produce the exploits but keep them relevant) and clients<br />
 </p>
 </div>
-<div id="outline-container-orgfd52c85" class="outline-4">
-<h4 id="orgfd52c85">Identity theft</h4>
-<div class="outline-text-4" id="text-orgfd52c85">
+<div id="outline-container-orgb3b3020" class="outline-4">
+<h4 id="orgb3b3020">Identity theft</h4>
+<div class="outline-text-4" id="text-orgb3b3020">
 <p>
 Identities are stolen because they can be abused.<br />
 American SSN is sometimes abused for authentication purposes.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgaebfb4a" class="outline-4">
-<h4 id="orgaebfb4a">Selling kits</h4>
-<div class="outline-text-4" id="text-orgaebfb4a">
+<div id="outline-container-org10bd28e" class="outline-4">
+<h4 id="org10bd28e">Selling kits</h4>
+<div class="outline-text-4" id="text-org10bd28e">
 <p>
 Various kinds of kits are sold in the cybercrime ecosystem:<br />
 Botnets, exploitation kits, viruses..<br />
@@ -613,18 +647,18 @@ Also, the selling of stolen VISA accounts is common for money laundering and sca
 </div>
 </div>
 </div>
-<div id="outline-container-orga8eac54" class="outline-2">
-<h2 id="orga8eac54">Abuses of cryptocurrency and forensics</h2>
-<div class="outline-text-2" id="text-orga8eac54">
+<div id="outline-container-org69d2874" class="outline-2">
+<h2 id="org69d2874">Abuses of cryptocurrency and forensics</h2>
+<div class="outline-text-2" id="text-org69d2874">
 </div>
 
-<div id="outline-container-orgb7459e0" class="outline-3">
-<h3 id="orgb7459e0">Some informations</h3>
-<div class="outline-text-3" id="text-orgb7459e0">
+<div id="outline-container-org126cd78" class="outline-3">
+<h3 id="org126cd78">Some informations</h3>
+<div class="outline-text-3" id="text-org126cd78">
 </div>
-<div id="outline-container-org61c46d4" class="outline-4">
-<h4 id="org61c46d4">Bitcoin wallet</h4>
-<div class="outline-text-4" id="text-org61c46d4">
+<div id="outline-container-orgb5a94d9" class="outline-4">
+<h4 id="orgb5a94d9">Bitcoin wallet</h4>
+<div class="outline-text-4" id="text-orgb5a94d9">
 <ul class="org-ul">
 <li>Manage and store keys of you bitcoin addresses<br /></li>
 <li>Creates and signs transactions (receive/send BTC)<br /></li>
@@ -633,9 +667,9 @@ Also, the selling of stolen VISA accounts is common for money laundering and sca
 </div>
 </div>
 
-<div id="outline-container-org500284f" class="outline-4">
-<h4 id="org500284f">Bitcoin address</h4>
-<div class="outline-text-4" id="text-org500284f">
+<div id="outline-container-orgb1de6c2" class="outline-4">
+<h4 id="orgb1de6c2">Bitcoin address</h4>
+<div class="outline-text-4" id="text-orgb1de6c2">
 <p>
 String used to receive payments.<br />
 You usually want to use more addresses to make people unable to track your movements.<br />
@@ -643,9 +677,9 @@ You usually want to use more addresses to make people unable to track your movem
 </div>
 </div>
 
-<div id="outline-container-org37c2190" class="outline-4">
-<h4 id="org37c2190">Bitcoin mining</h4>
-<div class="outline-text-4" id="text-org37c2190">
+<div id="outline-container-org9556f95" class="outline-4">
+<h4 id="org9556f95">Bitcoin mining</h4>
+<div class="outline-text-4" id="text-org9556f95">
 <p>
 &ldquo;Miners&rdquo; compete to solve a complex problem by bruteforce: find the next block of transactions with as much leading zeroes as possible.<br />
 The one that resolves it first gets a reward (constantly decreasing).<br />
@@ -653,9 +687,9 @@ The one that resolves it first gets a reward (constantly decreasing).<br />
 </div>
 </div>
 
-<div id="outline-container-orgf75d455" class="outline-4">
-<h4 id="orgf75d455">Forks</h4>
-<div class="outline-text-4" id="text-orgf75d455">
+<div id="outline-container-orgf8fa3e8" class="outline-4">
+<h4 id="orgf8fa3e8">Forks</h4>
+<div class="outline-text-4" id="text-orgf8fa3e8">
 <p>
 When two miners find the same solution at approximately the same time, each block becomes the new head of the blockchain for a network: the blockchain splits.<br />
 That&rsquo;s what is called a fork.<br />
@@ -665,9 +699,9 @@ When other 6/7 blocks are found, we see which chain they continue and we conside
 </div>
 </div>
 
-<div id="outline-container-org36e018b" class="outline-3">
-<h3 id="org36e018b">Pseudo Anonimity</h3>
-<div class="outline-text-3" id="text-org36e018b">
+<div id="outline-container-org7f7df4c" class="outline-3">
+<h3 id="org7f7df4c">Pseudo Anonimity</h3>
+<div class="outline-text-3" id="text-org7f7df4c">
 <p>
 An identity can have an arbitrary number of addresses, which can be used to split a transaction into multiple ones and make the derivation of the real owner difficult.<br />
 </p>
@@ -681,9 +715,9 @@ But all the transaction data is available, so if you take enough care you can tr
 </ul>
 </div>
 
-<div id="outline-container-org8e4990d" class="outline-4">
-<h4 id="org8e4990d">How to protect Pseudo Anonimity</h4>
-<div class="outline-text-4" id="text-org8e4990d">
+<div id="outline-container-org3266573" class="outline-4">
+<h4 id="org3266573">How to protect Pseudo Anonimity</h4>
+<div class="outline-text-4" id="text-org3266573">
 <p>
 The &ldquo;flow tracking&rdquo; described above is made difficult by malicious sites by mixing together multiple transactions from different clients. (See Silk Road, as an example).<br />
 </p>
@@ -691,9 +725,9 @@ The &ldquo;flow tracking&rdquo; described above is made difficult by malicious s
 </div>
 </div>
 </div>
-<div id="outline-container-orge2553d1" class="outline-2">
-<h2 id="orge2553d1">Introduction to Digital Forensics</h2>
-<div class="outline-text-2" id="text-orge2553d1">
+<div id="outline-container-orga34f81d" class="outline-2">
+<h2 id="orga34f81d">Introduction to Digital Forensics</h2>
+<div class="outline-text-2" id="text-orga34f81d">
 <p>
 Forensics: the application of scientific analysis methods to reconstruct evidence.<br />
 </p>
@@ -703,9 +737,9 @@ Digital Forensics: the application of scientific analysis methods to computer sy
 </p>
 </div>
 
-<div id="outline-container-orga53a36e" class="outline-3">
-<h3 id="orga53a36e">Witnesses vs experts</h3>
-<div class="outline-text-3" id="text-orga53a36e">
+<div id="outline-container-org41c3693" class="outline-3">
+<h3 id="org41c3693">Witnesses vs experts</h3>
+<div class="outline-text-3" id="text-org41c3693">
 <p>
 <b>Witnesses</b> testify about <span class="underline">what they personally know</span>. They cannot testify about something they heard from others.<br />
 <b>Experts</b> can <span class="underline">testify with their scientifical analysis</span> even if they where not present.<br />
@@ -717,9 +751,9 @@ Experts are witnesses with knowledge, skill, experience or education that can fo
 </div>
 </div>
 
-<div id="outline-container-org86bbccd" class="outline-3">
-<h3 id="org86bbccd">Daubert Standard (How to be an Expert Witness)</h3>
-<div class="outline-text-3" id="text-org86bbccd">
+<div id="outline-container-org36bc728" class="outline-3">
+<h3 id="org36bc728">Daubert Standard (How to be an Expert Witness)</h3>
+<div class="outline-text-3" id="text-org36bc728">
 <p>
 The <b>Daubert Standard</b> is a <span class="underline">rule of evidence</span> regarding the <span class="underline">admissibility of expert witness</span> testimonies in the U.S.<br />
 </p>
@@ -738,9 +772,9 @@ In the states where the standard is applied, an expert must:<br />
 </ul>
 </div>
 
-<div id="outline-container-org348beaa" class="outline-4">
-<h4 id="org348beaa">Scientific Method</h4>
-<div class="outline-text-4" id="text-org348beaa">
+<div id="outline-container-org76ea1d1" class="outline-4">
+<h4 id="org76ea1d1">Scientific Method</h4>
+<div class="outline-text-4" id="text-org76ea1d1">
 <p>
 For a method to be scientific, it must be:<br />
 </p>
@@ -753,9 +787,9 @@ If the experiment cannot be confuted, it is not scientific (e.g: statistics cann
 </div>
 </div>
 
-<div id="outline-container-orgfbf8f0d" class="outline-4">
-<h4 id="orgfbf8f0d">Scientific Test for Daubert</h4>
-<div class="outline-text-4" id="text-orgfbf8f0d">
+<div id="outline-container-org9f802fe" class="outline-4">
+<h4 id="org9f802fe">Scientific Test for Daubert</h4>
+<div class="outline-text-4" id="text-org9f802fe">
 <p>
 Factors to consider (not all of these must be simultaneously valid for the method to be considered scientific):<br />
 </p>
@@ -769,9 +803,9 @@ Factors to consider (not all of these must be simultaneously valid for the metho
 </div>
 </div>
 
-<div id="outline-container-orgea7badf" class="outline-4">
-<h4 id="orgea7badf">Four phases of investigation</h4>
-<div class="outline-text-4" id="text-orgea7badf">
+<div id="outline-container-org4710526" class="outline-4">
+<h4 id="org4710526">Four phases of investigation</h4>
+<div class="outline-text-4" id="text-org4710526">
 <p>
 The four phases of an investigation are:<br />
 </p>
@@ -786,30 +820,30 @@ The four phases of an investigation are:<br />
 </div>
 </div>
 
-<div id="outline-container-orge4c8db2" class="outline-2">
-<h2 id="orge4c8db2">Acquisition</h2>
-<div class="outline-text-2" id="text-orge4c8db2">
+<div id="outline-container-org78ea495" class="outline-2">
+<h2 id="org78ea495">Acquisition</h2>
+<div class="outline-text-2" id="text-org78ea495">
 </div>
-<div id="outline-container-org2edafdf" class="outline-3">
-<h3 id="org2edafdf">Acquisition in Italy</h3>
-<div class="outline-text-3" id="text-org2edafdf">
+<div id="outline-container-org12accf6" class="outline-3">
+<h3 id="org12accf6">Acquisition in Italy</h3>
+<div class="outline-text-3" id="text-org12accf6">
 <p>
 In Italy, it is not requested to provide a report on how the acquisition was made, so the methods now presented will be overkill.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org882bd4b" class="outline-3">
-<h3 id="org882bd4b">Brittleness of digital evidence</h3>
-<div class="outline-text-3" id="text-org882bd4b">
+<div id="outline-container-org814d78e" class="outline-3">
+<h3 id="org814d78e">Brittleness of digital evidence</h3>
+<div class="outline-text-3" id="text-org814d78e">
 <p>
 All digital evidence, if modified, is not <b>tamper evident</b>, which means it can be modified without the modification being noticeable afterwards.<br />
 There are, though, some procedure to ensure that digital evidence becomes tamper evident.<br />
 </p>
 </div>
-<div id="outline-container-org6408f9c" class="outline-4">
-<h4 id="org6408f9c">Hashes</h4>
-<div class="outline-text-4" id="text-org6408f9c">
+<div id="outline-container-org772308c" class="outline-4">
+<h4 id="org772308c">Hashes</h4>
+<div class="outline-text-4" id="text-org772308c">
 <p>
 In court it is asked to prove that evidence hasn&rsquo;t been modified, and hashes allow you to validate that.<br />
 Its <b>absence does not mean that the has been modified</b>.<br />
@@ -827,9 +861,9 @@ But they are useful to debunk any accusation of counterfation.<br />
 </div>
 </div>
 
-<div id="outline-container-org6c7babd" class="outline-3">
-<h3 id="org6c7babd">Typical hw/sw for acquisition</h3>
-<div class="outline-text-3" id="text-org6c7babd">
+<div id="outline-container-org4f8be4f" class="outline-3">
+<h3 id="org4f8be4f">Typical hw/sw for acquisition</h3>
+<div class="outline-text-3" id="text-org4f8be4f">
 <ul class="org-ul">
 <li>Hardware:<br />
 <ul class="org-ul">
@@ -845,9 +879,9 @@ But they are useful to debunk any accusation of counterfation.<br />
 </div>
 </div>
 
-<div id="outline-container-orgf9d26bf" class="outline-3">
-<h3 id="orgf9d26bf">Bitstream images</h3>
-<div class="outline-text-3" id="text-orgf9d26bf">
+<div id="outline-container-org487a132" class="outline-3">
+<h3 id="org487a132">Bitstream images</h3>
+<div class="outline-text-3" id="text-org487a132">
 <p>
 Usually, by &ldquo;copying and pasting&rdquo; we lose some important informations.<br />
 </p>
@@ -862,9 +896,9 @@ Of this image I want to make a hash, to ensure it&rsquo;s not tampered.<br />
 </div>
 </div>
 
-<div id="outline-container-org7ce51bf" class="outline-3">
-<h3 id="org7ce51bf">Acquisition procedure</h3>
-<div class="outline-text-3" id="text-org7ce51bf">
+<div id="outline-container-orgd96fbc3" class="outline-3">
+<h3 id="orgd96fbc3">Acquisition procedure</h3>
+<div class="outline-text-3" id="text-orgd96fbc3">
 <ul class="org-ul">
 <li>If possible, <b>disconnect the media</b><br />
 <ul class="org-ul">
@@ -909,9 +943,9 @@ The reason is that someone else who has analized before (or will analyze) the dr
 </p>
 </div>
 
-<div id="outline-container-orgc8c31b5" class="outline-4">
-<h4 id="orgc8c31b5">The time problem</h4>
-<div class="outline-text-4" id="text-orgc8c31b5">
+<div id="outline-container-org95095ec" class="outline-4">
+<h4 id="org95095ec">The time problem</h4>
+<div class="outline-text-4" id="text-org95095ec">
 <p>
 Computing the copy of a 1TB hdd/usb key might take some time depending on the interface used by the hdd itself or by the write blocker.<br />
 It might take several ours to compute an hash and make a copy of the source.<br />
@@ -923,9 +957,9 @@ To avoid the time waste, some softwares may automate part of the procedure by co
 </div>
 </div>
 
-<div id="outline-container-org1cdb098" class="outline-4">
-<h4 id="org1cdb098">The size problem</h4>
-<div class="outline-text-4" id="text-org1cdb098">
+<div id="outline-container-org08fe87d" class="outline-4">
+<h4 id="org08fe87d">The size problem</h4>
+<div class="outline-text-4" id="text-org08fe87d">
 <p>
 In large scale investigations (or when multiple investigations are held in parallel), the sizes of the drives might make storing their clones and transfering them a real burden.<br />
 Using external media devices is a no-go, since it slows down operations by a lot if you don&rsquo;t use the correct interfaces (USB).<br />
@@ -937,9 +971,9 @@ NASs and SANs are used all the times for this specific reason.<br />
 </div>
 </div>
 
-<div id="outline-container-orgd8ac81c" class="outline-4">
-<h4 id="orgd8ac81c">The encryption problem</h4>
-<div class="outline-text-4" id="text-orgd8ac81c">
+<div id="outline-container-orgce73895" class="outline-4">
+<h4 id="orgce73895">The encryption problem</h4>
+<div class="outline-text-4" id="text-orgce73895">
 <p>
 In Italy, it might not be required for the persecuted to provide the passcode to decrypt the evidence for the analysis, since it can be seen as <b>testifying against oneself</b>.<br />
 </p>
@@ -947,9 +981,9 @@ In Italy, it might not be required for the persecuted to provide the passcode to
 </div>
 </div>
 
-<div id="outline-container-orga54e42d" class="outline-3">
-<h3 id="orga54e42d">Forensics Duplicators</h3>
-<div class="outline-text-3" id="text-orga54e42d">
+<div id="outline-container-org10b60ca" class="outline-3">
+<h3 id="org10b60ca">Forensics Duplicators</h3>
+<div class="outline-text-3" id="text-org10b60ca">
 <p>
 These perform the hashes and copy the hard drive into one of the others, printing a receipt with all the informations of the process.<br />
 </p>
@@ -957,14 +991,14 @@ These perform the hashes and copy the hard drive into one of the others, printin
 </div>
 </div>
 
-<div id="outline-container-org125bb67" class="outline-2">
-<h2 id="org125bb67">Identification</h2>
-<div class="outline-text-2" id="text-org125bb67">
+<div id="outline-container-org4b2c9be" class="outline-2">
+<h2 id="org4b2c9be">Identification</h2>
+<div class="outline-text-2" id="text-org4b2c9be">
 </div>
 
-<div id="outline-container-org31b8303" class="outline-3">
-<h3 id="org31b8303">Setup</h3>
-<div class="outline-text-3" id="text-org31b8303">
+<div id="outline-container-org623bf29" class="outline-3">
+<h3 id="org623bf29">Setup</h3>
+<div class="outline-text-3" id="text-org623bf29">
 <p>
 The easyest operating system to work on when making forensic analisys is Linux, since it has/can:<br />
 </p>
@@ -979,9 +1013,9 @@ On a linux guest we might keep some windows vms to use soe additional tools.<br 
 </p>
 </div>
 
-<div id="outline-container-org6bb9399" class="outline-4">
-<h4 id="org6bb9399">Why not windows</h4>
-<div class="outline-text-4" id="text-org6bb9399">
+<div id="outline-container-org9473c00" class="outline-4">
+<h4 id="org9473c00">Why not windows</h4>
+<div class="outline-text-4" id="text-org9473c00">
 <p>
 Windows tampers with drives and <b>modifies evidence</b>.<br />
 It doesn&rsquo;t support many file systems.<br />
@@ -998,9 +1032,9 @@ Be wary of proprietary and non free software.<br />
 </div>
 </div>
 
-<div id="outline-container-org8802a54" class="outline-4">
-<h4 id="org8802a54">Repeatibility</h4>
-<div class="outline-text-4" id="text-org8802a54">
+<div id="outline-container-orga840512" class="outline-4">
+<h4 id="orga840512">Repeatibility</h4>
+<div class="outline-text-4" id="text-orga840512">
 <p>
 Since any other expert must be able to perform the same experiment, you should <b>avoid proprietary/paid forensic solutions</b>.<br />
 </p>
@@ -1010,9 +1044,9 @@ Moreover, if a machine is subject to a job without fully understanding (or havin
 </p>
 </div>
 
-<div id="outline-container-org42284f5" class="outline-5">
-<h5 id="org42284f5">Law enforcement tools</h5>
-<div class="outline-text-5" id="text-org42284f5">
+<div id="outline-container-orgfcfe0ad" class="outline-5">
+<h5 id="orgfcfe0ad">Law enforcement tools</h5>
+<div class="outline-text-5" id="text-orgfcfe0ad">
 <p>
 Adversarial Investigation tools that <b>must be left hidden</b> to the public in order to avoid other people (e.g. criminals) finding ways to circumvent them.<br />
 </p>
@@ -1024,9 +1058,9 @@ They are <i>not really fit</i> for the job, since to make an analysis scientific
 </div>
 </div>
 
-<div id="outline-container-orgb179dcd" class="outline-4">
-<h4 id="orgb179dcd">What analysis encompasses</h4>
-<div class="outline-text-4" id="text-orgb179dcd">
+<div id="outline-container-org036456c" class="outline-4">
+<h4 id="org036456c">What analysis encompasses</h4>
+<div class="outline-text-4" id="text-org036456c">
 <p>
 We will focus on tasks that only happen in forensics, but be careful: forensic analysis encompasses everything you have studied.<br />
 </p>
@@ -1034,17 +1068,17 @@ We will focus on tasks that only happen in forensics, but be careful: forensic a
 </div>
 </div>
 
-<div id="outline-container-orgbe2dc87" class="outline-3">
-<h3 id="orgbe2dc87">Data Recovery</h3>
-<div class="outline-text-3" id="text-orgbe2dc87">
+<div id="outline-container-org0e66459" class="outline-3">
+<h3 id="org0e66459">Data Recovery</h3>
+<div class="outline-text-3" id="text-org0e66459">
 <p>
 One of the most typical tasks of computer forensics<br />
 </p>
 </div>
 
-<div id="outline-container-org1dceb4c" class="outline-4">
-<h4 id="org1dceb4c">Disk Geometry</h4>
-<div class="outline-text-4" id="text-org1dceb4c">
+<div id="outline-container-orgaaf1ce1" class="outline-4">
+<h4 id="orgaaf1ce1">Disk Geometry</h4>
+<div class="outline-text-4" id="text-orgaaf1ce1">
 <p>
 The data is read from the tracks on the platters.<br />
 The minimum part of the track that can be read is a <b>Sector</b>.<br />
@@ -1072,9 +1106,9 @@ But we could check if a file we are seeking for matches with the part in the sla
 </div>
 </div>
 
-<div id="outline-container-org60b9d90" class="outline-4">
-<h4 id="org60b9d90">Retrieve data from the File System</h4>
-<div class="outline-text-4" id="text-org60b9d90">
+<div id="outline-container-org6e0d863" class="outline-4">
+<h4 id="org6e0d863">Retrieve data from the File System</h4>
+<div class="outline-text-4" id="text-org6e0d863">
 <p>
 The file system is the equivalent of the index of a series of folders and files.<br />
 In each <b>inode</b> you have a table of (direct | indirect) pointers to the data blocks that compose the file.<br />
@@ -1095,9 +1129,9 @@ If we want to access the deleted files, we either:<br />
 </div>
 </div>
 
-<div id="outline-container-orga26ad96" class="outline-4">
-<h4 id="orga26ad96">Carving</h4>
-<div class="outline-text-4" id="text-orga26ad96">
+<div id="outline-container-org74de383" class="outline-4">
+<h4 id="org74de383">Carving</h4>
+<div class="outline-text-4" id="text-org74de383">
 <p>
 Another method to retrieve data is the carving method, which consists in:<br />
 </p>
@@ -1118,9 +1152,9 @@ The problem comes when encryption and/or compression are taken into consideratio
 </div>
 </div>
 
-<div id="outline-container-orgf2f67b2" class="outline-3">
-<h3 id="orgf2f67b2">Antiforensic Techniques</h3>
-<div class="outline-text-3" id="text-orgf2f67b2">
+<div id="outline-container-orge17b357" class="outline-3">
+<h3 id="orge17b357">Antiforensic Techniques</h3>
+<div class="outline-text-3" id="text-orge17b357">
 <p>
 Aimed at circumventing the forensic analyst.<br />
 They are called transient when they just deviate the analysis, definitive when they destroy/tamper the evidence.<br />
@@ -1135,9 +1169,9 @@ The <b>most vunerable phases</b> are aquisition and identification.<br />
 <b>Definitive antiforensics</b> techniques can sometimes be detected, too, but cannot be reverted.<br />
 </p>
 </div>
-<div id="outline-container-org67cbf30" class="outline-4">
-<h4 id="org67cbf30">Timeline tampering</h4>
-<div class="outline-text-4" id="text-org67cbf30">
+<div id="outline-container-orgd2c24f7" class="outline-4">
+<h4 id="orgd2c24f7">Timeline tampering</h4>
+<div class="outline-text-4" id="text-orgd2c24f7">
 <p>
 A technique that consists in modifying the timestamp of files on the disk to make them appear not correlated one another.<br />
 It&rsquo;s a <b>definitive antiforensics</b> technique, since the old timestamp is not available anymore.<br />
@@ -1145,9 +1179,9 @@ It&rsquo;s a <b>definitive antiforensics</b> technique, since the old timestamp 
 </div>
 </div>
 
-<div id="outline-container-orga0c03cb" class="outline-4">
-<h4 id="orga0c03cb">Countering file recovery</h4>
-<div class="outline-text-4" id="text-orga0c03cb">
+<div id="outline-container-orgd57cb4e" class="outline-4">
+<h4 id="orgd57cb4e">Countering file recovery</h4>
+<div class="outline-text-4" id="text-orgd57cb4e">
 <p>
 File recovery uses data remnants on the disk, so:<br />
 </p>
@@ -1169,9 +1203,9 @@ This was never shown to be practical, but it was a reasonable assumption with th
 </div>
 </div>
 
-<div id="outline-container-org5fb52a3" class="outline-4">
-<h4 id="org5fb52a3">Fileless attacks</h4>
-<div class="outline-text-4" id="text-org5fb52a3">
+<div id="outline-container-org6966da0" class="outline-4">
+<h4 id="org6966da0">Fileless attacks</h4>
+<div class="outline-text-4" id="text-org6966da0">
 <p>
 No traces are left on the disk at all.<br />
 Metasploit has this feature: it injects in memory a DLL.<br />
@@ -1180,9 +1214,9 @@ Thus all traces are lost after the machine is turned off (and turning off is one
 </div>
 </div>
 
-<div id="outline-container-orgb715c91" class="outline-4">
-<h4 id="orgb715c91">Filesystem insertion and subversion technologies</h4>
-<div class="outline-text-4" id="text-orgb715c91">
+<div id="outline-container-org6190c66" class="outline-4">
+<h4 id="org6190c66">Filesystem insertion and subversion technologies</h4>
+<div class="outline-text-4" id="text-org6190c66">
 <p>
 We place the data <span class="underline">where there&rsquo;s no reason to look for it</span>.<br />
 The partition table, for example, has 32KB assigned but, in real use, it occupies 1KB at most.<br />
@@ -1201,9 +1235,9 @@ It is a <b>transient antiforensic</b> technique, since the evidence is hidden an
 </div>
 </div>
 
-<div id="outline-container-orgd193fc6" class="outline-4">
-<h4 id="orgd193fc6">Log tampering</h4>
-<div class="outline-text-4" id="text-orgd193fc6">
+<div id="outline-container-org8f74af9" class="outline-4">
+<h4 id="org8f74af9">Log tampering</h4>
+<div class="outline-text-4" id="text-org8f74af9">
 <p>
 If an attacker has access to the log files, it can tamper them to insert fake log entries or malicious code (this last option is only useful if they are automatically analyzed).<br />
 </p>
@@ -1214,9 +1248,9 @@ It is a <b>transient antiforensics</b> technique, since the real evidence has no
 </div>
 </div>
 
-<div id="outline-container-org916a5c8" class="outline-4">
-<h4 id="org916a5c8">Patition table tampering</h4>
-<div class="outline-text-4" id="text-org916a5c8">
+<div id="outline-container-org7eb581b" class="outline-4">
+<h4 id="org7eb581b">Patition table tampering</h4>
+<div class="outline-text-4" id="text-org7eb581b">
 <ul class="org-ul">
 <li>If a partition is not correctly aligned, the OS (Windows) might still use it, while forensic tools might miss them.<br /></li>
 <li>Normally, there is only one extendend partition per disk. Windows and Linux can manage multiple extended partitions, but forensic analysis tools might not support them.<br /></li>
@@ -1232,16 +1266,16 @@ This, too, is a <b>transient antiforensics</b> technique, since the data that co
 </div>
 </div>
 
-<div id="outline-container-orgbc3d440" class="outline-2">
-<h2 id="orgbc3d440">SSD forensics</h2>
-<div class="outline-text-2" id="text-orgbc3d440">
+<div id="outline-container-org64bcdbf" class="outline-2">
+<h2 id="org64bcdbf">SSD forensics</h2>
+<div class="outline-text-2" id="text-org64bcdbf">
 <p>
 SSDs are based on NAND based flash memory, widely used in mobile devices.<br />
 </p>
 </div>
-<div id="outline-container-orgc52867e" class="outline-3">
-<h3 id="orgc52867e">FTL</h3>
-<div class="outline-text-3" id="text-orgc52867e">
+<div id="outline-container-orga382e5b" class="outline-3">
+<h3 id="orga382e5b">FTL</h3>
+<div class="outline-text-3" id="text-orga382e5b">
 <p>
 In order to write on nand, you need to blank the block completely.<br />
 FTL (flash translation layer) chips are devices used to optimize the access to the SSD<br />
@@ -1276,16 +1310,16 @@ The FTL, moreover, is not standard: It is the main difference between different 
 </div>
 </div>
 
-<div id="outline-container-orgfd8c893" class="outline-3">
-<h3 id="orgfd8c893">Tests</h3>
-<div class="outline-text-3" id="text-orgfd8c893">
+<div id="outline-container-org3943f51" class="outline-3">
+<h3 id="org3943f51">Tests</h3>
+<div class="outline-text-3" id="text-org3943f51">
 <p>
 A set of tests was developed to assess the impacts of FTL on the use of black-box tools.<br />
 </p>
 </div>
-<div id="outline-container-org1b90d79" class="outline-4">
-<h4 id="org1b90d79">Trimming</h4>
-<div class="outline-text-4" id="text-org1b90d79">
+<div id="outline-container-org64d3944" class="outline-4">
+<h4 id="org64d3944">Trimming</h4>
+<div class="outline-text-4" id="text-org64d3944">
 <p>
 Trim activates after a second of the drive being IDLE, and it is very aggressive.<br />
 After ten second from the erase of the drive, it will be completely empties (looking through the FTL).<br />
@@ -1293,45 +1327,45 @@ After ten second from the erase of the drive, it will be completely empties (loo
 </div>
 </div>
 
-<div id="outline-container-org7356f63" class="outline-4">
-<h4 id="org7356f63">Garbage Collection</h4>
-<div class="outline-text-4" id="text-org7356f63">
+<div id="outline-container-org8bcb7f7" class="outline-4">
+<h4 id="org8bcb7f7">Garbage Collection</h4>
+<div class="outline-text-4" id="text-org8bcb7f7">
 <p>
 We didn&rsquo;t find Garbage collection of the drives.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org0304443" class="outline-4">
-<h4 id="org0304443">Erasing patterns</h4>
-<div class="outline-text-4" id="text-org0304443">
+<div id="outline-container-orgedd5202" class="outline-4">
+<h4 id="orgedd5202">Erasing patterns</h4>
+<div class="outline-text-4" id="text-orgedd5202">
 <p>
 Certain SSD controllers exhibit unexpected trimming patterns.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org69438b5" class="outline-4">
-<h4 id="org69438b5">Compression</h4>
-<div class="outline-text-4" id="text-org69438b5">
+<div id="outline-container-org728a162" class="outline-4">
+<h4 id="org728a162">Compression</h4>
+<div class="outline-text-4" id="text-org728a162">
 <p>
 Files with High entropy (that cannot be compressed) will take more time to be written<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgabaec4f" class="outline-4">
-<h4 id="orgabaec4f">Wear Leveling</h4>
-<div class="outline-text-4" id="text-orgabaec4f">
+<div id="outline-container-orgfa6cb33" class="outline-4">
+<h4 id="orgfa6cb33">Wear Leveling</h4>
+<div class="outline-text-4" id="text-orgfa6cb33">
 <p>
 We thought that wear leveling, since it would make shadow copies of the files, could help the forensic analysis. It does not.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3d03d45" class="outline-4">
-<h4 id="org3d03d45">Reults on file recoverability</h4>
-<div class="outline-text-4" id="text-org3d03d45">
+<div id="outline-container-org51c00d2" class="outline-4">
+<h4 id="org51c00d2">Reults on file recoverability</h4>
+<div class="outline-text-4" id="text-org51c00d2">
 <p>
 Very detrimental. If TRIM is active, it&rsquo;s quite difficult to recover any file.<br />
 </p>
@@ -1339,9 +1373,9 @@ Very detrimental. If TRIM is active, it&rsquo;s quite difficult to recover any f
 </div>
 </div>
 
-<div id="outline-container-orgb174027" class="outline-3">
-<h3 id="orgb174027">Conclusions</h3>
-<div class="outline-text-3" id="text-orgb174027">
+<div id="outline-container-org83129a6" class="outline-3">
+<h3 id="org83129a6">Conclusions</h3>
+<div class="outline-text-3" id="text-org83129a6">
 <p>
 For forensics analysts, SSD are a pain in the arse.<br />
 We can say that SSDs have an &ldquo;intrinsic&rdquo; secure deletion system.<br />
@@ -1349,17 +1383,17 @@ We can say that SSDs have an &ldquo;intrinsic&rdquo; secure deletion system.<br 
 </div>
 </div>
 </div>
-<div id="outline-container-org0f14a9e" class="outline-2">
-<h2 id="org0f14a9e">Evaluation and presentation</h2>
-<div class="outline-text-2" id="text-org0f14a9e">
+<div id="outline-container-org7d4609f" class="outline-2">
+<h2 id="org7d4609f">Evaluation and presentation</h2>
+<div class="outline-text-2" id="text-org7d4609f">
 <p>
 These phases are tightly coupled with experience and are difficult to teach generally.<br />
 </p>
 </div>
 
-<div id="outline-container-org2e3710d" class="outline-3">
-<h3 id="org2e3710d">Evaluation phase</h3>
-<div class="outline-text-3" id="text-org2e3710d">
+<div id="outline-container-org4d390a0" class="outline-3">
+<h3 id="org4d390a0">Evaluation phase</h3>
+<div class="outline-text-3" id="text-org4d390a0">
 <p>
 Consists in <b>matching the evidence elements with the required legal elements to support/negate a legal theory</b>.<br />
 </p>
@@ -1378,9 +1412,9 @@ Very often, expert witnesses work on the results of other experts (not on the ev
 </p>
 </div>
 
-<div id="outline-container-orgcb39460" class="outline-4">
-<h4 id="orgcb39460">The relationship with lawyers, customers and prosecutor/police</h4>
-<div class="outline-text-4" id="text-orgcb39460">
+<div id="outline-container-orgea1ff62" class="outline-4">
+<h4 id="orgea1ff62">The relationship with lawyers, customers and prosecutor/police</h4>
+<div class="outline-text-4" id="text-orgea1ff62">
 <p>
 The important thing to remember is that: &ldquo;unless you are a police officer, you are not a policeman&rdquo;. It&rsquo;s <b>not your duty to punish</b> someone.<br />
 Unless you are a lawyer, it&rsquo;s <b>not your duty to protect</b> people either (even though lawyers and customers pay your bills).<br />
@@ -1405,9 +1439,9 @@ In Italy, a super-partes kind of experts are available: the judge experts, reque
 </div>
 </div>
 
-<div id="outline-container-org40908c7" class="outline-4">
-<h4 id="org40908c7">Analyzing the documents</h4>
-<div class="outline-text-4" id="text-org40908c7">
+<div id="outline-container-org3eddb15" class="outline-4">
+<h4 id="org3eddb15">Analyzing the documents</h4>
+<div class="outline-text-4" id="text-org3eddb15">
 <p>
 You always need to analyze what can be said and <i>what can not</i>, possibly specifying <b>what further experiments would be needed</b> to say more.<br />
 </p>
@@ -1423,9 +1457,9 @@ It&rsquo;s also very important to <b>review previous documents and evidences</b>
 </div>
 </div>
 
-<div id="outline-container-org3fcfccb" class="outline-3">
-<h3 id="org3fcfccb">Presentation phase</h3>
-<div class="outline-text-3" id="text-org3fcfccb">
+<div id="outline-container-org753518a" class="outline-3">
+<h3 id="org753518a">Presentation phase</h3>
+<div class="outline-text-3" id="text-org753518a">
 <p>
 During the presentatiion phase, all experts must testify with objective facts (without interpretation or twisting) but they are not required to be completely non-sided to the matter (so they might want to avoid certain tests etc.)<br />
 But be wary, since omission of truth is persecutable in Italy <b>experts cannot</b>, when asked, <b>claim professional secrecy</b>.<br />
@@ -1437,9 +1471,9 @@ This implies that, should you find another crime evidence during your analysis, 
 </p>
 </div>
 
-<div id="outline-container-org9d41664" class="outline-4">
-<h4 id="org9d41664">Typical errors found in reports and analyses and presentation errors</h4>
-<div class="outline-text-4" id="text-org9d41664">
+<div id="outline-container-org978d5b8" class="outline-4">
+<h4 id="org978d5b8">Typical errors found in reports and analyses and presentation errors</h4>
+<div class="outline-text-4" id="text-org978d5b8">
 <p>
 If the theory is that &ldquo;a supernatural/incredibly powerful being did something&rdquo; and that cannot be confuted, it is a &ldquo;trojan defense&rdquo;.<br />
 (You can never exclude a trojan virus that deletes itself put the files on my computer, but it is not <b>falsifiable</b> so not <b>scientific</b>)<br />
@@ -1452,9 +1486,9 @@ The report you signed is the only thing you can bring with you in a court.<br />
 </p>
 </div>
 
-<div id="outline-container-orgdbae664" class="outline-5">
-<h5 id="orgdbae664">What to look for</h5>
-<div class="outline-text-5" id="text-orgdbae664">
+<div id="outline-container-org07cab48" class="outline-5">
+<h5 id="org07cab48">What to look for</h5>
+<div class="outline-text-5" id="text-org07cab48">
 <ul class="org-ul">
 <li><b>Acquisition errors</b><br />
 <ul class="org-ul">
@@ -1488,9 +1522,9 @@ On the other side, if you cannot dispute the facts that the opposition is saying
 </div>
 </div>
 
-<div id="outline-container-orgaa07b0d" class="outline-4">
-<h4 id="orgaa07b0d">What to do when your client is in the wrong</h4>
-<div class="outline-text-4" id="text-orgaa07b0d">
+<div id="outline-container-org3c74fd1" class="outline-4">
+<h4 id="org3c74fd1">What to do when your client is in the wrong</h4>
+<div class="outline-text-4" id="text-org3c74fd1">
 <p>
 You can avoid to present the informations about your client that aren&rsquo;t on your favor.<br />
 But if the prosecutor asks, you must respond (unless you &ldquo;didn&rsquo;t touch&rdquo; the topic in your analysis)<br />
@@ -1498,9 +1532,9 @@ But if the prosecutor asks, you must respond (unless you &ldquo;didn&rsquo;t tou
 </div>
 </div>
 
-<div id="outline-container-org553e572" class="outline-4">
-<h4 id="org553e572">Writing your report</h4>
-<div class="outline-text-4" id="text-org553e572">
+<div id="outline-container-org2d379cc" class="outline-4">
+<h4 id="org2d379cc">Writing your report</h4>
+<div class="outline-text-4" id="text-org2d379cc">
 <p>
 You want to explain the situation in a simple way, but not a simplistic way.<br />
 The judge won&rsquo;t like to be treated like a child, but he will want to understand everything (so all the technical terminology will have to be explained).<br />
@@ -1509,9 +1543,9 @@ You will also have to explain why certain things are relevant.<br />
 </div>
 </div>
 
-<div id="outline-container-org64cedff" class="outline-4">
-<h4 id="org64cedff">Structure of a report</h4>
-<div class="outline-text-4" id="text-org64cedff">
+<div id="outline-container-orgd16104b" class="outline-4">
+<h4 id="orgd16104b">Structure of a report</h4>
+<div class="outline-text-4" id="text-orgd16104b">
 <p>
 Always explain the reasons behind an analysis and its results.<br />
 </p>
@@ -1538,9 +1572,9 @@ Give a fast write up of what was written in the report, then use a strong ending
 </div>
 </div>
 
-<div id="outline-container-org534c61f" class="outline-3">
-<h3 id="org534c61f">Testimony as a witness</h3>
-<div class="outline-text-3" id="text-org534c61f">
+<div id="outline-container-org5eb7100" class="outline-3">
+<h3 id="org5eb7100">Testimony as a witness</h3>
+<div class="outline-text-3" id="text-org5eb7100">
 <p>
 In many jurisdiction, the expert may be called as a witness or may only just have to submit a report.<br />
 In Italy, if you are working in a criminal procedure, you must be called as a witness.<br />
@@ -1552,9 +1586,9 @@ In Italy, you are asked to know you duty as a witness: answer truthfully and not
 </div>
 </div>
 
-<div id="outline-container-orgfd9c420" class="outline-3">
-<h3 id="orgfd9c420">Direct and cross examination</h3>
-<div class="outline-text-3" id="text-orgfd9c420">
+<div id="outline-container-orga5122c5" class="outline-3">
+<h3 id="orga5122c5">Direct and cross examination</h3>
+<div class="outline-text-3" id="text-orga5122c5">
 <ul class="org-ul">
 <li><b>Direct examination</b><br />
 you are <i>first</i> called by your side and proceed to a friendly direct examination.<br />
@@ -1582,9 +1616,9 @@ In civil court, witnesses are expected to provide answers to questions that were
 </div>
 </div>
 
-<div id="outline-container-org82e3bdb" class="outline-2">
-<h2 id="org82e3bdb">Fraud analysis and detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></h2>
-<div class="outline-text-2" id="text-org82e3bdb">
+<div id="outline-container-orgc2c6ce2" class="outline-2">
+<h2 id="orgc2c6ce2">Fraud analysis and detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></h2>
+<div class="outline-text-2" id="text-orgc2c6ce2">
 <p>
 What is a <b>fraud</b>? It&rsquo;s a wrongful or criminal deception intended for financial or personal gain.<br />
 In particular, it is:<br />
@@ -1602,9 +1636,9 @@ Fraudsters do not operate independently, they involve complex and organized stru
 </ul>
 </div>
 
-<div id="outline-container-org2d21d1b" class="outline-3">
-<h3 id="org2d21d1b">Why people commit fraud</h3>
-<div class="outline-text-3" id="text-org2d21d1b">
+<div id="outline-container-orgcf0ff4b" class="outline-3">
+<h3 id="orgcf0ff4b">Why people commit fraud</h3>
+<div class="outline-text-3" id="text-orgcf0ff4b">
 <p>
 The main reason is the <span class="underline">potential monetary gain</span>.<br />
 But we have an abstact model that tries to explain the drivers of a fraud, the <b>fraud triangle</b>, composed of:<br />
@@ -1614,12 +1648,15 @@ But we have an abstact model that tries to explain the drivers of a fraud, the <
 <li>opportunity<br /></li>
 <li>rationalization<br /></li>
 </ul>
+<p>
+For example a frauster in a <b>difficult financial situation</b> (<sub>motivation</sub>_), with the <b>opportunity</b> to commit a fraud, might start to <b>rationalize the crime</b> as necessary and overall OK.<br />
+</p>
 </div>
 </div>
 
-<div id="outline-container-org57b4809" class="outline-3">
-<h3 id="org57b4809">Fraud categories</h3>
-<div class="outline-text-3" id="text-org57b4809">
+<div id="outline-container-org2ed0066" class="outline-3">
+<h3 id="org2ed0066">Fraud categories</h3>
+<div class="outline-text-3" id="text-org2ed0066">
 <ul class="org-ul">
 <li>Banking and credit card frauds<br />
 Has two subtypes:<br />
@@ -1676,25 +1713,26 @@ The second factor authentication based on the sim introduced by banks caused thi
 </div>
 </div>
 
-<div id="outline-container-orga26bfde" class="outline-3">
-<h3 id="orga26bfde">Anti-fraud stategies</h3>
-<div class="outline-text-3" id="text-orga26bfde">
+<div id="outline-container-org48ee6ab" class="outline-3">
+<h3 id="org48ee6ab">Anti-fraud stategies</h3>
+<div class="outline-text-3" id="text-org48ee6ab">
 </div>
-<div id="outline-container-org8ee015f" class="outline-4">
-<h4 id="org8ee015f">Anti fraud mechanisms</h4>
-<div class="outline-text-4" id="text-org8ee015f">
+<div id="outline-container-org148032e" class="outline-4">
+<h4 id="org148032e">Anti fraud mechanisms</h4>
+<div class="outline-text-4" id="text-org148032e">
 <p>
 Reduce losses due to frauds:<br />
 </p>
 <ul class="org-ul">
-<li>Prevents and detect part of the frauds.<br /></li>
-<li>hinder fraudsters who will look for other easier opportunities. (go on other organizations)<br /></li>
+<li>Prevent and detect part of the frauds.<br /></li>
+<li>Hinder fraudsters who will look for other easier opportunities (go on other organizations, for example).<br /></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org6a18f7e" class="outline-4">
-<h4 id="org6a18f7e">Fraud detection and Fraud prevention</h4>
-<div class="outline-text-4" id="text-org6a18f7e">
+
+<div id="outline-container-orgb0969ee" class="outline-4">
+<h4 id="orgb0969ee">Fraud detection and Fraud prevention</h4>
+<div class="outline-text-4" id="text-orgb0969ee">
 <p>
 <span class="underline">Fraud detection</span> mechanisms recognize fraudolent activities after they have happened (ex-post approach)<br />
 They usually provide the analyst with an index risk of fraud, depending on the past transaction (behavior) of the user<br />
@@ -1709,9 +1747,9 @@ They are <b>complementary</b> and <b>not independent</b>: if a fraud adapts to a
 </p>
 </div>
 
-<div id="outline-container-orga8c1fdd" class="outline-5">
-<h5 id="orga8c1fdd">Example of fraud prevention: Strong customer authentication</h5>
-<div class="outline-text-5" id="text-orga8c1fdd">
+<div id="outline-container-org6583409" class="outline-5">
+<h5 id="org6583409">Example of fraud prevention: Strong customer authentication</h5>
+<div class="outline-text-5" id="text-org6583409">
 <p>
 Two authentication methods are required to make a payment in the European Economic Area.<br />
 </p>
@@ -1722,13 +1760,14 @@ But each security measure impacts the cost and usability of a system and, for th
 </div>
 </div>
 </div>
-<div id="outline-container-org7927932" class="outline-4">
-<h4 id="org7927932">Strategies for Fraud detection and prevention</h4>
-<div class="outline-text-4" id="text-org7927932">
+
+<div id="outline-container-orgd6899b2" class="outline-4">
+<h4 id="orgd6899b2">Strategies for Fraud detection and prevention</h4>
+<div class="outline-text-4" id="text-orgd6899b2">
 </div>
-<div id="outline-container-org2b3abd5" class="outline-5">
-<h5 id="org2b3abd5">Expert-based approach</h5>
-<div class="outline-text-5" id="text-org2b3abd5">
+<div id="outline-container-orgfa274f0" class="outline-5">
+<h5 id="orgfa274f0">Expert-based approach</h5>
+<div class="outline-text-5" id="text-orgfa274f0">
 <p>
 This approach to fraud analysis is built on the domain knowledge of the fraud analyst.<br />
 It involves <b>manual investigation</b> of a suspicious case to understand the fraud mechanism.<br />
@@ -1744,9 +1783,9 @@ For example: If the amount of claim is above the threshold or if there is a seve
 </p>
 </div>
 
-<div id="outline-container-orgfd8b926" class="outline-6">
-<h6 id="orgfd8b926">Rule based engines</h6>
-<div class="outline-text-6" id="text-orgfd8b926">
+<div id="outline-container-org551e036" class="outline-6">
+<h6 id="org551e036">Rule based engines</h6>
+<div class="outline-text-6" id="text-org551e036">
 <p>
 Rudimental (but quite functional) fraud detection systems, but expensive to build.<br />
 </p>
@@ -1759,18 +1798,18 @@ Moreover, new <i>fraud patterns are not automatically signaled</i>: you must fir
 </div>
 </div>
 
-<div id="outline-container-org694479a" class="outline-5">
-<h5 id="org694479a">Automated fraud detection systems</h5>
-<div class="outline-text-5" id="text-org694479a">
+<div id="outline-container-org66a4259" class="outline-5">
+<h5 id="org66a4259">Automated fraud detection systems</h5>
+<div class="outline-text-5" id="text-org66a4259">
 <p>
-An automated system for detecting fraud requires less human involvement and could lead to a more efficient system, <b>based on data analysis</b>.<br />
+An automated system consists in a software implementing a mathematical model to recognize frauds. This approach requires less human involvement and could lead to a more efficient system.<br />
 <span class="underline">Expert knowledge remains, in any case, crucial to build the system</span>.<br />
 </p>
 </div>
 
-<div id="outline-container-org96a8501" class="outline-6">
-<h6 id="org96a8501">Data driven fraud detection</h6>
-<div class="outline-text-6" id="text-org96a8501">
+<div id="outline-container-org5cf4a5b" class="outline-6">
+<h6 id="org5cf4a5b">Data driven fraud detection</h6>
+<div class="outline-text-6" id="text-org5cf4a5b">
 <p>
 Based on machine learning.<br />
 It is <b>precise</b>, due to the increased detection power w.r.t. classic approaches and the massive amount of informations available from previous frauds.<br />
@@ -1781,9 +1820,9 @@ It is <b>efficient</b>, because it costs much less to automate the analysis than
 </div>
 </div>
 
-<div id="outline-container-orgd634163" class="outline-4">
-<h4 id="orgd634163">Fraud management</h4>
-<div class="outline-text-4" id="text-orgd634163">
+<div id="outline-container-org50d026b" class="outline-4">
+<h4 id="org50d026b">Fraud management</h4>
+<div class="outline-text-4" id="text-org50d026b">
 <p>
 When a fraud is detected, it must be<br />
 </p>
@@ -1799,25 +1838,12 @@ A fraud becomes easier to detect the more time has passed, due to copycats using
 </div>
 </div>
 
-<div id="outline-container-org52196bf" class="outline-3">
-<h3 id="org52196bf">Frauds as a dynamic phenomenon</h3>
-<div class="outline-text-3" id="text-org52196bf">
-<p>
-Frauds remain hard and complex to detect.<br />
-</p>
-
-<p>
-A fraudster may think about sending fraudolent transactions that may try to <b>shift the model of fraud detection systems</b> of an institution.<br />
-Unsupervised learning technique must be still monitored by experts.<br />
-</p>
-</div>
-</div>
-<div id="outline-container-orgf6e5338" class="outline-3">
-<h3 id="orgf6e5338">Techniques to detect a fraud automatically</h3>
-<div class="outline-text-3" id="text-orgf6e5338">
+<div id="outline-container-orgbe109dd" class="outline-3">
+<h3 id="orgbe109dd">Techniques to detect a fraud automatically</h3>
+<div class="outline-text-3" id="text-orgbe109dd">
 <p>
 New techniques able to <span class="underline">adapt to new frauds</span> are needed.<br />
-They can either be<br />
+They can either be:<br />
 </p>
 <ul class="org-ul">
 <li><b>Unsupervised learning</b> (or descriptive) analytics techniques<br /></li>
@@ -1825,18 +1851,18 @@ They can either be<br />
 </ul>
 </div>
 
-<div id="outline-container-org25b16e6" class="outline-4">
-<h4 id="org25b16e6">Unsupervised learning analytics techniques</h4>
-<div class="outline-text-4" id="text-org25b16e6">
+<div id="outline-container-org35e70ad" class="outline-4">
+<h4 id="org35e70ad">Unsupervised learning analytics techniques</h4>
+<div class="outline-text-4" id="text-org35e70ad">
 <p>
 They do <b>not require labeled observations</b>. They learn from past observations by <b>detecting anomalies</b>.<br />
 They can detect novel fraud patterns.<br />
 </p>
 </div>
 
-<div id="outline-container-org03e7f0c" class="outline-5">
-<h5 id="org03e7f0c">Telecommunication example</h5>
-<div class="outline-text-5" id="text-org03e7f0c">
+<div id="outline-container-org8c4a847" class="outline-5">
+<h5 id="org8c4a847">Telecommunication example</h5>
+<div class="outline-text-5" id="text-org8c4a847">
 <p>
 I can see a fraud is in act if I see <i>multiple short calls</i>, <i>during night hours</i> and <i>with little time between one another</i>.<br />
 But note that there can be multiple false negatives.<br />
@@ -1844,9 +1870,9 @@ But note that there can be multiple false negatives.<br />
 </div>
 </div>
 
-<div id="outline-container-orgb22d938" class="outline-5">
-<h5 id="orgb22d938">Limitations</h5>
-<div class="outline-text-5" id="text-orgb22d938">
+<div id="outline-container-org3ad8455" class="outline-5">
+<h5 id="org3ad8455">Limitations</h5>
+<div class="outline-text-5" id="text-org3ad8455">
 <p>
 Unsupervised learning techniques are <b>prone to deception</b> by camouflage-like fraud strategies.<br />
 They need to be complemented by other tools.<br />
@@ -1855,18 +1881,18 @@ They need to be complemented by other tools.<br />
 </div>
 </div>
 
-<div id="outline-container-org180ccf1" class="outline-4">
-<h4 id="org180ccf1">Supervised learning techniques</h4>
-<div class="outline-text-4" id="text-org180ccf1">
+<div id="outline-container-orgc9999bb" class="outline-4">
+<h4 id="orgc9999bb">Supervised learning techniques</h4>
+<div class="outline-text-4" id="text-orgc9999bb">
 <p>
 Learn from <b>labeled</b> historical observations, where the fraud was exposed.<br />
 They can find known alarms that fraudsters cannot hide.<br />
 </p>
 </div>
 
-<div id="outline-container-org92df08d" class="outline-5">
-<h5 id="org92df08d">Limitations</h5>
-<div class="outline-text-5" id="text-org92df08d">
+<div id="outline-container-org8727df0" class="outline-5">
+<h5 id="org8727df0">Limitations</h5>
+<div class="outline-text-5" id="text-org8727df0">
 <ul class="org-ul">
 <li>Low detection power against new fraud types<br /></li>
 <li>Need a labeled set to learn from<br /></li>
@@ -1876,9 +1902,9 @@ They can find known alarms that fraudsters cannot hide.<br />
 </div>
 </div>
 
-<div id="outline-container-org4051794" class="outline-3">
-<h3 id="org4051794">Developing a fraud detection system</h3>
-<div class="outline-text-3" id="text-org4051794">
+<div id="outline-container-orgd0b3d39" class="outline-3">
+<h3 id="orgd0b3d39">Developing a fraud detection system</h3>
+<div class="outline-text-3" id="text-orgd0b3d39">
 <ol class="org-ol">
 <li>Start with an Expert-based rule engine<br /></li>
 <li>use a unsupervised learning system<br /></li>
@@ -1890,18 +1916,18 @@ The exact order of adoption depends from case to case.<br />
 </div>
 </div>
 
-<div id="outline-container-org8d3d6a5" class="outline-3">
-<h3 id="org8d3d6a5">Social Network Analysis</h3>
-<div class="outline-text-3" id="text-org8d3d6a5">
+<div id="outline-container-org99be74c" class="outline-3">
+<h3 id="org99be74c">Social Network Analysis</h3>
+<div class="outline-text-3" id="text-org99be74c">
 <p>
 Extends the abilities of fraud detection systems by detecting <span class="underline">characteristics of frauds between linked entities</span>.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org04c0366" class="outline-3">
-<h3 id="org04c0366">Fraud management cycle</h3>
-<div class="outline-text-3" id="text-org04c0366">
+<div id="outline-container-org0bc544a" class="outline-3">
+<h3 id="org0bc544a">Fraud management cycle</h3>
+<div class="outline-text-3" id="text-org0bc544a">
 <p>
 you have to put together the following steps:<br />
 </p>
@@ -1914,9 +1940,9 @@ you have to put together the following steps:<br />
 </ol>
 </div>
 
-<div id="outline-container-org50b41c9" class="outline-4">
-<h4 id="org50b41c9">Regular update of the model</h4>
-<div class="outline-text-4" id="text-org50b41c9">
+<div id="outline-container-org97f76e8" class="outline-4">
+<h4 id="org97f76e8">Regular update of the model</h4>
+<div class="outline-text-4" id="text-org97f76e8">
 <p>
 The <b>frequency</b> of update of your model depends on:<br />
 </p>
@@ -1929,18 +1955,19 @@ The <b>frequency</b> of update of your model depends on:<br />
 </ul>
 </div>
 
-<div id="outline-container-org31e728b" class="outline-5">
-<h5 id="org31e728b">Reinforcement learning</h5>
-<div class="outline-text-5" id="text-org31e728b">
+<div id="outline-container-orga3c822a" class="outline-5">
+<h5 id="orga3c822a">Reinforcement learning</h5>
+<div class="outline-text-5" id="text-orga3c822a">
 <p>
 Instead of waiting for a window to update the model, continuously update it as soon as new data is available.<br />
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org143a165" class="outline-4">
-<h4 id="org143a165">Example: Credit card fraud</h4>
-<div class="outline-text-4" id="text-org143a165">
+
+<div id="outline-container-org25a400b" class="outline-4">
+<h4 id="org25a400b">Example: Credit card fraud</h4>
+<div class="outline-text-4" id="text-org25a400b">
 <p>
 <b>Outlier detection</b> is made by analyzing clusters of common transaction based on position and time.<br />
 If a transaction happens outside of a group (it&rsquo;s an outlier), they might be a fraud.<br />
@@ -1954,9 +1981,9 @@ An outlier might be a fraudster or a victim.<br />
 </div>
 </div>
 
-<div id="outline-container-orgd2ad05a" class="outline-3">
-<h3 id="orgd2ad05a">Fraud analytical process</h3>
-<div class="outline-text-3" id="text-orgd2ad05a">
+<div id="outline-container-org429f85e" class="outline-3">
+<h3 id="org429f85e">Fraud analytical process</h3>
+<div class="outline-text-3" id="text-org429f85e">
 <p>
 How to develop a <b>fraud analysis model</b>.<br />
 </p>
@@ -1972,9 +1999,9 @@ The performance of your model will strictly depend on this step.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-orgfa08019" class="outline-4">
-<h4 id="orgfa08019">Preprocessing</h4>
-<div class="outline-text-4" id="text-orgfa08019">
+<div id="outline-container-org2c677ef" class="outline-4">
+<h4 id="org2c677ef">Preprocessing</h4>
+<div class="outline-text-4" id="text-org2c677ef">
 <ul class="org-ul">
 <li>identify the business problem<br /></li>
 <li>identify the data sources<br /></li>
@@ -1985,17 +2012,17 @@ The performance of your model will strictly depend on this step.<br /></li>
 </div>
 </div>
 
-<div id="outline-container-orgfc2c85d" class="outline-4">
-<h4 id="orgfc2c85d">Analytics</h4>
-<div class="outline-text-4" id="text-orgfc2c85d">
+<div id="outline-container-orga586d38" class="outline-4">
+<h4 id="orga586d38">Analytics</h4>
+<div class="outline-text-4" id="text-orga586d38">
 <ul class="org-ul">
 <li>Analyze the data. Here the <b>model is built</b> based on the data preprocessed.<br /></li>
 </ul>
 </div>
 
-<div id="outline-container-org497d982" class="outline-5">
-<h5 id="org497d982">Possible analysis outputs</h5>
-<div class="outline-text-5" id="text-org497d982">
+<div id="outline-container-org77c7453" class="outline-5">
+<h5 id="org77c7453">Possible analysis outputs</h5>
+<div class="outline-text-5" id="text-org77c7453">
 <ul class="org-ul">
 <li>Find known easy frauds, that ensure the system is working<br /></li>
 <li>Find unknown patterns, that provide added insight and detection power.<br /></li>
@@ -2008,18 +2035,18 @@ In any case, you&rsquo;re going to work on <b>clusters</b>, and will be trying t
 </div>
 </div>
 
-<div id="outline-container-orga38eb36" class="outline-4">
-<h4 id="orga38eb36">Post processing phase</h4>
-<div class="outline-text-4" id="text-orga38eb36">
+<div id="outline-container-org9941e37" class="outline-4">
+<h4 id="org9941e37">Post processing phase</h4>
+<div class="outline-text-4" id="text-org9941e37">
 <p>
 Validate the model created with experts.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org61b35f7" class="outline-4">
-<h4 id="org61b35f7">Key characteristics of successful fraud analtics models</h4>
-<div class="outline-text-4" id="text-org61b35f7">
+<div id="outline-container-org7dfa52c" class="outline-4">
+<h4 id="org7dfa52c">Key characteristics of successful fraud analtics models</h4>
+<div class="outline-text-4" id="text-org7dfa52c">
 <p>
 To understand if your system is working I must monitor:<br />
 </p>
@@ -2034,9 +2061,10 @@ The time and effort that is required to obtain a result and evaluate it is impor
 </ul>
 </div>
 </div>
-<div id="outline-container-org29ac0cd" class="outline-4">
-<h4 id="org29ac0cd">Fraud management as risk management</h4>
-<div class="outline-text-4" id="text-org29ac0cd">
+
+<div id="outline-container-org2edf0c8" class="outline-4">
+<h4 id="org2edf0c8">Fraud management as risk management</h4>
+<div class="outline-text-4" id="text-org2edf0c8">
 <p>
 Every time we have to deploy a fraud management system, we must consider<br />
 </p>
@@ -2060,9 +2088,9 @@ Direct costs are the equipment, its management and its operation.<br />
 </ul>
 </div>
 
-<div id="outline-container-orgfc171fe" class="outline-5">
-<h5 id="orgfc171fe">Economical cost</h5>
-<div class="outline-text-5" id="text-orgfc171fe">
+<div id="outline-container-orgb2f3373" class="outline-5">
+<h5 id="orgb2f3373">Economical cost</h5>
+<div class="outline-text-5" id="text-orgb2f3373">
 <p>
 Developing and implementing a fraud-detection model involves a significant cost to an organization.<br />
 </p>
@@ -2079,9 +2107,9 @@ Moreover, now that the fraud-detection model should go under the <span class="un
 </div>
 </div>
 
-<div id="outline-container-org8b7e0d2" class="outline-3">
-<h3 id="org8b7e0d2">Challenges of developing fraud-detection models</h3>
-<div class="outline-text-3" id="text-org8b7e0d2">
+<div id="outline-container-org268ed38" class="outline-3">
+<h3 id="org268ed38">Challenges of developing fraud-detection models</h3>
+<div class="outline-text-3" id="text-org268ed38">
 <ul class="org-ul">
 <li>Dynamic nature of frauds<br />
 As previously seen, fraudsters will keep on trying to beat detection and prevention systems by developing new strategies and methods.<br />
@@ -2100,9 +2128,9 @@ The model must be able to deal with massive amounts of data.<br /></li>
 </div>
 </div>
 
-<div id="outline-container-org0495d1a" class="outline-3">
-<h3 id="org0495d1a">Red flags of frauds</h3>
-<div class="outline-text-3" id="text-org0495d1a">
+<div id="outline-container-org9aaadd3" class="outline-3">
+<h3 id="org9aaadd3">Red flags of frauds</h3>
+<div class="outline-text-3" id="text-org9aaadd3">
 <p>
 What we want to extract from an analysis are the &ldquo; <span class="underline">patterns</span> &rdquo; for frauds, to be used as the grounding truth for new fraud detection systems.<br />
 </p>
@@ -2114,34 +2142,35 @@ This means translating the typical anomalies (called &ldquo;red flags&rdquo; her
 </div>
 </div>
 
-<div id="outline-container-org20944b2" class="outline-2">
-<h2 id="org20944b2">Machine Learning for Fraud Detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></h2>
-<div class="outline-text-2" id="text-org20944b2">
+<div id="outline-container-orgc002e79" class="outline-2">
+<h2 id="orgc002e79">Machine Learning for Fraud Detection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="Carminati">Carminati</span></span></h2>
+<div class="outline-text-2" id="text-orgc002e79">
 <p>
 In the previous section we focused on the fraud analisys and detection management part, where we studied how to counteract frauds.<br />
 Let&rsquo;s now focus on how we can apply machine learning techniques in automatic fraud detection. (the more analytical part).<br />
 </p>
 </div>
-<div id="outline-container-orge266e29" class="outline-3">
-<h3 id="orge266e29">Notice</h3>
-<div class="outline-text-3" id="text-orge266e29">
+<div id="outline-container-orge2b3d3f" class="outline-3">
+<h3 id="orge2b3d3f">Notice</h3>
+<div class="outline-text-3" id="text-orge2b3d3f">
 <p>
 During the years, many techniques have been developed for fraud detection with ML from different disciplines.<br />
 The main focus won&rsquo;t be on the technicalities of these techniques but on the fraud detection perspective.<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgb81233b" class="outline-3">
-<h3 id="orgb81233b">Data preprocessing</h3>
-<div class="outline-text-3" id="text-orgb81233b">
+
+<div id="outline-container-org17a0649" class="outline-3">
+<h3 id="org17a0649">Data preprocessing</h3>
+<div class="outline-text-3" id="text-org17a0649">
 <p>
 This part is where the experts lose 70% of their time.<br />
 </p>
 </div>
 
-<div id="outline-container-orgf2c85ea" class="outline-4">
-<h4 id="orgf2c85ea">Real data problems</h4>
-<div class="outline-text-4" id="text-orgf2c85ea">
+<div id="outline-container-org018fd28" class="outline-4">
+<h4 id="org018fd28">Real data problems</h4>
+<div class="outline-text-4" id="text-org018fd28">
 <p>
 When you&rsquo;re working on the theory, the more data you have the better.<br />
 When we move to the real world though, this sentence is not so true anymore.<br />
@@ -2158,9 +2187,9 @@ We need to <b>filter our data accordingly</b>. Even the slightest mistake can le
 </div>
 </div>
 
-<div id="outline-container-org54768bf" class="outline-4">
-<h4 id="org54768bf">Types of sources</h4>
-<div class="outline-text-4" id="text-org54768bf">
+<div id="outline-container-orgdb94584" class="outline-4">
+<h4 id="orgdb94584">Types of sources</h4>
+<div class="outline-text-4" id="text-orgdb94584">
 <p>
 To fulfill an analysis, you need to know what data sources to acquire from.<br />
 </p>
@@ -2174,11 +2203,11 @@ The main objective is to <b>find correlations between data sources</b>.<br />
 </p>
 </div>
 
-<div id="outline-container-org557ab1e" class="outline-5">
-<h5 id="org557ab1e">Transactional Data</h5>
-<div class="outline-text-5" id="text-org557ab1e">
+<div id="outline-container-orgec051c3" class="outline-5">
+<h5 id="orgec051c3">Transactional Data</h5>
+<div class="outline-text-5" id="text-orgec051c3">
 <p>
-One kind of data source.<br />
+The most common kind of data source.<br />
 It&rsquo;s composed of structured informations capturing the characteristics of a transaction from a customer.<br />
 </p>
 
@@ -2198,28 +2227,28 @@ These features can be used individually or jointly, and their interaction can be
 </div>
 </div>
 
-<div id="outline-container-orgab61d81" class="outline-4">
-<h4 id="orgab61d81">Types of data elements</h4>
-<div class="outline-text-4" id="text-orgab61d81">
+<div id="outline-container-org9349c79" class="outline-4">
+<h4 id="org9349c79">Types of data elements</h4>
+<div class="outline-text-4" id="text-org9349c79">
 <p>
 You can either have continuous data or categorical data:<br />
 </p>
 <ul class="org-ul">
 <li><b>Continuous</b> data<br />
-data elements are defined on an <span class="underline">interval</span> (limited or unlimited) (the amount of a transaction or its timestamp is an example)<br /></li>
+Data elements are defined on an <span class="underline">interval</span> (limited or unlimited) (the amount of a transaction or its timestamp is an example)<br /></li>
 <li><b>Categorical</b> data<br />
 <ul class="org-ul">
-<li><span class="underline">Nominal</span>: data elements that are <span class="underline">limited on a set of values</span> without ordering (iban; IP; motivation; region)<br /></li>
-<li><span class="underline">Ordinal</span>: data elements <span class="underline">limited on a set</span> <span class="underline">with an ordering</span><br /></li>
+<li><span class="underline">Nominal</span>: data elements that are <span class="underline">discrete on a set of values</span> without ordering (Ibans; IP; Motivation; Region)<br /></li>
+<li><span class="underline">Ordinal</span>: data elements <span class="underline">discrete on a set</span> <span class="underline">with an ordering</span><br /></li>
 <li><span class="underline">Binary</span>: data elements that <span class="underline">can only take two values</span>.<br /></li>
 </ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org92767e9" class="outline-4">
-<h4 id="org92767e9">Sampling</h4>
-<div class="outline-text-4" id="text-org92767e9">
+<div id="outline-container-org18f171d" class="outline-4">
+<h4 id="org18f171d">Sampling</h4>
+<div class="outline-text-4" id="text-org18f171d">
 <p>
 Sampling consists in taking a subset of the dataset available to build our data model.<br />
 This step is needed because we need to <b>generalize</b> and <b>model the future</b>, and to do so we need to <b>focus more on newer data</b> (by taking more samples from newer time frames). A good sample must be <span class="underline">representative for the future</span>.<br />
@@ -2234,9 +2263,9 @@ Your <b>average period</b> (the time window you selected) must also be as unbias
 </p>
 </div>
 
-<div id="outline-container-org9f611c2" class="outline-5">
-<h5 id="org9f611c2">Bias example</h5>
-<div class="outline-text-5" id="text-org9f611c2">
+<div id="outline-container-org1c7abaf" class="outline-5">
+<h5 id="org1c7abaf">Bias example</h5>
+<div class="outline-text-5" id="text-org1c7abaf">
 <p>
 In holidays, users change their spending pattern.<br />
 Not only that, but also the types of goods bought are different.<br />
@@ -2261,9 +2290,9 @@ Sampling has a direct impact on the fraud detection power.<br />
 </div>
 </div>
 
-<div id="outline-container-orga4264f3" class="outline-5">
-<h5 id="orga4264f3">Stratified sampling</h5>
-<div class="outline-text-5" id="text-orga4264f3">
+<div id="outline-container-org8cb2e95" class="outline-5">
+<h5 id="org8cb2e95">Stratified sampling</h5>
+<div class="outline-text-5" id="text-org8cb2e95">
 <p>
 To make a <i>stratified sample</i> means to <b>keep some properties</b> (found in the data) <b>valid</b> in the sample taken.<br />
 </p>
@@ -2279,9 +2308,9 @@ When doing sampling, you might want to extract samples taking into consideration
 </div>
 </div>
 
-<div id="outline-container-org0f4c385" class="outline-4">
-<h4 id="org0f4c385">Visual data exploration</h4>
-<div class="outline-text-4" id="text-org0f4c385">
+<div id="outline-container-orga94e50b" class="outline-4">
+<h4 id="orga94e50b">Visual data exploration</h4>
+<div class="outline-text-4" id="text-orga94e50b">
 <p>
 First informal step after sampling.<br />
 You basically analyze the distribution of data visually (through charts) to find its properties.<br />
@@ -2289,9 +2318,9 @@ You basically analyze the distribution of data visually (through charts) to find
 </div>
 </div>
 
-<div id="outline-container-orgebcba12" class="outline-4">
-<h4 id="orgebcba12">Exploratory statistical Analysis</h4>
-<div class="outline-text-4" id="text-orgebcba12">
+<div id="outline-container-orgfa32485" class="outline-4">
+<h4 id="orgfa32485">Exploratory statistical Analysis</h4>
+<div class="outline-text-4" id="text-orgfa32485">
 <p>
 Some <b>statistical measurements</b> (average, standard deviation etc.) can be made on the data to extract some properties.<br />
 </p>
@@ -2302,9 +2331,9 @@ Some fitting of the distribution of the data can help to understand other charac
 </div>
 </div>
 
-<div id="outline-container-orgd5749a6" class="outline-4">
-<h4 id="orgd5749a6">Dealing with missing values</h4>
-<div class="outline-text-4" id="text-orgd5749a6">
+<div id="outline-container-org0e46026" class="outline-4">
+<h4 id="org0e46026">Dealing with missing values</h4>
+<div class="outline-text-4" id="text-org0e46026">
 <p>
 Missing values can either have been omitted (due to information being non applicable or undisclosed) or simply be missing due to an error.<br />
 </p>
@@ -2324,13 +2353,13 @@ If it&rsquo;s not the case, another of the two methods can be applied.<br /></li
 </div>
 </div>
 
-<div id="outline-container-org013a823" class="outline-4">
-<h4 id="org013a823">Outliers</h4>
-<div class="outline-text-4" id="text-org013a823">
+<div id="outline-container-org48da439" class="outline-4">
+<h4 id="org48da439">Outliers</h4>
+<div class="outline-text-4" id="text-org48da439">
 <p>
 Outliers are extreme values that are dissimilar to the rest of the population.<br />
 Some of these values might be legitimate (or they might be the result of invalid observations).<br />
-The methods to find them will be described in more depth later on (see the sections on <a href="#org4698b44">Outliers detection</a>)<br />
+The methods to find them will be described in more depth later on (see the sections on <a href="#orge9c36ce">Outliers detection</a>)<br />
 </p>
 
 <p>
@@ -2346,9 +2375,9 @@ Other methods (namely fitting regression lines and mahalanobis distance) are use
 </ul>
 </div>
 
-<div id="outline-container-org81b0243" class="outline-5">
-<h5 id="org81b0243">Outlier treatment</h5>
-<div class="outline-text-5" id="text-org81b0243">
+<div id="outline-container-org07e336d" class="outline-5">
+<h5 id="org07e336d">Outlier treatment</h5>
+<div class="outline-text-5" id="text-org07e336d">
 <p>
 If an outlier is an invalid observation, you can treat it as a missing value.<br />
 For valid observation, you can impose a range of values that do not modify your mean too much and put the outlier at one of the extremes.<br />
@@ -2357,9 +2386,9 @@ For valid observation, you can impose a range of values that do not modify your 
 </div>
 </div>
 
-<div id="outline-container-org4a8ed1f" class="outline-4">
-<h4 id="org4a8ed1f">When invalid data is not outlying</h4>
-<div class="outline-text-4" id="text-org4a8ed1f">
+<div id="outline-container-org02ff1f3" class="outline-4">
+<h4 id="org02ff1f3">When invalid data is not outlying</h4>
+<div class="outline-text-4" id="text-org02ff1f3">
 <p>
 Sometimes, invalid values are not outliers though.<br />
 </p>
@@ -2378,18 +2407,18 @@ To impose these checks you need the help of experts.<br />
 </div>
 </div>
 
-<div id="outline-container-orgc1b1cbe" class="outline-4">
-<h4 id="orgc1b1cbe">Conclusion on outliers and invalid values</h4>
-<div class="outline-text-4" id="text-orgc1b1cbe">
+<div id="outline-container-org42afd67" class="outline-4">
+<h4 id="org42afd67">Conclusion on outliers and invalid values</h4>
+<div class="outline-text-4" id="text-org42afd67">
 <p>
 Every single time you have to treat outliers and invalid values you must be really cautious when using the previous techniques, since these methods will impact the performance of your system (by removing the outliers, for example, you could lose some frauds).<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf76055e" class="outline-4">
-<h4 id="orgf76055e">Standardization</h4>
-<div class="outline-text-4" id="text-orgf76055e">
+<div id="outline-container-org7992f1a" class="outline-4">
+<h4 id="org7992f1a">Standardization</h4>
+<div class="outline-text-4" id="text-org7992f1a">
 <p>
 Standardizatoin consists in <b>scaling variables to a similar range</b>. This step is <span class="underline">heavily affected by outliers</span>.<br />
 You must always use common standardization methods.<br />
@@ -2397,19 +2426,19 @@ You must always use common standardization methods.<br />
 </div>
 </div>
 
-<div id="outline-container-org089b15c" class="outline-4">
-<h4 id="org089b15c">Categorization</h4>
-<div class="outline-text-4" id="text-org089b15c">
+<div id="outline-container-org81b67bb" class="outline-4">
+<h4 id="org81b67bb">Categorization</h4>
+<div class="outline-text-4" id="text-org81b67bb">
 <p>
-To confront <i><a href="#orgab61d81">categorical values</a></i> , they must first be <span class="underline">transformed</span> to reduce their number of categories.<br />
+To confront <i><a href="#org9349c79">categorical values</a></i> , they must first be <span class="underline">transformed</span> to reduce their number of categories.<br />
 For example, IBANs and IPs could be categorized by their frequency (this process would make them comparable).<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1b1b311" class="outline-4">
-<h4 id="org1b1b311">Variable Selection</h4>
-<div class="outline-text-4" id="text-org1b1b311">
+<div id="outline-container-org793368c" class="outline-4">
+<h4 id="org793368c">Variable Selection</h4>
+<div class="outline-text-4" id="text-org793368c">
 <p>
 A dataset is composed by hundreds of features.<br />
 On a detection model, there are usually 10-15 of them.<br />
@@ -2417,9 +2446,9 @@ Which features to select in a model is a challenging task by itself.<br />
 </p>
 </div>
 
-<div id="outline-container-org7b20683" class="outline-5">
-<h5 id="org7b20683">Filters</h5>
-<div class="outline-text-5" id="text-org7b20683">
+<div id="outline-container-org4e01fd4" class="outline-5">
+<h5 id="org4e01fd4">Filters</h5>
+<div class="outline-text-5" id="text-org4e01fd4">
 <p>
 Filters are used to <span class="underline">understand the informations each variable gives to the model</span>.<br />
 They are standardized (pearson correlation, fisher score etc.), but they are not meant to be your only analysis step.<br />
@@ -2431,18 +2460,18 @@ Their main limitation is that you usually work variable by variable, without con
 </div>
 </div>
 
-<div id="outline-container-orgecb4f79" class="outline-5">
-<h5 id="orgecb4f79">Wrapper</h5>
-<div class="outline-text-5" id="text-orgecb4f79">
+<div id="outline-container-orge4f30bb" class="outline-5">
+<h5 id="orge4f30bb">Wrapper</h5>
+<div class="outline-text-5" id="text-orge4f30bb">
 <p>
 Instead of having to select my features at the beginning, I only give in input different set of features and see what the more promising sets are.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org7b41a45" class="outline-5">
-<h5 id="org7b41a45">Principal Components Analysis</h5>
-<div class="outline-text-5" id="text-org7b41a45">
+<div id="outline-container-org742620a" class="outline-5">
+<h5 id="org742620a">Principal Components Analysis</h5>
+<div class="outline-text-5" id="text-org742620a">
 <p>
 Try to reduce the number of variables by computing new variables, called <b>principal components</b>, that are <span class="underline">not correlated one another</span> and are <span class="underline">linear correlations of the original variables</span> .<br />
 </p>
@@ -2461,9 +2490,9 @@ But the new variables made might be not as interpretable than the original ones.
 </div>
 </div>
 
-<div id="outline-container-org20993db" class="outline-3">
-<h3 id="org20993db">Descriptive analytics for fraud detection</h3>
-<div class="outline-text-3" id="text-org20993db">
+<div id="outline-container-orgf87e498" class="outline-3">
+<h3 id="orgf87e498">Descriptive analytics for fraud detection (Unsupervised learining techniques)</h3>
+<div class="outline-text-3" id="text-orgf87e498">
 <p>
 <b>Unsupervised learning techniques</b> are used to <span class="underline">find anomalies</span> deviating from the norm. The main challenge is defining the norm; To do so, we use <b>descriptive analytics</b>.<br />
 Two possibilities (with different levels of granularity):<br />
@@ -2479,9 +2508,9 @@ Besides these limitations, they are usually useful to <span class="underline">un
 </p>
 </div>
 
-<div id="outline-container-org2da8885" class="outline-4">
-<h4 id="org2da8885">Relevant environments for Unsupervised learning</h4>
-<div class="outline-text-4" id="text-org2da8885">
+<div id="outline-container-orgb4c31d9" class="outline-4">
+<h4 id="orgb4c31d9">Relevant environments for Unsupervised learning</h4>
+<div class="outline-text-4" id="text-orgb4c31d9">
 <p>
 The use of Unsupervised learning techniques is particularly useful:<br />
 </p>
@@ -2493,9 +2522,9 @@ The use of Unsupervised learning techniques is particularly useful:<br />
 </div>
 </div>
 
-<div id="outline-container-orgc08d7b4" class="outline-4">
-<h4 id="orgc08d7b4">Defining the norm</h4>
-<div class="outline-text-4" id="text-orgc08d7b4">
+<div id="outline-container-org106400d" class="outline-4">
+<h4 id="org106400d">Defining the norm</h4>
+<div class="outline-text-4" id="text-org106400d">
 <p>
 <i>The norm</i> <b>depends on the context</b> you are analyzing.<br />
 It is a boundary (a threshold) that, due to the nature of frauds (continuously changing), will have to adapt.<br />
@@ -2508,9 +2537,9 @@ Even if you obtain good results on the tests, you must be able to make your syst
 </div>
 </div>
 
-<div id="outline-container-org4698b44" class="outline-4">
-<h4 id="org4698b44">Graphical outliers detection</h4>
-<div class="outline-text-4" id="text-org4698b44">
+<div id="outline-container-orge9c36ce" class="outline-4">
+<h4 id="orge9c36ce">Graphical outliers detection</h4>
+<div class="outline-text-4" id="text-orge9c36ce">
 <p>
 Ideal tools to explore the data and get preliminary insights.<br />
 </p>
@@ -2526,15 +2555,15 @@ It has some disadvantages though:<br />
 </div>
 </div>
 
-<div id="outline-container-org03ad482" class="outline-4">
-<h4 id="org03ad482">Statistical outliers detection</h4>
-<div class="outline-text-4" id="text-org03ad482">
+<div id="outline-container-org7c3dee6" class="outline-4">
+<h4 id="org7c3dee6">Statistical outliers detection</h4>
+<div class="outline-text-4" id="text-org7c3dee6">
 <p>
 Some statistical methods are applied to detect frauds:<br />
 </p>
 <ul class="org-ul">
 <li><b>Z-score</b><br />
-Seen before when we talked about <a href="#org013a823">outliers</a>.<br /></li>
+Seen before when we talked about <a href="#org48da439">outliers</a>.<br /></li>
 <li><b>Break point analysis</b><br />
 Detects <span class="underline">intra-account</span> (in the same account) frauds<br /></li>
 <li><b>Peer group analysis</b><br />
@@ -2549,9 +2578,9 @@ These techniques are differentiated mainly by the granularity with wich you want
 </p>
 </div>
 
-<div id="outline-container-org4d28dac" class="outline-5">
-<h5 id="org4d28dac">Break point analysis</h5>
-<div class="outline-text-5" id="text-org4d28dac">
+<div id="outline-container-org719ebf7" class="outline-5">
+<h5 id="org719ebf7">Break point analysis</h5>
+<div class="outline-text-5" id="text-org719ebf7">
 <p>
 Detects sudden changes in the account behavior (called <b>Break point</b>).<br />
 The method is quite simple:<br />
@@ -2565,9 +2594,9 @@ This comparation is usually made with <i>t-score</i>, a metric that measures how
 </div>
 </div>
 
-<div id="outline-container-org7537e52" class="outline-5">
-<h5 id="org7537e52">Peer Group analysis</h5>
-<div class="outline-text-5" id="text-org7537e52">
+<div id="outline-container-orgea63de1" class="outline-5">
+<h5 id="orgea63de1">Peer Group analysis</h5>
+<div class="outline-text-5" id="text-orgea63de1">
 <p>
 The main goal is to define the <span class="underline">peer group</span> (group of <b>similarly behaving accounts</b>) of an account.<br />
 </p>
@@ -2590,9 +2619,9 @@ The update of the patterns is usually done weekly or monthly, due to the fraudol
 </div>
 
 
-<div id="outline-container-org8208b1c" class="outline-6">
-<h6 id="org8208b1c">Identifying, sizing and comparing a peer group</h6>
-<div class="outline-text-6" id="text-org8208b1c">
+<div id="outline-container-orgf731e04" class="outline-6">
+<h6 id="orgf731e04">Identifying, sizing and comparing a peer group</h6>
+<div class="outline-text-6" id="text-orgf731e04">
 <p>
 To identify a peer group we can use 2 methods:<br />
 </p>
@@ -2620,9 +2649,9 @@ How do you compare the behavior of the target w.r.t. the peers?<br />
 </div>
 </div>
 
-<div id="outline-container-org7bb1819" class="outline-5">
-<h5 id="org7bb1819">Break point analysis vs peer group analysis</h5>
-<div class="outline-text-5" id="text-org7bb1819">
+<div id="outline-container-orgc3405fc" class="outline-5">
+<h5 id="orgc3405fc">Break point analysis vs peer group analysis</h5>
+<div class="outline-text-5" id="text-orgc3405fc">
 <p>
 The two are complementary: you must use both at different times.<br />
 E.g. for the holidays, break point analysis performs poorly: people spend more, resulting in an anomaly.<br />
@@ -2635,9 +2664,9 @@ Both these analyses, though, will <span class="underline">detect only local modi
 </div>
 </div>
 
-<div id="outline-container-org525044c" class="outline-5">
-<h5 id="org525044c">Association rule analysis</h5>
-<div class="outline-text-5" id="text-org525044c">
+<div id="outline-container-org07b66fd" class="outline-5">
+<h5 id="org07b66fd">Association rule analysis</h5>
+<div class="outline-text-5" id="text-org07b66fd">
 <p>
 Detects frequent occurring <b>relationships between items</b>.<br />
 An association rule is an implication X &rArr; Y, where both X and Y are subsets of data from the same set with <span class="underline">no common elements</span>.<br />
@@ -2650,9 +2679,9 @@ Supermarkets would decide which items to put near each other in an isle this way
 </p>
 </div>
 
-<div id="outline-container-org89f6019" class="outline-6">
-<h6 id="org89f6019">Support</h6>
-<div class="outline-text-6" id="text-org89f6019">
+<div id="outline-container-org8586e28" class="outline-6">
+<h6 id="org8586e28">Support</h6>
+<div class="outline-text-6" id="text-org8586e28">
 <p>
 The frequency of an item set is measured by means of its <b>support</b>, which is the percentage of total transaction in the database that contains the item set.<br />
 </p>
@@ -2666,9 +2695,9 @@ Based on this function, we can identify the <b>frequent item set</b> , which wil
 </div>
 </div>
 
-<div id="outline-container-orgca1bf8f" class="outline-6">
-<h6 id="orgca1bf8f">Confidence</h6>
-<div class="outline-text-6" id="text-orgca1bf8f">
+<div id="outline-container-orgc231f01" class="outline-6">
+<h6 id="orgc231f01">Confidence</h6>
+<div class="outline-text-6" id="text-orgc231f01">
 <p>
 Measures the <span class="underline">strength of the association</span>.<br />
 It&rsquo;s defined as the probability of the rule consequent given the rule antecedent.<br />
@@ -2680,9 +2709,9 @@ confidence(x \Rightarrow y): \frac{support(x \cup y)}{support (x)}
 </div>
 </div>
 </div>
-<div id="outline-container-orgf1c52d5" class="outline-4">
-<h4 id="orgf1c52d5">Clustering</h4>
-<div class="outline-text-4" id="text-orgf1c52d5">
+<div id="outline-container-org2e58f2d" class="outline-4">
+<h4 id="org2e58f2d">Clustering</h4>
+<div class="outline-text-4" id="text-org2e58f2d">
 <p>
 The goal of this analysis method is to <b>group the observations to find the norm</b>.<br />
 These groups should maximize the <span class="underline">homogeneity between elements in the same group</span> and maximize the <span class="underline">etherogeneity between different groups</span>.<br />
@@ -2693,9 +2722,9 @@ The general idea is that the norm will be characterized by big dense clusters, w
 </p>
 </div>
 
-<div id="outline-container-org493a6fa" class="outline-5">
-<h5 id="org493a6fa">Kinds of clusters</h5>
-<div class="outline-text-5" id="text-org493a6fa">
+<div id="outline-container-org20ef71b" class="outline-5">
+<h5 id="org20ef71b">Kinds of clusters</h5>
+<div class="outline-text-5" id="text-org20ef71b">
 <p>
 Clusters can be either:<br />
 </p>
@@ -2714,9 +2743,9 @@ Clusters can be either:<br />
 </div>
 </div>
 
-<div id="outline-container-orgd90673b" class="outline-5">
-<h5 id="orgd90673b">Measure the similarity of elements</h5>
-<div class="outline-text-5" id="text-orgd90673b">
+<div id="outline-container-org62820c1" class="outline-5">
+<h5 id="org62820c1">Measure the similarity of elements</h5>
+<div class="outline-text-5" id="text-org62820c1">
 <p>
 To measure the similarity of elements <b>distance metrics</b> are used.<br />
 There are many of them and it should be used whichever suits the dataset best.<br />
@@ -2728,18 +2757,18 @@ Euclidean distance is used commonly at the beginning for its simplicity.<br />
 </div>
 </div>
 
-<div id="outline-container-org54579dd" class="outline-5">
-<h5 id="org54579dd">Hierarchical clustering</h5>
-<div class="outline-text-5" id="text-org54579dd">
+<div id="outline-container-orge208887" class="outline-5">
+<h5 id="orge208887">Hierarchical clustering</h5>
+<div class="outline-text-5" id="text-orge208887">
 <p>
 In <b>divisive clustering</b> techniques, the dataset is initially considered as a <span class="underline">unique cluster</span>, to be divided later on.<br />
 In <b>agglomerative clustering</b> techniques, every element is considered as a <span class="underline">single point cluster</span>, to be aggregated with other clusters later on.<br />
 </p>
 </div>
 
-<div id="outline-container-org8ed53e8" class="outline-6">
-<h6 id="org8ed53e8">Distance between clusters</h6>
-<div class="outline-text-6" id="text-org8ed53e8">
+<div id="outline-container-org2d729ea" class="outline-6">
+<h6 id="org2d729ea">Distance between clusters</h6>
+<div class="outline-text-6" id="text-org2d729ea">
 <p>
 There are different ways to compute the <b>distance between clusters</b>, too.<br />
 </p>
@@ -2757,9 +2786,9 @@ Depending on this selection, all your results will be different.<br />
 </div>
 </div>
 
-<div id="outline-container-org7ba37b0" class="outline-6">
-<h6 id="org7ba37b0">Select the number of clusters</h6>
-<div class="outline-text-6" id="text-org7ba37b0">
+<div id="outline-container-org9a281e6" class="outline-6">
+<h6 id="org9a281e6">Select the number of clusters</h6>
+<div class="outline-text-6" id="text-org9a281e6">
 <p>
 The selection of the number of clusters is <b>made through visualization</b>. Two techniques are used:<br />
 </p>
@@ -2770,9 +2799,9 @@ The selection of the number of clusters is <b>made through visualization</b>. Tw
 </div>
 </div>
 
-<div id="outline-container-org1b9c9af" class="outline-6">
-<h6 id="org1b9c9af">Advantages and disadvantages</h6>
-<div class="outline-text-6" id="text-org1b9c9af">
+<div id="outline-container-org691d7a9" class="outline-6">
+<h6 id="org691d7a9">Advantages and disadvantages</h6>
+<div class="outline-text-6" id="text-org691d7a9">
 <p>
 Advantages:<br />
 </p>
@@ -2791,14 +2820,14 @@ Disadvantages:<br />
 </div>
 </div>
 
-<div id="outline-container-orgbe5d42d" class="outline-5">
-<h5 id="orgbe5d42d">Nonhierarchical clustering</h5>
-<div class="outline-text-5" id="text-orgbe5d42d">
+<div id="outline-container-org5262152" class="outline-5">
+<h5 id="org5262152">Nonhierarchical clustering</h5>
+<div class="outline-text-5" id="text-org5262152">
 </div>
 
-<div id="outline-container-org271c5a2" class="outline-6">
-<h6 id="org271c5a2">k-means</h6>
-<div class="outline-text-6" id="text-org271c5a2">
+<div id="outline-container-orga39a30a" class="outline-6">
+<h6 id="orga39a30a">k-means</h6>
+<div class="outline-text-6" id="text-orga39a30a">
 <p>
 Follow these steps:<br />
 </p>
@@ -2818,9 +2847,9 @@ This method is sensitive to outliers.<br />
 </div>
 </div>
 
-<div id="outline-container-org5453b6f" class="outline-6">
-<h6 id="org5453b6f">Self organizing maps</h6>
-<div class="outline-text-6" id="text-org5453b6f">
+<div id="outline-container-org4eb1f8f" class="outline-6">
+<h6 id="org4eb1f8f">Self organizing maps</h6>
+<div class="outline-text-6" id="text-org4eb1f8f">
 <p>
 Feed forward neural network with two layers (input and output).<br />
 Allows to <span class="underline">visualize and cluster high dimensional nets on 2 layer neural networks</span>.<br />
@@ -2855,9 +2884,9 @@ visualizes the contribution of each input attribute to each neuron.<br /></li>
 </div>
 </div>
 
-<div id="outline-container-org71fe762" class="outline-5">
-<h5 id="org71fe762">Semi-Supervised clustering</h5>
-<div class="outline-text-5" id="text-org71fe762">
+<div id="outline-container-orgb339a7a" class="outline-5">
+<h5 id="orgb339a7a">Semi-Supervised clustering</h5>
+<div class="outline-text-5" id="text-orgb339a7a">
 <p>
 Incorporates background knowledge to guide the clustering, by putting some constraints on how the clusters are formed.<br />
 These can be put at different levels:<br />
@@ -2870,18 +2899,18 @@ These can be put at different levels:<br />
 </div>
 </div>
 
-<div id="outline-container-org3a93e80" class="outline-5">
-<h5 id="org3a93e80">One-class SVM</h5>
-<div class="outline-text-5" id="text-org3a93e80">
+<div id="outline-container-orgb4d08e4" class="outline-5">
+<h5 id="orgb4d08e4">One-class SVM</h5>
+<div class="outline-text-5" id="text-orgb4d08e4">
 <p>
 Try to maximize the distance between norm and anomalies: try to separate theme with a linear hyperplane (the anomalies are then the ones near the origin of your graph).<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org2fab6f6" class="outline-5">
-<h5 id="org2fab6f6">Evaluation of clustering solutions</h5>
-<div class="outline-text-5" id="text-org2fab6f6">
+<div id="outline-container-org135aba1" class="outline-5">
+<h5 id="org135aba1">Evaluation of clustering solutions</h5>
+<div class="outline-text-5" id="text-org135aba1">
 <p>
 There&rsquo;s <span class="underline">no universal criterion</span> to evaluate which clustering is better, but a commonly used solution is the <b>sum of Squared Errors</b>.<br />
 </p>
@@ -2899,9 +2928,9 @@ The unsupervised one will tell you the clustering, the supervised might lead you
 </div>
 </div>
 
-<div id="outline-container-org078c77e" class="outline-3">
-<h3 id="org078c77e">Predictive analytics for fraud detection</h3>
-<div class="outline-text-3" id="text-org078c77e">
+<div id="outline-container-org913d098" class="outline-3">
+<h3 id="org913d098">Predictive analytics for fraud detection (Supervised learining techniques)</h3>
+<div class="outline-text-3" id="text-org913d098">
 <p>
 The aim of these analytics is to build a model to <b>predict a variable of interest</b> (it will be called <span class="underline">target variable</span> from now on).<br />
 The real value that the target assumes from our prediction is then used to steer the learning process.<br />
@@ -2920,9 +2949,9 @@ Two kinds of predictive analysis can be distinguished depending on the type of v
 </ul>
 </div>
 
-<div id="outline-container-orgf13284b" class="outline-4">
-<h4 id="orgf13284b">Linear regression</h4>
-<div class="outline-text-4" id="text-orgf13284b">
+<div id="outline-container-org081cdbd" class="outline-4">
+<h4 id="org081cdbd">Linear regression</h4>
+<div class="outline-text-4" id="text-org081cdbd">
 <p>
 One of the many kinds of regression.<br />
 </p>
@@ -2945,9 +2974,9 @@ It has some limitation though:<br />
 </div>
 </div>
 
-<div id="outline-container-orgec7c766" class="outline-4">
-<h4 id="orgec7c766">Logistic regression</h4>
-<div class="outline-text-4" id="text-orgec7c766">
+<div id="outline-container-org86607a4" class="outline-4">
+<h4 id="org86607a4">Logistic regression</h4>
+<div class="outline-text-4" id="text-org86607a4">
 <p>
 Another kind of regression.<br />
 </p>
@@ -2974,9 +3003,9 @@ By training our model through logistic regression on a labeled set, we can find 
 </div>
 </div>
 
-<div id="outline-container-orga088d35" class="outline-4">
-<h4 id="orga088d35">Decision trees</h4>
-<div class="outline-text-4" id="text-orga088d35">
+<div id="outline-container-org060190e" class="outline-4">
+<h4 id="org060190e">Decision trees</h4>
+<div class="outline-text-4" id="text-org060190e">
 <p>
 A classification method of training.<br />
 We use a <b>tree like structure</b> to <span class="underline">label our observations</span>.<br />
@@ -2994,9 +3023,9 @@ Decision trees are defined by three &ldquo;decisions&rdquo; (<i>sorry for the pl
 </ol>
 </div>
 
-<div id="outline-container-org6a88659" class="outline-5">
-<h5 id="org6a88659">Splitting decision</h5>
-<div class="outline-text-5" id="text-org6a88659">
+<div id="outline-container-org02b6fb0" class="outline-5">
+<h5 id="org02b6fb0">Splitting decision</h5>
+<div class="outline-text-5" id="text-org02b6fb0">
 <p>
 First of all, we define <b>impurity</b> as the diversity on our dataset.<br />
 When our dataset is composed of half/half (of a specific condition), we have maximal impurity.<br />
@@ -3009,9 +3038,9 @@ The variable to do the splitting decision on is chosen by looking at the <span c
 </div>
 </div>
 
-<div id="outline-container-orga13f9dd" class="outline-5">
-<h5 id="orga13f9dd">Stopping decision</h5>
-<div class="outline-text-5" id="text-orga13f9dd">
+<div id="outline-container-org603a93d" class="outline-5">
+<h5 id="org603a93d">Stopping decision</h5>
+<div class="outline-text-5" id="text-org603a93d">
 <p>
 If we split too much, we tend to <span class="underline">overfit</span> (consider, other than the data we are interested in, also noise).<br />
 </p>
@@ -3032,19 +3061,19 @@ Once the misclassification error is at its minimum, we can then say to stop the 
 </div>
 </div>
 
-<div id="outline-container-orgfc7f2e1" class="outline-5">
-<h5 id="orgfc7f2e1">Advantages</h5>
-<div class="outline-text-5" id="text-orgfc7f2e1">
+<div id="outline-container-org2f39996" class="outline-5">
+<h5 id="org2f39996">Advantages</h5>
+<div class="outline-text-5" id="text-org2f39996">
 <p>
 Decision trees are useful because they are <span class="underline">easy to build</span>.<br />
-Moreover, they are a <span class="underline">white-box method</span>: you can convert a decision tree into a set of <a href="#orgfd8b926">decision rules</a> easily (the ones that fraud detection expert based systems use), since you have the conditions on each node.<br />
+Moreover, they are a <span class="underline">white-box method</span>: you can convert a decision tree into a set of <a href="#org551e036">decision rules</a> easily (the ones that fraud detection expert based systems use), since you have the conditions on each node.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge29667e" class="outline-5">
-<h5 id="orge29667e">Disadvantages</h5>
-<div class="outline-text-5" id="text-orge29667e">
+<div id="outline-container-orgda5f90b" class="outline-5">
+<h5 id="orgda5f90b">Disadvantages</h5>
+<div class="outline-text-5" id="text-orgda5f90b">
 <p>
 Decision trees tends to overfit the data, but we could use cross validation to reduce this.<br />
 </p>
@@ -3052,27 +3081,27 @@ Decision trees tends to overfit the data, but we could use cross validation to r
 </div>
 </div>
 
-<div id="outline-container-org8916498" class="outline-4">
-<h4 id="org8916498">Regression trees</h4>
-<div class="outline-text-4" id="text-org8916498">
+<div id="outline-container-org651a6c8" class="outline-4">
+<h4 id="org651a6c8">Regression trees</h4>
+<div class="outline-text-4" id="text-org651a6c8">
 <p>
 You can also predict continuous targets with decision trees (for example, you can give the <i>probability</i> of a transaction being a fraud) and transform them into a <span class="underline">regression method</span>.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3b11b35" class="outline-4">
-<h4 id="org3b11b35">Neural Networks</h4>
-<div class="outline-text-4" id="text-org3b11b35">
+<div id="outline-container-orgcbd46c7" class="outline-4">
+<h4 id="orgcbd46c7">Neural Networks</h4>
+<div class="outline-text-4" id="text-orgcbd46c7">
 <p>
 Generalization of existing statistical models.<br />
 The basic element of a Neural network is the <b>neuron</b>: it takes an input, multiplies it by a weight and puts it into a <i>transformation function</i> (can be a logistic regression).<br />
 </p>
 </div>
 
-<div id="outline-container-org1054b61" class="outline-5">
-<h5 id="org1054b61">Layers</h5>
-<div class="outline-text-5" id="text-org1054b61">
+<div id="outline-container-org6852605" class="outline-5">
+<h5 id="org6852605">Layers</h5>
+<div class="outline-text-5" id="text-org6852605">
 <p>
 The neural networks presented during lesson are composed of 3 layers:<br />
 </p>
@@ -3089,9 +3118,9 @@ Neural networks can be used both as a <span class="underline">regression analysi
 </div>
 </div>
 
-<div id="outline-container-org3be1acb" class="outline-5">
-<h5 id="org3be1acb">Weigth learning</h5>
-<div class="outline-text-5" id="text-org3be1acb">
+<div id="outline-container-org32b81cd" class="outline-5">
+<h5 id="org32b81cd">Weigth learning</h5>
+<div class="outline-text-5" id="text-org32b81cd">
 <p>
 To optimize a neural network, we use an iterative algorithm that optimizes a <b>cost function</b> to find the best assignments to the weights of each neuron.<br />
 </p>
@@ -3103,16 +3132,16 @@ To avoid this, we usually do the optimization with <span class="underline">multi
 </div>
 </div>
 
-<div id="outline-container-org6828ee1" class="outline-5">
-<h5 id="org6828ee1">How many hidden neurons?</h5>
-<div class="outline-text-5" id="text-org6828ee1">
+<div id="outline-container-org75ce992" class="outline-5">
+<h5 id="org75ce992">How many hidden neurons?</h5>
+<div class="outline-text-5" id="text-org75ce992">
 <p>
 The number of hidden neurons to use depends on the non linearity of the dataset.<br />
 The more complex are the patterns we need to model, the more neurons we will need.<br />
 </p>
 
 <p>
-The procedure to select the number of neurons is basically the same seen to select the number of nodes in Decision trees (called, in that context, the <a href="#orga13f9dd">stopping decision</a>):<br />
+The procedure to select the number of neurons is basically the same seen to select the number of nodes in Decision trees (called, in that context, the <a href="#org603a93d">stopping decision</a>):<br />
 </p>
 <ol class="org-ol">
 <li>Split the data into <span class="underline">training</span>, <span class="underline">validation</span> and <span class="underline">test</span> set<br /></li>
@@ -3124,9 +3153,9 @@ The procedure to select the number of neurons is basically the same seen to sele
 </div>
 </div>
 
-<div id="outline-container-org3bb6760" class="outline-5">
-<h5 id="org3bb6760">The overfitting problem</h5>
-<div class="outline-text-5" id="text-org3bb6760">
+<div id="outline-container-orgf640b79" class="outline-5">
+<h5 id="orgf640b79">The overfitting problem</h5>
+<div class="outline-text-5" id="text-orgf640b79">
 <p>
 To avoid overfitting, we can use two techniques<br />
 </p>
@@ -3137,9 +3166,9 @@ To avoid overfitting, we can use two techniques<br />
 </div>
 </div>
 
-<div id="outline-container-orgdc19dbc" class="outline-5">
-<h5 id="orgdc19dbc">Neural Networks lack interpretability</h5>
-<div class="outline-text-5" id="text-orgdc19dbc">
+<div id="outline-container-orgf1db11b" class="outline-5">
+<h5 id="orgf1db11b">Neural Networks lack interpretability</h5>
+<div class="outline-text-5" id="text-orgf1db11b">
 <p>
 It is extremely difficult to find out why a certain output is given from certain inputs, which makes the <span class="underline">extraction of rules complex</span>.<br />
 </p>
@@ -3149,9 +3178,9 @@ They are, though, generally more performant than the other methods seen.<br />
 </p>
 </div>
 
-<div id="outline-container-orgaf5f7b6" class="outline-6">
-<h6 id="orgaf5f7b6">Variable selection in Neural Networks</h6>
-<div class="outline-text-6" id="text-orgaf5f7b6">
+<div id="outline-container-org1e15a9e" class="outline-6">
+<h6 id="org1e15a9e">Variable selection in Neural Networks</h6>
+<div class="outline-text-6" id="text-org1e15a9e">
 <p>
 To find out which variables contribute actively to the outputs of the neural network, we must visualize the interaction between the inputs (our variables, like &ldquo;the age of the customer&rdquo; and &ldquo;the amount claimed by the insurance company&rdquo;) and the rest of the network.<br />
 </p>
@@ -3167,9 +3196,9 @@ We build a neural network with all the variables in input, then we recreate the 
 </div>
 </div>
 
-<div id="outline-container-org42fa30c" class="outline-6">
-<h6 id="org42fa30c">Extracting rules from Neural Networks</h6>
-<div class="outline-text-6" id="text-org42fa30c">
+<div id="outline-container-org475bec7" class="outline-6">
+<h6 id="org475bec7">Extracting rules from Neural Networks</h6>
+<div class="outline-text-6" id="text-org475bec7">
 <p>
 To extract the rules to be fed to a rule based engine, we can use two techniques:<br />
 </p>
@@ -3181,9 +3210,9 @@ To extract the rules to be fed to a rule based engine, we can use two techniques
 </div>
 </div>
 
-<div id="outline-container-org191a289" class="outline-5">
-<h5 id="org191a289">Two stage model setup</h5>
-<div class="outline-text-5" id="text-org191a289">
+<div id="outline-container-org11e3be7" class="outline-5">
+<h5 id="org11e3be7">Two stage model setup</h5>
+<div class="outline-text-5" id="text-org11e3be7">
 <p>
 Instead of directly using a Neural network, we can estimate a simpler model with a more interpretable method (like linear/logistic regression) and, then, use a neural network to predict the errors made by the model and adjust the parameters of the linear model.<br />
 </p>
@@ -3191,26 +3220,26 @@ Instead of directly using a Neural network, we can estimate a simpler model with
 </div>
 </div>
 
-<div id="outline-container-org3d61b78" class="outline-4">
-<h4 id="org3d61b78">Support Vector Machines</h4>
-<div class="outline-text-4" id="text-org3d61b78">
+<div id="outline-container-org60e6d75" class="outline-4">
+<h4 id="org60e6d75">Support Vector Machines</h4>
+<div class="outline-text-4" id="text-org60e6d75">
 <p>
 Based on linear programming<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup> (define an objective function and put some constraints on it).<br />
 It&rsquo;s a <span class="underline">classification method</span>, but it can also be applied as a regression method.<br />
 </p>
 </div>
 
-<div id="outline-container-org2737d12" class="outline-5">
-<h5 id="org2737d12">Benefits</h5>
-<div class="outline-text-5" id="text-org2737d12">
+<div id="outline-container-org304807d" class="outline-5">
+<h5 id="org304807d">Benefits</h5>
+<div class="outline-text-5" id="text-org304807d">
 <p>
 In linear programming, it&rsquo;s <span class="underline">easy to introduce business knowledge</span> (simply add constraints).<br />
 </p>
 </div>
 </div>
-<div id="outline-container-orgaf68f78" class="outline-5">
-<h5 id="orgaf68f78">Problem</h5>
-<div class="outline-text-5" id="text-orgaf68f78">
+<div id="outline-container-org9f6b99b" class="outline-5">
+<h5 id="org9f6b99b">Problem</h5>
+<div class="outline-text-5" id="text-org9f6b99b">
 <ol class="org-ol">
 <li>It can estimate <span class="underline">multiple optimal decision boundaries</span> for a linear separable case.<br />
 We can avoid this problem by selecting the boundary that is maximally distant from the two classes.<br /></li>
@@ -3221,31 +3250,31 @@ In this case, we can introduce a <span class="underline">misclassification error
 </div>
 </div>
 
-<div id="outline-container-org14c1496" class="outline-5">
-<h5 id="org14c1496">Rule extraction and Variable selection</h5>
-<div class="outline-text-5" id="text-org14c1496">
+<div id="outline-container-org4349abd" class="outline-5">
+<h5 id="org4349abd">Rule extraction and Variable selection</h5>
+<div class="outline-text-5" id="text-org4349abd">
 <p>
 To extract variables and rules from SVMs, we can use the same approaches seen for Neural Networks:<br />
 </p>
 <ul class="org-ul">
-<li>for <span class="underline">variable selection</span> , the <a href="#orgaf5f7b6">backward variable selection</a> procedure can be used to reduce the input variables.<br /></li>
-<li>for <span class="underline">rule extraction</span> , the SVM can be interpreted as a neural network and the <a href="#org42fa30c">same methods</a> can be applied.<br /></li>
+<li>for <span class="underline">variable selection</span> , the <a href="#org1e15a9e">backward variable selection</a> procedure can be used to reduce the input variables.<br /></li>
+<li>for <span class="underline">rule extraction</span> , the SVM can be interpreted as a neural network and the <a href="#org475bec7">same methods</a> can be applied.<br /></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org22cb295" class="outline-4">
-<h4 id="org22cb295">Ensemble methods</h4>
-<div class="outline-text-4" id="text-org22cb295">
+<div id="outline-container-org2d35996" class="outline-4">
+<h4 id="org2d35996">Ensemble methods</h4>
+<div class="outline-text-4" id="text-org2d35996">
 <p>
 Ensembe methods aim at estimating <b>multiple analytical models</b> instead of only one; The models created can then be used to cover different parts of the data input.<br />
 </p>
 </div>
 
-<div id="outline-container-orgd2a0e9e" class="outline-5">
-<h5 id="orgd2a0e9e">Bagging</h5>
-<div class="outline-text-5" id="text-orgd2a0e9e">
+<div id="outline-container-org5117bbd" class="outline-5">
+<h5 id="org5117bbd">Bagging</h5>
+<div class="outline-text-5" id="text-org5117bbd">
 <p>
 The Baggin method is an ensemble method. It consists of two steps:<br />
 </p>
@@ -3261,9 +3290,9 @@ A <span class="underline">regression</span> model is built by averaging the outc
 </div>
 </div>
 
-<div id="outline-container-orgca481e7" class="outline-5">
-<h5 id="orgca481e7">Boosting</h5>
-<div class="outline-text-5" id="text-orgca481e7">
+<div id="outline-container-org342ff03" class="outline-5">
+<h5 id="org342ff03">Boosting</h5>
+<div class="outline-text-5" id="text-org342ff03">
 <p>
 The Boosting method is an ensemble method. It estimates multiple models using a <span class="underline">weighted data sample</span>.<br />
 </p>
@@ -3279,9 +3308,9 @@ The final model used is a combination of all the individual models.<br />
 </div>
 </div>
 
-<div id="outline-container-orgfe5c2d5" class="outline-5">
-<h5 id="orgfe5c2d5">Random Forest&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span></span></h5>
-<div class="outline-text-5" id="text-orgfe5c2d5">
+<div id="outline-container-org30ae45c" class="outline-5">
+<h5 id="org30ae45c">Random Forest&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span></span></h5>
+<div class="outline-text-5" id="text-org30ae45c">
 <p>
 We create a &ldquo;forest&rdquo; of decision trees, with random splitting decision variables for each tree.<br />
 </p>
@@ -3293,9 +3322,9 @@ It&rsquo;s not clear how the final model is built from the set of decision trees
 </div>
 </div>
 
-<div id="outline-container-org749decd" class="outline-4">
-<h4 id="org749decd">Evaluating a fraud detection model</h4>
-<div class="outline-text-4" id="text-org749decd">
+<div id="outline-container-org4d0c176" class="outline-4">
+<h4 id="org4d0c176">Evaluating a fraud detection model</h4>
+<div class="outline-text-4" id="text-org4d0c176">
 <p>
 Two key decisions determine the effectiveness of the predictive models shown above:<br />
 </p>
@@ -3305,16 +3334,16 @@ Two key decisions determine the effectiveness of the predictive models shown abo
 </ul>
 </div>
 
-<div id="outline-container-orgaa74d0b" class="outline-5">
-<h5 id="orgaa74d0b">Splitting the data set</h5>
-<div class="outline-text-5" id="text-orgaa74d0b">
+<div id="outline-container-org1f574b0" class="outline-5">
+<h5 id="org1f574b0">Splitting the data set</h5>
+<div class="outline-text-5" id="text-org1f574b0">
 <p>
 The training data set and the test dataset must be completely separated.<br />
 The decision on how we split the set <b>depends on the size</b> of the dataset itself.<br />
 </p>
 
 <p>
-When present, the validation sample (seen for <a href="#orga13f9dd">decision trees</a> and <a href="#org6828ee1">neural networks</a>) should be separated, too, but the requirement is less strict.<br />
+When present, the validation sample (seen for <a href="#org603a93d">decision trees</a> and <a href="#org75ce992">neural networks</a>) should be separated, too, but the requirement is less strict.<br />
 </p>
 
 <p>
@@ -3322,9 +3351,9 @@ Sometimes, having the <span class="underline">same percentage of fraudsters</spa
 </p>
 </div>
 
-<div id="outline-container-orgc04baac" class="outline-6">
-<h6 id="orgc04baac">Small data sets</h6>
-<div class="outline-text-6" id="text-orgc04baac">
+<div id="outline-container-org43eaab8" class="outline-6">
+<h6 id="org43eaab8">Small data sets</h6>
+<div class="outline-text-6" id="text-org43eaab8">
 <p>
 When the data set is not big enough, two methods can be adopted to make the split:<br />
 </p>
@@ -3342,15 +3371,15 @@ The selection of the model can then be performed in different ways:<br />
 <ul class="org-ul">
 <li>randomly (common for leave-one-out cross validation, since every model changes by only an observation)<br /></li>
 <li>a final model on all observation is built (taking into consideration the performances coming out of the cross validation process)<br /></li>
-<li>an ensemble model is built with a voting procedure (similarly to what we have seen for <a href="#orgd2a0e9e">bagging ensemble models</a>)<br /></li>
+<li>an ensemble model is built with a voting procedure (similarly to what we have seen for <a href="#org5117bbd">bagging ensemble models</a>)<br /></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e27c13" class="outline-5">
-<h5 id="org1e27c13">Performance metrics</h5>
-<div class="outline-text-5" id="text-org1e27c13">
+<div id="outline-container-org41f8e15" class="outline-5">
+<h5 id="org41f8e15">Performance metrics</h5>
+<div class="outline-text-5" id="text-org41f8e15">
 <p>
 The main performance metrics used to evaluate our analytical model are:<br />
 </p>
@@ -3365,9 +3394,9 @@ The main performance metrics used to evaluate our analytical model are:<br />
 </div>
 
 
-<div id="outline-container-orgf270494" class="outline-5">
-<h5 id="orgf270494">Managing skewed datasets</h5>
-<div class="outline-text-5" id="text-orgf270494">
+<div id="outline-container-orge52df60" class="outline-5">
+<h5 id="orge52df60">Managing skewed datasets</h5>
+<div class="outline-text-5" id="text-orge52df60">
 <p>
 With a skewed<sup><a id="fnr.2.100" class="footref" href="#fn.2">2</a></sup> dataset it might become difficult to make a valid model due to the missing observations labeled as frauds.<br />
 Two transformations can be made to the dataset to make it less skewed:<br />
@@ -3390,9 +3419,9 @@ In general, it&rsquo;s suggested to <b>stay as close as possible to the original
 </div>
 </div>
 
-<div id="outline-container-orgca897aa" class="outline-2">
-<h2 id="orgca897aa">Mobile Forensics&#xa0;&#xa0;&#xa0;<span class="tag"><span class="guest_lecture">guest_lecture</span></span></h2>
-<div class="outline-text-2" id="text-orgca897aa">
+<div id="outline-container-org9175844" class="outline-2">
+<h2 id="org9175844">Mobile Forensics&#xa0;&#xa0;&#xa0;<span class="tag"><span class="guest_lecture">guest_lecture</span></span></h2>
+<div class="outline-text-2" id="text-org9175844">
 <p>
 Mobile devices use has increased between people and, in turn, mobile forensics investigation has gained importance.<br />
 </p>
@@ -3402,9 +3431,9 @@ Mobile forensics is a branch of digital forensics, related to the recovery of di
 </p>
 </div>
 
-<div id="outline-container-orgbb59694" class="outline-3">
-<h3 id="orgbb59694">Forensical soundness</h3>
-<div class="outline-text-3" id="text-orgbb59694">
+<div id="outline-container-orgcb7c7eb" class="outline-3">
+<h3 id="orgcb7c7eb">Forensical soundness</h3>
+<div class="outline-text-3" id="text-orgcb7c7eb">
 <p>
 Forensically sound is a term used to justify the use of particular forensic technology or methodology.<br />
 </p>
@@ -3428,9 +3457,9 @@ When the acquisition of data is not possible without changing the configuration 
 </p>
 </div>
 
-<div id="outline-container-orgcb114d6" class="outline-4">
-<h4 id="orgcb114d6">Low Level Exploits</h4>
-<div class="outline-text-4" id="text-orgcb114d6">
+<div id="outline-container-org93205c0" class="outline-4">
+<h4 id="org93205c0">Low Level Exploits</h4>
+<div class="outline-text-4" id="text-org93205c0">
 <p>
 In some phones, it&rsquo;s possible to obtain the best acquisition (full, unaltered) with <b>low level exploits</b>, which allow us to <span class="underline">obtain root privileges before the phone boots</span>; Such acquisitions are the nearest to forensically sound in mobile forensics.<br />
 It&rsquo;s more common on Android devices.<br />
@@ -3438,9 +3467,9 @@ It&rsquo;s more common on Android devices.<br />
 </div>
 </div>
 
-<div id="outline-container-org3c5fff4" class="outline-4">
-<h4 id="org3c5fff4">Documentation is key</h4>
-<div class="outline-text-4" id="text-org3c5fff4">
+<div id="outline-container-org7f3c198" class="outline-4">
+<h4 id="org7f3c198">Documentation is key</h4>
+<div class="outline-text-4" id="text-org7f3c198">
 <p>
 The key to forensic soundness is <b>documentation</b>. The acquisition process should change the original evidence as little as possible and any changes should be documented and assessed.<br />
 </p>
@@ -3448,9 +3477,9 @@ The key to forensic soundness is <b>documentation</b>. The acquisition process s
 </div>
 </div>
 
-<div id="outline-container-org9ee0a8d" class="outline-3">
-<h3 id="org9ee0a8d">Challenges of mobile forensics</h3>
-<div class="outline-text-3" id="text-org9ee0a8d">
+<div id="outline-container-org9f6c211" class="outline-3">
+<h3 id="org9f6c211">Challenges of mobile forensics</h3>
+<div class="outline-text-3" id="text-org9f6c211">
 <p>
 In the mobile world we have a <b>big market fragmentation</b>, with new devices added daily.<br />
 </p>
@@ -3478,9 +3507,9 @@ Finally, for some apps the data is stored not only on the phone but on the <b>cl
 </div>
 </div>
 
-<div id="outline-container-orgbfe9d2f" class="outline-3">
-<h3 id="orgbfe9d2f">Operating system diversity</h3>
-<div class="outline-text-3" id="text-orgbfe9d2f">
+<div id="outline-container-org15a9daa" class="outline-3">
+<h3 id="org15a9daa">Operating system diversity</h3>
+<div class="outline-text-3" id="text-org15a9daa">
 <p>
 In mobile, the most used OSes nowadays are <span class="underline">Android</span> and <span class="underline">iOS</span>, with the only additional (still being developed) OS being <span class="underline">KaiOS</span>.<br />
 In Italy we use mostly Android, while in America iOS is dominant.<br />
@@ -3488,9 +3517,9 @@ As you can understand, most of the commercial companies are US based.<br />
 </p>
 </div>
 
-<div id="outline-container-org9f49b23" class="outline-4">
-<h4 id="org9f49b23">Android versions diversity</h4>
-<div class="outline-text-4" id="text-org9f49b23">
+<div id="outline-container-org4f9be78" class="outline-4">
+<h4 id="org4f9be78">Android versions diversity</h4>
+<div class="outline-text-4" id="text-org4f9be78">
 <p>
 Android has multiple versions still being used by a wide audience, with the security patches providing an additional layer of diversification.<br />
 </p>
@@ -3501,9 +3530,9 @@ When it comes to software level exploits, having knowledge of the version and wh
 </div>
 </div>
 
-<div id="outline-container-orgd5331df" class="outline-4">
-<h4 id="orgd5331df">iOS versions diversity</h4>
-<div class="outline-text-4" id="text-orgd5331df">
+<div id="outline-container-org613665d" class="outline-4">
+<h4 id="org613665d">iOS versions diversity</h4>
+<div class="outline-text-4" id="text-org613665d">
 <p>
 Since iOS forces the updates on the phones, there&rsquo;s not the same diversity that you can find in the android market share.<br />
 </p>
@@ -3511,9 +3540,9 @@ Since iOS forces the updates on the phones, there&rsquo;s not the same diversity
 </div>
 </div>
 
-<div id="outline-container-org1336c9e" class="outline-3">
-<h3 id="org1336c9e">Guidelines to follow</h3>
-<div class="outline-text-3" id="text-org1336c9e">
+<div id="outline-container-org3c1c2aa" class="outline-3">
+<h3 id="org3c1c2aa">Guidelines to follow</h3>
+<div class="outline-text-3" id="text-org3c1c2aa">
 <p>
 There are various guidelines documented online to follow.<br />
 The one we will analyze is <a href="https://drive.google.com/file/d/1sVko_Uo7o6iootWwn9IoLJ3mrMVXqTDg/view">one from SWGDE</a>.<br />
@@ -3524,26 +3553,26 @@ It&rsquo;s organized in sections:<br />
 </p>
 </div>
 
-<div id="outline-container-org3cf9d0e" class="outline-4">
-<h4 id="org3cf9d0e">Evidence collection and preservation</h4>
-<div class="outline-text-4" id="text-org3cf9d0e">
+<div id="outline-container-orge947e2f" class="outline-4">
+<h4 id="orge947e2f">Evidence collection and preservation</h4>
+<div class="outline-text-4" id="text-orge947e2f">
 <p>
 Tipically done by law enforcement.<br />
 </p>
 </div>
 
-<div id="outline-container-orgd19baa2" class="outline-5">
-<h5 id="orgd19baa2">Preparation</h5>
-<div class="outline-text-5" id="text-orgd19baa2">
+<div id="outline-container-org278a239" class="outline-5">
+<h5 id="org278a239">Preparation</h5>
+<div class="outline-text-5" id="text-org278a239">
 <p>
 You need to have the proper tools to do and document the steps you will take, and you need to have proper legal authority to collect the evidence<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org516e7fc" class="outline-5">
-<h5 id="org516e7fc">Documentation</h5>
-<div class="outline-text-5" id="text-org516e7fc">
+<div id="outline-container-org6ab391b" class="outline-5">
+<h5 id="org6ab391b">Documentation</h5>
+<div class="outline-text-5" id="text-org6ab391b">
 <p>
 Take notes of the collection location and the device state and characteristics at the time of collection.<br />
 You have different things to identify and take as evidence, such as cables, phone boxes etc.<br />
@@ -3551,9 +3580,9 @@ You have different things to identify and take as evidence, such as cables, phon
 </div>
 </div>
 
-<div id="outline-container-orga46afca" class="outline-5">
-<h5 id="orga46afca">What to do first</h5>
-<div class="outline-text-5" id="text-orga46afca">
+<div id="outline-container-org56f08ed" class="outline-5">
+<h5 id="org56f08ed">What to do first</h5>
+<div class="outline-text-5" id="text-org56f08ed">
 <p>
 Based on the state of the phone and its type, you have two options for the <b>preservation process</b> (what to do to preserve the integrity of the evidence and to work in a <span class="underline">forensically sound</span> way):<br />
 </p>
@@ -3575,9 +3604,9 @@ Based on the state of the phone and its type, you have two options for the <b>pr
 </div>
 </div>
 
-<div id="outline-container-org8870114" class="outline-5">
-<h5 id="org8870114">Check periferals</h5>
-<div class="outline-text-5" id="text-org8870114">
+<div id="outline-container-org0150630" class="outline-5">
+<h5 id="org0150630">Check periferals</h5>
+<div class="outline-text-5" id="text-org0150630">
 <p>
 Check for any paired or linked devices, which might lead to backups or additional informations.<br />
 </p>
@@ -3585,17 +3614,17 @@ Check for any paired or linked devices, which might lead to backups or additiona
 </div>
 </div>
 
-<div id="outline-container-org3d8ff90" class="outline-4">
-<h4 id="org3d8ff90">Evidence Handling</h4>
-<div class="outline-text-4" id="text-org3d8ff90">
+<div id="outline-container-orgaf3dd22" class="outline-4">
+<h4 id="orgaf3dd22">Evidence Handling</h4>
+<div class="outline-text-4" id="text-orgaf3dd22">
 <p>
 The steps to extract the data from your device without loss of digital or physical data (e.g: fingerprints).<br />
 </p>
 </div>
 
-<div id="outline-container-org31a4336" class="outline-5">
-<h5 id="org31a4336">Access devices</h5>
-<div class="outline-text-5" id="text-org31a4336">
+<div id="outline-container-org7514ef8" class="outline-5">
+<h5 id="org7514ef8">Access devices</h5>
+<div class="outline-text-5" id="text-org7514ef8">
 <p>
 Frequently, phones can be unlocked if you have access to a safe place of the owner or another smart tool (a smartwatch) or the body of the person itself.<br />
 Be careful: don&rsquo;t try to guess the password, which might call procedures of the phone to provide additional security measures (like formatting the data partition of the phone).<br />
@@ -3603,9 +3632,9 @@ Be careful: don&rsquo;t try to guess the password, which might call procedures o
 </div>
 </div>
 
-<div id="outline-container-orgaea9b29" class="outline-5">
-<h5 id="orgaea9b29">Devices powered on and unlocked</h5>
-<div class="outline-text-5" id="text-orgaea9b29">
+<div id="outline-container-orgba5063e" class="outline-5">
+<h5 id="orgba5063e">Devices powered on and unlocked</h5>
+<div class="outline-text-5" id="text-orgba5063e">
 <p>
 Document as much as possible the content of the phone (also by taking pictures) without locking it accidentally.<br />
 </p>
@@ -3616,9 +3645,9 @@ If the phone is an organization&rsquo;s device, an MDM (mobile device management
 </div>
 </div>
 
-<div id="outline-container-orgb897e3a" class="outline-5">
-<h5 id="orgb897e3a">Encryption</h5>
-<div class="outline-text-5" id="text-orgb897e3a">
+<div id="outline-container-orgcdef5c4" class="outline-5">
+<h5 id="orgcdef5c4">Encryption</h5>
+<div class="outline-text-5" id="text-orgcdef5c4">
 <p>
 Most of the devices nowadays use some form of encryption.<br />
 iOS devices (mostly, but not only) have backup passwords.<br />
@@ -3627,9 +3656,9 @@ There are ways to bypass and reset these kind of passwords but this modifies the
 </div>
 </div>
 
-<div id="outline-container-org01fed5b" class="outline-5">
-<h5 id="org01fed5b">Network Isolation</h5>
-<div class="outline-text-5" id="text-org01fed5b">
+<div id="outline-container-orgc582b51" class="outline-5">
+<h5 id="orgc582b51">Network Isolation</h5>
+<div class="outline-text-5" id="text-orgc582b51">
 <p>
 Any kind of connection can be dangerous for the phone.<br />
 </p>
@@ -3637,13 +3666,13 @@ Any kind of connection can be dangerous for the phone.<br />
 </div>
 </div>
 
-<div id="outline-container-org2af344d" class="outline-4">
-<h4 id="org2af344d">Evidence acquisition</h4>
-<div class="outline-text-4" id="text-org2af344d">
+<div id="outline-container-orgac17d91" class="outline-4">
+<h4 id="orgac17d91">Evidence acquisition</h4>
+<div class="outline-text-4" id="text-orgac17d91">
 </div>
-<div id="outline-container-org43253a3" class="outline-5">
-<h5 id="org43253a3">Preparation</h5>
-<div class="outline-text-5" id="text-org43253a3">
+<div id="outline-container-org6078568" class="outline-5">
+<h5 id="org6078568">Preparation</h5>
+<div class="outline-text-5" id="text-org6078568">
 <p>
 Prepare all the software applications, cables etc. to perform the acquisition.<br />
 </p>
@@ -3658,9 +3687,9 @@ Sometimes, exploit are not available at the time of the analysis, but they might
 </p>
 </div>
 
-<div id="outline-container-org123ce9a" class="outline-6">
-<h6 id="org123ce9a">Tools for law enforcement and acquisition services</h6>
-<div class="outline-text-6" id="text-org123ce9a">
+<div id="outline-container-orgecfe7f8" class="outline-6">
+<h6 id="orgecfe7f8">Tools for law enforcement and acquisition services</h6>
+<div class="outline-text-6" id="text-orgecfe7f8">
 <p>
 Some of these tools are only <b>meant for law enforcement</b>.<br />
 Most of the times though, police analysts use unlocking and decryption mechanisms <b>provided as a service</b>, where you send the phone to a lab and they unlock it through zero-days exploit that are not yet available to the public (and not yet tested).<br />
@@ -3673,9 +3702,9 @@ This methods must be carefully reviewed by a court of law, since the methods use
 </div>
 </div>
 
-<div id="outline-container-org0355f9d" class="outline-5">
-<h5 id="org0355f9d">Device identification</h5>
-<div class="outline-text-5" id="text-org0355f9d">
+<div id="outline-container-org1415888" class="outline-5">
+<h5 id="org1415888">Device identification</h5>
+<div class="outline-text-5" id="text-org1415888">
 <p>
 To identify a device, you can use:<br />
 </p>
@@ -3700,17 +3729,17 @@ Another option is to <span class="underline">check the coverage of the warranty<
 </div>
 </div>
 
-<div id="outline-container-orgf0eb212" class="outline-5">
-<h5 id="orgf0eb212">Extraction methods</h5>
-<div class="outline-text-5" id="text-orgf0eb212">
+<div id="outline-container-orga019efd" class="outline-5">
+<h5 id="orga019efd">Extraction methods</h5>
+<div class="outline-text-5" id="text-orga019efd">
 <p>
 As a general rule, you can obtain different level of extraction based on the kind of devices and the patches applied.<br />
 </p>
 </div>
 
-<div id="outline-container-org86059ed" class="outline-6">
-<h6 id="org86059ed">Physical acquisition</h6>
-<div class="outline-text-6" id="text-org86059ed">
+<div id="outline-container-orgd62eaac" class="outline-6">
+<h6 id="orgd62eaac">Physical acquisition</h6>
+<div class="outline-text-6" id="text-orgd62eaac">
 <p>
 Our goal is generally to obtain a physical, non invasive acquisition, which means we would use an exploit to obtain an image of the entire phone without phisically handling the phone (except for the insertion of a cable).<br />
 </p>
@@ -3725,9 +3754,9 @@ These engeneering bootloader must be signed by Samsung and be valid for the phon
 </div>
 </div>
 
-<div id="outline-container-orgde37e03" class="outline-6">
-<h6 id="orgde37e03">Logical acquisition</h6>
-<div class="outline-text-6" id="text-orgde37e03">
+<div id="outline-container-orge255651" class="outline-6">
+<h6 id="orge255651">Logical acquisition</h6>
+<div class="outline-text-6" id="text-orge255651">
 <p>
 When a physical acquisition is not possible we rely on smaller acquisitions or, sometimes, simple logical acquisitions (which means that we only take what is available to us as non-root users).<br />
 </p>
@@ -3738,9 +3767,9 @@ Whit a logical aquisition we can tipically obtain native applications data but n
 </div>
 </div>
 
-<div id="outline-container-org373f672" class="outline-6">
-<h6 id="org373f672">Partial filesystem aquisition</h6>
-<div class="outline-text-6" id="text-org373f672">
+<div id="outline-container-org99dcaa5" class="outline-6">
+<h6 id="org99dcaa5">Partial filesystem aquisition</h6>
+<div class="outline-text-6" id="text-org99dcaa5">
 <p>
 Since we are mostly interested on third party applications, sometimes we might try some (software) invasive method to get those data, for example to downgrade the application to have a viable exploit to make.<br />
 Take note that <b>this method is invasive</b>, since you are changing the state of the phone to do it.<br />
@@ -3748,9 +3777,9 @@ Take note that <b>this method is invasive</b>, since you are changing the state 
 </div>
 </div>
 
-<div id="outline-container-org21bb23c" class="outline-6">
-<h6 id="org21bb23c">Invasive acquisition</h6>
-<div class="outline-text-6" id="text-org21bb23c">
+<div id="outline-container-orgdca8577" class="outline-6">
+<h6 id="orgdca8577">Invasive acquisition</h6>
+<div class="outline-text-6" id="text-orgdca8577">
 <p>
 You can remove the chip from the device and try to analyze it, but most of the times nowadays you will get encrypted data.<br />
 This is still a <span class="underline">great option for IoT devices</span>.<br />
@@ -3765,9 +3794,9 @@ On some android devices you can also simply remove external memories (sd cards a
 </div>
 </div>
 
-<div id="outline-container-org31ece8e" class="outline-3">
-<h3 id="org31ece8e">Tool analysis: Autopsy</h3>
-<div class="outline-text-3" id="text-org31ece8e">
+<div id="outline-container-org1e12b2b" class="outline-3">
+<h3 id="org1e12b2b">Tool analysis: Autopsy</h3>
+<div class="outline-text-3" id="text-org1e12b2b">
 <p>
 Autopsy is an open source tool to analyze machines (calls itself the &ldquo;premium forensic platform&rdquo;).<br />
 For mobile forensics, it will need an image to analyze.<br />
@@ -3775,9 +3804,9 @@ It is centralized (in the organization, not globally), so its users users can sh
 </p>
 </div>
 
-<div id="outline-container-orge071beb" class="outline-4">
-<h4 id="orge071beb">Android analysis on Autopsy</h4>
-<div class="outline-text-4" id="text-orge071beb">
+<div id="outline-container-org7230eee" class="outline-4">
+<h4 id="org7230eee">Android analysis on Autopsy</h4>
+<div class="outline-text-4" id="text-org7230eee">
 <p>
 Once you unzip the android file, you get two files:<br />
 </p>
@@ -3807,9 +3836,9 @@ The tool will start adding the data source to your case.<br />
 </p>
 </div>
 
-<div id="outline-container-orgc76efda" class="outline-5">
-<h5 id="orgc76efda">Image extraction</h5>
-<div class="outline-text-5" id="text-orgc76efda">
+<div id="outline-container-org3b6af70" class="outline-5">
+<h5 id="org3b6af70">Image extraction</h5>
+<div class="outline-text-5" id="text-org3b6af70">
 <p>
 The extraction of the image must usually be done with commercial tools, like UFED for PC (from Cellebrite).<br />
 The same company makes a commercial analyzer (like autopsy, but a bit more advanced).<br />
@@ -3822,9 +3851,9 @@ That&rsquo;s why you should know what are the risks of each image extraction met
 </div>
 </div>
 
-<div id="outline-container-orgc0e7809" class="outline-5">
-<h5 id="orgc0e7809">Image Analysis</h5>
-<div class="outline-text-5" id="text-orgc0e7809">
+<div id="outline-container-org457a5f7" class="outline-5">
+<h5 id="org457a5f7">Image Analysis</h5>
+<div class="outline-text-5" id="text-org457a5f7">
 <p>
 After having loaded the image, you can look at its contents through Autopsy.<br />
 You can see, by looking at the data sources, the huge number of partitions in an android device.<br />
@@ -3867,9 +3896,9 @@ These might not be all the messages saved on the phone! These are just the ones 
 </div>
 </div>
 
-<div id="outline-container-org2c503f1" class="outline-3">
-<h3 id="org2c503f1">Android analysis with Physical analyzer (commercial tool)</h3>
-<div class="outline-text-3" id="text-org2c503f1">
+<div id="outline-container-org83744ff" class="outline-3">
+<h3 id="org83744ff">Android analysis with Physical analyzer (commercial tool)</h3>
+<div class="outline-text-3" id="text-org83744ff">
 <p>
 Built for mobile only.<br />
 </p>
@@ -3897,9 +3926,9 @@ Moreover, you can also see the account tokens used in the phone (potentially hav
 </p>
 </div>
 
-<div id="outline-container-org56fc868" class="outline-4">
-<h4 id="org56fc868">How to have a forensically resilient phone&#xa0;&#xa0;&#xa0;<span class="tag"><span class="in_class_question">in_class_question</span></span></h4>
-<div class="outline-text-4" id="text-org56fc868">
+<div id="outline-container-org8faa80d" class="outline-4">
+<h4 id="org8faa80d">How to have a forensically resilient phone&#xa0;&#xa0;&#xa0;<span class="tag"><span class="in_class_question">in_class_question</span></span></h4>
+<div class="outline-text-4" id="text-org8faa80d">
 <p>
 To have a forensically resilient phone, the producer must limit the costumers on their use and set restrictions on the things they can do with the phone.<br />
 </p>
@@ -3908,9 +3937,9 @@ To have a forensically resilient phone, the producer must limit the costumers on
 </div>
 </div>
 
-<div id="outline-container-orgc767b61" class="outline-2">
-<h2 id="orgc767b61">Malware Analysis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span>&#xa0;<span class="guest_lecture">guest_lecture</span></span></h2>
-<div class="outline-text-2" id="text-orgc767b61">
+<div id="outline-container-org01e5b9a" class="outline-2">
+<h2 id="org01e5b9a">Malware Analysis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="missing_informations">missing_informations</span>&#xa0;<span class="guest_lecture">guest_lecture</span></span></h2>
+<div class="outline-text-2" id="text-org01e5b9a">
 <p>
 There are two kinds of analysis (we will use both in the demo):<br />
 </p>
@@ -3956,7 +3985,7 @@ If you have followed the course &ldquo;Foundations of Operation Research&rdquo;,
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Tancredi Covioli</p>
-<p class="date">Created: 2021-06-11 ven 01:25</p>
+<p class="date">Created: 2021-06-12 sab 17:56</p>
 </div>
 </body>
 </html>
