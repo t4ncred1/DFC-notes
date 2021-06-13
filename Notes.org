@@ -799,7 +799,7 @@ The _retrieval of deleted data_ (the most expected work by forensics experts) is
 
 If you are trying to investigate any compromise that extends to the hypervisor, it will be almost impossible to investigate, unless the cloud provider wants to demonstrate such compromise with you (quite unusual, since then they'll have to admit the security breach).
 
-** Attrubution issue
+** Attribution issue
 In cyberspace, attribution is diffcult: IPs can be taken, but linking them to a real person is the real deal.
 
 In cloud forensics, the problem is even worse: Anyone can pay with someone else's payment card the cloud instance fee.
@@ -821,7 +821,8 @@ All these issues gave incentive to Cloud Providers to put forensic-friendly feat
 - Storage of vm snapshots
 - Identity management
 
-*** Dual considerations
+** Cloud enabled forensics
+Should forensic experts use cloud infrastructures to do their work?
 - Pros
   + data storage size is constantly increasing
   + analysis of large amounts of data might be unfeasible on local hardware
