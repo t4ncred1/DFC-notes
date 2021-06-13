@@ -1657,11 +1657,7 @@ A *logistic regression* is just the _combination of a linear regression and a bo
 
 The parameters of a logistic regression model are estimated using a *maximum likelihood* optimization.
 
-With a logistic regression model we are able to predict boolean variables, such as a variable that represents the question "/is this observation fraudolent?/".
-
-To decide wether a response is positive or not we use an *activation function*, that maps our obtained prediction (already bounded between 0 and 1 thanks to the bunding function) to a positive or a negative answer.
-
-By training our model through logistic regression on a labeled set, we can find the combinatoin of variables that gives us a response to the question accurately enough.
+With a logistic regression model we are able to predict boolean variables.
 
 *** Decision trees
 :PROPERTIES:
