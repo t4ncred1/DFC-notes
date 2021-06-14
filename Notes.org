@@ -122,11 +122,18 @@ The monetization of the attacks can be either direct or indirect.
 - Indirect monetization: information gathering; abuse computing resources for other attacks; rent or sell botnets.
 
 The discriminant between the two is whether the money comes directly from the victim or from the use of their computer.
-** Cybercrime
+** Cybercrime ecosystem
 :PROPERTIES:
 :NOTER_PAGE: 24
 :END:
-Cybercrime has its own ecosystem, whit producers, enablers (that don't produce the exploits but keep them relevant) and clients
+Cybercrime has its own ecosystem, with:
+- producers, that produce the malware
+- enablers, that provide the infrastructure to make the malware work
+- sellers
+- testers, that check the malware against common antiviruses and scanners to evaluate its elusiveness.
+- clients, that use the malware
+- Money mules, that launder[fn:7] the money made through malware sales.
+
 *** Identity theft
 :PROPERTIES:
 :NOTER_PAGE: 22
@@ -1113,6 +1120,12 @@ The main focus won't be on the technicalities of these techniques but on the fra
 :NOTER_PAGE: 3
 :END:
 This part is where the experts lose 70% of their time.
+As [[*Preprocessing][previously seen]], the preprocessing phase consists in:
+- identify the business problem
+- identify the data sources
+- select the data (through [[*Sampling][sampling]])
+- clean the data (by dealing with [[*Dealing with missing values][missing values]], [[*Outliers][outliers]] and [[*Invalid data][invalid data]])
+- transform the data (through [[*Standardization][standardization]] and [[*Categorization][categorization]])
 
 *** Real data problems
 :PROPERTIES:
