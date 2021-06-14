@@ -2272,7 +2272,182 @@ The time for the exam will be aroud 1 and a half hour (depending on the number o
 
 All the other lectures aren't going to be on exam (but, if cited, they will be accepted).
 
+* TODO Past exams questions
+** Se un perito avesse utilizzato una versione live di linux, che cosa ipotizzerebbe (e cosa farebbe di conseguenza)?
+Ipotizzerei che la macchina analizzata dal perito fosse spenta, ma che fosse difficile o impossibile accedere fisicamente al disco (e.g. pc portatile, macbook), e che quindi si sia optato per leggere i dati accendendo la macchina stessa tramite boot da live USB; Oppure che la machina in questione avesse più dischi configurati in RAID, e la configurazione RAID fosse effettuata tramite hardware, rendendo quindi molto più facile la lettura dei dischi utilizzando l'hardware originale della macchina piuttosto che smontandoli.
+
+** Escludendo la componente umana, come si potrebbe modificare il contenuto di un disco? :missing_informations:
+Degradazione data dall'età del disco, hardware failure, corruzione dovuta a sbalzi/interruzione di corrente.
+
+** Che valenza ha secondo lei il timestamp in un processo
+Il timestamp di un processo può essere utile ad indentificare se un processo è stato o meno coinvolto o utilizzato durante un attack da un attacker sulla macchina (e.g. se è noto il momento iniziale e finale di attività dell'attacker).
+
+** esame e controesame
+Il Consulente Tecnico Privato viene esaminato in tribunale da entrambe le parti, spesso sotto giuramento (anche se non richiesto esplicitamente dalla legge). L'esame è l'interrogatorio posto dall'avvocato della stessa parte, mentre il controesame è quello posto dall'avvocato della parte opposta.
+
+** Definizione di forense e in particolare di informatica forense
+forense=> l'applicazione dei metodi di analisi scientifica per ricostruire degli elementi probatori
+informatica forense => applicarela scienza dietro i dispositivi elettronici e digitali per ricostruire dei dati di fatto che possono essere usati in ultima analisi in tribunale
+
+** Definizione Trimming e perché c'è?
+Il trimming è una ottimizzazione per i dischi di tipo SSD (Solid State Drive). Essendo la memoria SSD composta di celle NAND che possono essere scritte solo dopo essere precedentemente azzerate, si può segnalare al controller del disco quali settori possono essere azzerati perché non più utili, così alla prossima scrittura non vi sarà bisogno di aspettare l'azzeramento delle celle interessate.
+
+** Problemi Relativi Ad attività forense su cloud
+Sul cloud non è possibile effettuare una normale analisi forense, perché si è limitati dalla non accessibilità a diversi componenti del sistema (quali specificamente dipende dal tipo di servizio, IAAS, PAAS, SAAS). Il traffico di rete ad esempio non è mai accessibile, così come l'hardware vero e proprio dove gira l'host del servizio cloud. Inoltre alcuni dati esistono solo come risultato di una transazione (e.g. pagine web), e sono quindi effimeri e volatili; eseguire l'acquisizione di questo tipo di dati è molto complicato.
+
+** Definizione Antiforense, Transitoria Definitiva + Esempi
+Anti-forense: tecniche per impedire la ricostruzione dell'informazione, o far sì che essa sia debole in tribunale. Applicare anti-forense definitiva consiste nell'influenzare l'acquisizione dei dati rendendoli o impossibili da acquisire o possibili da acquisire, ma solo in forma alterata. E.G. eliminazione file, cambio dei timestamp. Anti-forense transitoria vuol dire influenzare l'identificazione, occultando la prova, ed è una tecnica che può però essere invertita o raggirata. E.G. maniploare file system inserendo dati dove normalmente non dovrebbero esservene, eliminare o modificare header/footer dei file.
+
+** Relazione File Cancellati/ Attività Forense
+I file cancellati sono oggetto di interesse in quanto spesso chi effettua il crimine vuole cancellare le sue tracce tramite l'eliminazione di file. Eseguire il dump di un disco e l'analisi dei journal del filesystem (se il filesystem li supporta) o dei blocchi non utilizzati del disco è utile a recuperare (anche parzialmente) i file cancellati o i loro metadati. A seconda della situazione potrebbe essere possibile recuperare metadati+dati, solo metadati, o solo dati.
+
+** Cos'è un write blocker
+Strumento HW o SW che consente di comunicare con un disco in sola lettura, bloccando le operazioni di scrittura senza farle arrivare al disco. Utile per garantire che i dati nel disco non vengano modificati.
+
+** Cos'è lo slack space e cosa ci si può trovare
+I file su disco sono salvati a blocchi chiamati settori. Se un file non è esattamente multiplo della size del settore, nell'ultimo settore si trova spazio non usato dal file, dove possono trovarsi dati relativi a file precedenti.
+
+** Significato di "scientifico"?
+Scientifico vuol dire usare un metodo induttivo nell'estrarre la teoria dall'esperimento, descrivendolo in modo dettagliato ed oggettivo, in modo che sia ripetibile da qualsiasi altro esperto ottenendo gli stessi risultati. Inoltre, è scientifico anche tutto ciò per il quale si è in grado di costruire un esperimento per falsificarlo.
+
+** Cos'è il carving? In quali casi ci serve fare carving (per recuperare cosa) ?
+Carving = recupero di file tramite scansione dell'intero disco, riconoscendo magic number o formati noti di header e/o trailer di file. Utile per recuperare file eliminati. Il carving è l'unica opzione se nel disco dal quale si vogliono recuperare i file non sono presenti metadati su di essi, ma solamente il contenuto dei file.
+
+** copia disco procedura
+(1) scollegare dischi da macchina (2) collegare tramite write blocker, se possibile tramite HW specifico perché più veloce (3) calcolo hash dell’oroginale (4) copia (5) hash della copia e dell’originale dopo fatta al copia. Se h(orig) \equiv h(copia) \equiv h(orig dopo copia) \Rightarrow tutto ok. NB: la prima copia è irripetibile, potrebbe non andare a buon fine => si applica ART 360 e non 359.
+
+* DONE Exam Sample
+:PROPERTIES:
+:NOTER_DOCUMENT: appunti/Exam Example.pdf
+:NOTER_PAGE: 1
+:END:
+** Question 1
+#+BEGIN_QUOTE
+Describe a process for the acquisition of a drive, discussing also what is a write blocker, and considering what are the differences in the case of the acquisition of a machine that is currently turned on.
+#+END_QUOTE
+
+/the following answer is taken from the [[*Acquisition procedure][Acquisition procedure]] section./
+
+In un qualsiasi processo di acquisizione di memoria, bisogna garantire per quanto possibile che le fonti di prova digitali non siano manomesse.
+Per fare ciò, ci sono diverse procedure, che dipendono dallo stato in cui si trova il dispositivo da analizzare.
+
+Nel caso standard, ovvero quando abbiamo la _macchina spenta_ o si hanno solo i dischi, la buona pratica è quella di:
+1. scollegare i dischi dalla macchina
+2. collegarli a uno strumento di acquisizione se possibile utilizzando un *write blocker* (uno strumento dotato di un connettore per disco che blocca i comandi di scrittura sullo stesso, non permettendo che i dati vengano manomessi o modificati durante l’acquisizione)
+3. calcolare l’hash della fonte di prova originale
+4. eseguire la copia e, successivamente, calcolare l’hash di quest’ultima confrontandolo con quello dell’originale.
+
+Se la macchina fosse accesa al momento dell'acquisizione e avessimo la possibilità di spegnerla, basterebbe staccarla dalla corrente e procedere con la procedura d'aquisizione vista nel caso precedente.
+È di fondamentale importanza non permettere al sistema operativo di effettuare la procedura di spegnimento, in quanto quest'ultimo potrebbe cambiare lo stato della macchina e, di conseguenza, la prova.
+
+Se la macchina fosse accesa al momento dell'acquisizione e non avessimo la possibilità di spegnerla (come nel caso di laptop con batteria non accessibile), le operazioni da fare sarebbero:
+1. scollegare la macchina dalla rete, per impedire qualunque possibilità di controllo da remoto
+2. Acquisire, in ordine di volatilità, tutti i dati in grado di descrivere lo stato della macchina: il memory dump, le informazioni di runtime (rete e processi attivi)
+3. Procedere con l’acquisizione del disco.
+
+In tutti i casi, se la procedura sarà andata a buon fine, i due hash ottenuti prima e dopo l'acquisizione concideranno. In caso contrario, sarà necessario ripetere la procedura.
+
+** Question 2
+:PROPERTIES:
+:NOTER_PAGE: 3
+:END:
+#+begin_quote
+Consider the task of acquisition of a web page. Describe a process to perform the task, outlining all the potential challenges and the techniques to overcome or mitigate them.
+#+end_quote
+
+/the following answer is taken from the [[*Acquisition of a web page][Acquisition of a web page]] section./
+
+Le pagine web sono difficili da acquisire in quanto bisogna capire come poter catturarne o riprodurne l’eventuale contenuto dinamico in modo del tutto identico al momento in cui il processato l'ha consultata.
+
+Inoltre, se il contenuto dinamico è importato da siti esterni, bisogna capire il suo stato legale, e acquisire dati oltre la semplice visualizzazione.
+
+Inoltre bisogna gestire la problematica dell'*attribuzione*, che consiste nel capire chi è il proprietario dell'elemento visualizzato.
+Ci sono diversi strumenti e tecniche a supporto di ciò, tra cui =whois=, un tool a linea di comando che permette di capire chi ha registrato un certo dominio o chi possiede un certo blocco di indirizzi IP, e la dns resolution.
+
+Se possibile, è importante anche identificare il provider, la connettività e la geolocalizzazione (quest'ultima non è deterministica, in quanto attribuita in base alle annotazioni fatte dal provider).
+
+** Question 3
+:PROPERTIES:
+:NOTER_PAGE: 4
+:END:
+#+begin_quote
+Describe the roles in the underground market that may be involved in a ransomware
+operation, in order to exemplify what we mean by “malware/crime-as-a-service”. Which of these roles can be investigated/identified by analyzing a malware sample?
+#+end_quote
+
+/the following answer is taken from the [[*Cybercrime ecosystem][Cybercrime ecosystem]] section./
+
+Il ransomware è un malware che consiste nel cifrare i file contenuti in un dispositivo, chiedendo un riscatto monetario per ottenere la chiave di decrittazione.
+
+Come sappiamo spesso, quando si parla di malware, non vi è un singolo individuo dietro, ma un intero ecosistema criminale.
+Sono infatti diverse le figure che potrebbero aver partecipato alla messa in atto un cyberattacco di tipo ransomware.
+Queste figure sono:
+- i produttori del malware
+- i venditori del malware
+- gli _enablers_, che provvedono all'infrastruttura (botnet, siti malware) per rendere il malware operativo.
+- _testers_, che testano il malware su diversi antivirus e scanners.
+- i _money mules_, che reciclano il denaro per evitare che figurino grossi spostamenti e, quindi, evitare sospetti.
+- i clienti, che richiedono l'attacco (previa compensazione).
+
+Analizzando il malware, potremmo trovare l'indirizzo di destinazione per il deposito del riscatto (solitamente richiesto in bitcoins o altre valute pseudoanonime) e, tramite ulteriori ricerche, arrivare a ricollegarlo al _venditore_, che è quindi l'entità più esposta.
+Un esempio dove si è riusciti a risalire al venditore di un malware a partire da una porzione del codice dello stesso (anche se non ottenuta da un'analisi del malware stesso ma da un forum) è il caso *Silk Road*.
+** Question 4
+:PROPERTIES:
+:NOTER_PAGE: 5
+:ID:       f419085d-d631-4174-b01a-fefc420a99cb
+:END:
+#+begin_quote
+Provide a definition of fraud, highlighting and describing its main
+characteristics.
+#+end_quote
+
+/this answer is taken from the [[*Fraud analysis and detection][Fraud analysis and detection]] section./
+
+Una frode è un inganno illecito o criminale destinato a produrre un guadagno finanziario o personale.
+E’ un crimine _non comune_, _ben ponderato_, _impercettibile_, _in evoluzione nel tempo_ e spesso _accuratamente organizzato_, e appare in molti tipi di forme.
+Le frodi sono non comuni in quanto solamente una minoranza di transazioni concernono una frode specifica, delle quali solo un numero limitato sarà riconosciuto come frode vera e propria. Questo rende difficile il loro rilevamento e rende difficile imparare da casi passati.
+Le frodi sono inoltre ben ponderate e impercettibili, perché solitamente i criminali che le commettono provano a camuffarle andando a simulare il comportamento di normali transazioni.
+Le frodi si evolvono nel tempo in quanto si adattano ai meccanismi di rilevamento e prevenzione messi in atto.
+Infine, le frodi sono crimini ben organizzati in quanto comprendono spesso la presenza di strutture criminali complesse.
+
+-----
+#+begin_quote
+Describe the fraud analytical process model, highlighting the core features
+and challenges of each step.
+#+end_quote
+
+/this answer is taken from the [[*Fraud analytical process][Fraud analytical process]] section./
+
+Il processo analitico di una frode si può suddividere in tre sottoprocessi fondamentali, che sono: fase di _pre-processing_, _fase analitica_ e fase di _post-processing_.
+
+La fase più lunga e impegnativa è sicuramente la prima, in quanto comprende diversi meccanismi di machine learning.
+Dall’output di questa fase dipendono le performance del modello che verrà implementato.
+Nella fase di pre-processing, sono diversi i passi che vengono fatti: si inizia con l’identificazione delle anomalie che il sistema dovrà rilevare, successivamente alla scelta del data set da cui i dati verranno prelevati, e quali di questi dati verranno effettivamente prelevati (sampling), per poi essere ‘puliti’ (gestione di duplicati, dati inutili, dati con elementi mancanti ecc) e trasformati (tramite standardizzazione e categorizzazione).
+Infatti dopo la trasformazione avviene l’analisi dei dati ottenuti dalla fase di pre-processing, e infine l’interpretazione, la valutazione e il rilascio del modello(si va a valutare se il modello è abbastanza prestante e non troppo costoso per essere utilizzato).
+
+-----
+#+begin_quote
+You work for the Time Variance Authority (TVA), a company specialized in detecting banking frauds.
+You suspect that some fraudulent patterns are not detected by the fraud detection system developed by your company. Therefore, you decide to analyze some data acquired from an already deployed system.
+By taking into consideration only the graphs shown below, which shows the amount spent by one customer, explain the analysis you would apply on the data and what are the first insights you can extract from it.
+#+end_quote
+
+#+CAPTION: the plot for question 4.3
+[[./images/exam-plot.png]]
+
+/this answer is taken from the [[*Statistical outliers detection][Statistical outliers detection]] section./
+
+In questo caso l’analisi più agevole da applicare è quella della breakpoint analysis.
+Questo è un metodo di rilevamento intra account (si vanno ad analizzare le transazioni di un singolo utente).
+Selezioniamo una finestra temporale di interesse, che verrà spezzata in una parte vecchia e una nuova.
+Successivamente procederemo alla comparazione di queste due parti per verificare la possibilità di frode tramite un comportamento anomalo.
+In questo caso, ad esempio, se prendiamo come finestra temporale vecchia da 0 a 80, e come nuova finestra temporale quella che va da 80 a 120, possiamo vedere come ci siano stati una serie di prelievi più alti (>200 euro) rispetto al solito (<100 euro). Questo potrebbe indicare una possibile frode.
+
+Non essendo il timestamp delle transazioni segnato, un'altra ipotesi potrebbe essere che si tratti di un periodo di spesa maggiore per l'utente (come potrebbe essere il periodo delle feste).
+
 * Footnotes
+
+[fn:7] Money laundering consists in making the illegally acquired money figure as lawfully gained money.
 
 [fn:6] a plenaria is the definitive approvation of an action.
 
