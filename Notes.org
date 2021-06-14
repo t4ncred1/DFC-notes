@@ -2250,7 +2250,7 @@ The *best strategy is doing both*.
 
 On windows, register entries are used by malwares to get persistency and stay hidden.
 
-* Should companies be more helpful to companies to support justice :noexport:
+* NO Should companies be more helpful to companies to support justice :noexport:
 
 ** Shooting of San Bernardino
 FBI asked Apple to write some code to avoid having the phone wiped after too many wrong code attempts
@@ -2262,7 +2262,7 @@ Justice is a very broad term, and the questions seems charged: is justice always
 
 The right decision is the one that follows the decision that we, as a society, ha   d.
 
-* Exam informations :noexport:
+* NO Exam informations :noexport:
 The exam is going to be a written one, except:
 - If you are abroad (there's a checkbox to be flagged on subscription)
 - All requests to make the exam online are going to be accepted, but be considerate of the number of people.
