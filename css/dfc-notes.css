@@ -83,13 +83,20 @@ blockquote {
 #table-of-contents {
   padding-bottom: 1%;
 }
+
 #table-of-contents li {
   padding-top: 0.15em;
   padding-bottom: 0.15em;
 }
+
 .footpara {
   display: inline;
 }
+
+#table-of-contents span {
+  float:none;
+}
+
 /* Heading styles */
 h1,
 h2,
@@ -217,6 +224,7 @@ pre,
 .org-org-meta-line {
   color: var(--color-primary);
 }
+
 blockquote {
   border-left: 5px solid var(--color-primary);
   margin-left: calc(clamp(1rem, 5%, 1.5rem) - 0.5rem);
