@@ -59,10 +59,6 @@ a:visited {
   color: var(--color-primary);
 }
 
-a:hover {
-  filter: brightness(70%);
-}
-
 a:active {
   filter: brightness(70%);
 }
@@ -86,6 +82,10 @@ blockquote {
 }
 #table-of-contents {
   padding-bottom: 1%;
+}
+#table-of-contents li {
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
 }
 .footpara {
   display: inline;
@@ -169,6 +169,10 @@ img {
   height: auto;
 }
 
+.figure {
+  text-align: center;
+}
+
 /* Responsive code blocks and tables */
 pre,
 .outline-text-2,
@@ -179,6 +183,7 @@ pre,
   max-width: 100%;
   overflow-x: auto;
   padding-right: calc(max(1rem, 6%) - 2rem);
+  padding-left: calc(max(1rem, 4%) - 2rem);
 }
 
 .outline-1 {
@@ -237,27 +242,23 @@ blockquote {
    for targeting both the "tag individually */
 
 .tag {
-  margin-top: 10px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 1px;
-  color: black;
   font-size: var(--font-size-tags);
   font-family: var(--font-heading);
 }
 
-.tag > span {
-  display: block;
+.tag span {
+  /*! display: block; */
   /* background-color: var(--color-secondary); */
   text-transform: uppercase;
   font-weight: normal;
-  border: 2px solid black;
-  border-radius: 8px;
-  width: fit-content;
-  padding: 4px 10px;
-  margin: 0;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 0.3em 0.3em;
+  margin-right: .5em;
   /* box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.08), */
   /*   0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05); */
+  float: right;
+  color: #333;
 }
 
 .underline {
