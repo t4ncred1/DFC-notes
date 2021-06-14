@@ -330,19 +330,19 @@ The recomputation of the hash of the source and the acquisition image is made to
 We often use *multiple hashing algorithms* to compute the hash for the same image.
 The reason is that someone else who has analized before (or will analyze) the drive might have used a different hashing algorithm.
 
-*** The time problem
+**** The time problem
 Computing the copy of a 1TB hdd/usb key might take some time depending on the interface used by the hdd itself or by the write blocker.
 It might take several ours to compute an hash and make a copy of the source.
 
 To avoid the time waste, some softwares may automate part of the procedure by computing the source hash while copyng.
 
-*** The size problem
+**** The size problem
 In large scale investigations (or when multiple investigations are held in parallel), the sizes of the drives might make storing their clones and transfering them a real burden.
 Using external media devices is a no-go, since it slows down operations by a lot if you don't use the correct interfaces (USB).
 
 NASs and SANs are used all the times for this specific reason.
 
-*** The encryption problem
+**** The encryption problem
 In Italy, it might not be required for the persecuted to provide the passcode to decrypt the evidence for the analysis, since it can be seen as *testifying against oneself*.
 
 ** Forensics Duplicators
@@ -785,17 +785,18 @@ It's difficult for non technical people to understand the complexity of a system
 
 Another example of lack of data is when we try to get the number of people that interacted with a page/an element.
 
-*** Acquisition problems
+*** Acquisition of a web page
 How do you acquire a web page?
 
 Problems:
 - Dynamic contents
-  How can you be sure that is what the victim was seeing? Everything the user see might be based on something he has done.
+  How can you be sure that is what the prosecuted was seeing? Everything the user see might be based on something he has done.
 - Due to encryption, we cannot use the old method of using a packet sniffer to capture the data.
 - Visualization is different from data. What is the status of things that are imported from the outside?
 - Who is the couprit of an offensive advertisement?
 - The attribution problem
-  The structure of the internet changes daily, and you want to retrieve the data at the time of the victim's visit. This data consists in:
+  Who was the actual provider of the data?
+  The structure of the internet changes daily, and you want to retrieve the data at the time of the prosecuted's visit. This data consists in:
   + Whois data
   + DNS resolution
   + Connectivity and provider identification
@@ -1139,7 +1140,7 @@ It means that, if you have _messy data in your inputs, your analysis will yeld a
 
 We need to *filter our data accordingly*. Even the slightest mistake can lead to invalid results.
 
-*** Types of sources
+*** Identify the data sources
 :PROPERTIES:
 :NOTER_PAGE: 7
 :END:
@@ -1263,7 +1264,7 @@ They can be either:
 If an outlier is an invalid observation, you can treat it as a missing value.
 For valid observation, you can impose a range of values that do not modify your mean too much and put the outlier at one of the extremes.
 
-*** When invalid data is not outlying
+*** Invalid data
 :PROPERTIES:
 :NOTER_PAGE: 37
 :END:
